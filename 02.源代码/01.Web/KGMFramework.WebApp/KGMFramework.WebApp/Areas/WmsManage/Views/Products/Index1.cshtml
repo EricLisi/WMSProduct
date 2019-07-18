@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<div class="topPanel">
+    <div class="toolbar">
+        <div class="btn-group">
+            <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+        </div>
+        <div class="btn-group">
+            @*<a id="NF-add" class="btn btn-primary dropdown-text" onclick="btn_add()"><i class="fa fa-plus"></i>Create</a>
+            <a class="btn btn-primary dropdown-text" onclick="FileOper.Uploadify({ router: 'Products' })"><i class="fa fa-plus"></i>Upload</a>*@
+            <a class="btn btn-primary dropdown-text" onclick="ExportExcel({ router: 'Products' })"><i class="fa fa-plus"></i>Export</a>
+        </div>
+       @*<div class="operate">
+            <ul class="nav nav-pills">
+                <li class="first">Already selected</li>
+                <li><a id="NF-edit" onclick="btn_edit()"><i class="fa fa-pencil-square-o"></i>Edit</a></li>
+                <li><a id="NF-delete" onclick="btn_delete()"><i class="fa fa-trash-o"></i>Delete</a></li>
+                <li><a id="NF-Details" onclick="btn_details()"><i class="fa fa-search-plus"></i>Details</a></li>
+            </ul>
+            <a href="javascript:;" class="close"></a>
+        </div>
+        <script>$('.toolbar').authorizeButton()</script>*@
+    </div>
+    <div class="search">
+        <table>
+            <tr>
+                <td>
+                    <div class="input-group">
+                        <input id="txt_keyword" type="text" class="form-control" placeholder="GTS License No" style="width: 200px;">
+                        <span class="input-group-btn">
+                            <button id="btn_search" type="button" class="btn  btn-primary"><i class="fa fa-search"></i></button>
+                            <button id="btn_search1" type="button" class="btn  btn-primary" onclick="AdvenSearch()">Advanced query</button>
+                        </span>
+                    </div>
+                </td> 
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="gridPanel">
+    <table id="gridList"></table>
+    <div id="gridPager"></div>
+</div>
+
+
+<script src="~/Content/js/framework-IndexVar.js"></script>
+<script src="~/Areas/PrintLabelManage/Content/js/Products/Index1.js"></script>
+<script src="~/Content/js/framework-Index.js"></script> 

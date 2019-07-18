@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <!-- 资源文件引入开始 -->
+    <link rel="stylesheet" href="../../../../assets/plugin/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../../../../assets/plugin/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../../../assets/css/app-common.css" />
+    <link rel="stylesheet" href="../../../../assets/plugin/app-scroll/app-scroll.css" />
+    <link rel="stylesheet" href="../../../../assets/css/app-frame-index.css"/>
+    <link rel="stylesheet" href="../../../../assets/plugin/app-layout/app-layout.css"/>   
+    <link rel="stylesheet" href="../../../../assets/plugin/app-select/app-select.css"/>   
+    <link rel="stylesheet" href="../../../../assets/plugin/app-grid/app-grid.css" />
+    <link rel="stylesheet" href="../../../../assets/plugin/layx/layx.min.css"/>
+    <style>
+    	.app-layout{
+		    padding:0px;
+		}
+		.app-layout-wrap {
+		    border-radius:0px;
+		}
+    </style>
+    <!-- 资源文件引入结束 -->
+</head>
+<body>
+<div class="app-layout">
+    <div class="app-layout-center">
+        <div class="app-layout-wrap app-layout-wrap-notitle">
+            <div class="app-layout-tool">
+                <div class="app-layout-tool-left">
+                    <div class="app-layout-tool-item">
+                        <input id="txt_Keyword" type="text" class="form-control" placeholder="请输入名称/编码" />
+                    </div>
+                    <div class="app-layout-tool-item">
+                        <a id="btn_Search" class="btn btn-primary btn-sm"><i class="fa fa-search"></i>&nbsp;<span class="applg">查询</span></a>
+                    </div>
+                </div>
+                <div class="app-layout-tool-right">
+                    <div class=" btn-group btn-group-sm">
+                        <a id="app_refresh" class="btn btn-default"><i class="fa fa-refresh"></i></a>
+                    </div>
+                    <div class=" btn-group btn-group-sm" app-authorize="no">
+                        <a id="app_add" class="btn btn-default"><i class="fa fa-plus"></i>&nbsp;<span class="applg">新增</span></a>
+                        <a id="app_edit" class="btn btn-default"><i class="fa fa-pencil-square-o"></i>&nbsp;<span class="applg">编辑</span></a>
+                        <a id="app_delete" class="btn btn-default"><i class="fa fa-trash-o"></i>&nbsp;<span class="applg">删除</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="app-layout-body" id="gridtable"></div>
+        </div>
+    </div>
+</div>
+    <!-- 脚本开始 -->
+     <!--<script src="../../../../mock/itemstypedata.js"></script>-->
+    <script src="../../../../assets/plugin/jquery/jquery-1.10.2.min.js"></script>
+    <script src="../../../../assets/plugin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../../../assets/plugin/resize/resize.js"></script>
+    <script src="../../../../assets/plugin/mousewheel/mousewheel.js"></script>
+    <script src="../../../../assets/plugin/app-scroll/app-scroll.js"></script>
+    <script src="../../../../assets/plugin/app-layout/app-layout.js"></script>   
+    <script src="../../../../assets/plugin/layx/layx.min.js"></script>
+    <script src="../../../../assets/plugin/app-select/app-select.js"></script>    
+    <script src="../../../../assets/plugin/app-grid/app-grid.js"></script>
+    <script src="../../../../assets/js/app-common-index.js"></script>
+    <script src="../js/index.js"></script>
+    <!-- 脚本结束 -->
+</body>
+
+</html>

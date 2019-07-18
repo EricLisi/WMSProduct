@@ -1,0 +1,114 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+<style>
+    .file {
+        position: relative;
+        display: inline-block;
+        background: #D0EEFF;
+        border: 1px solid #99D3F5;
+        border-radius: 4px;
+        padding: 4px 12px;
+        overflow: hidden;
+        color: #1E88C7;
+        text-decoration: none;
+        text-indent: 0;
+        line-height: 20px;
+        margin: 10px 10px 2px;
+    }
+
+        .file input {
+            position: absolute;
+            font-size: 100px;
+            right: 0;
+            top: 0;
+            opacity: 0;
+        }
+
+        .file:hover {
+            background: #AADFFD;
+            border-color: #78C3F3;
+            color: #004974;
+            text-decoration: none;
+        }
+</style>
+<link href="~/Content/plugins/uploadify/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/plugins/uploadify/fileinput.css" rel="stylesheet" />
+<link href="~/Content/css/framework-theme.css" rel="stylesheet" />
+<link href="~/Content/css/framework-font.css" rel="stylesheet" />
+@*<script src="~/Content/js/index.js"></script>*@
+@*<script src="~/Content/js/indextab.js"></script>*@
+<script src="~/Content/js/framework-IndexVar.js"></script>
+<script src="~/Content/js/framework-FormVar.js"></script>
+
+<a href="javascript:;" class="file">
+    选择文件
+    <input type="file" onchange="importf(this)" name="" id="">
+</a>
+@*<input type="file" onchange="importf(this)" style="width:500px;height:30px;line-height:30px;" />*@
+<table id="BorrowList" style="overflow-y: hidden;"></table>
+<div class="pull-right" style="margin-right:10px;margin-top:10px;">
+    <div class="btn-group">
+        <a id="NF-Close" authorize="yes" class="btn btn-danger dropdown-text pull-right" onclick="btn_Close()"><i class="fa fa-trash-o"></i>关闭</a>
+    </div>
+</div>
+
+<script>
+    var router = "/Utility/UploadifyForm1";
+    var s = []
+    formSetting = {
+        initFormEvent: function initControl() {
+            //渲染datagrid列表
+            InitGridSelf(s);
+        },
+    };
+    InitForm(router, formSetting);//初始化窗体
+
+
+
+    //渲染datagrid列表
+    function InitGridSelf(data) {
+        $("#BorrowList").dataGrid({
+            treeGrid: false,
+            datatype: "local",
+            data: data,
+            height: 200,
+            editable: false,
+            editRow: true,
+            multiselect: true,
+            colModel: [
+                { label: "行号", name: "RowNumber", width: 150, align: 'left', key: true },
+                    { label: "资产编码", name: "F_AssetEnCode", width: 100, align: 'left', },
+                    { label: '结果', name: 'F_Result', width: 100, align: 'left' },
+                    { label: '原因', name: 'F_Reason', width: 100, align: 'left' }
+            ]//grid的显示列
+        });
+    }
+    function importf(obj) {//导入
+        if (!obj.files) {
+            return;
+        }
+        var f = obj.files[0];
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $("#BorrowList").jqGrid("clearGridData");//初始化时清空表格数据
+            //显示数据加载中
+            $.loading(true)
+
+            $.loading(false)
+            //alert(3)
+            //$("#BorrowList").trigger("reloadGrid");
+        };
+    }
+
+
+    //点击保存
+    function btn_Close() {
+          $.modalClose();
+    }
+
+</script>
+
+<script src="~/Content/js/framework-Index.js"></script>
+<script src="~/Content/js/framework-Form.js"></script>

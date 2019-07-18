@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../../../assets/plugin/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../../../../assets/css/app-common.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/layx/layx.min.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/app-scroll/app-scroll.css" />
+		<link rel="stylesheet" href="../../../../assets/css/app-iframe-form.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/wizard/wizard.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/app-tree/app-tree.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/app-select/app-select.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/timeline/app-timeline.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/app-formselect/app-formselect.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/inputsearch/app-isearch.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/app-grid/app-grid.css" />
+		<link rel="stylesheet" href="../css/form.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/datepicker/skin/WdatePicker.css" />
+		<!--<style>
+			.btn-group-sm>.btn,
+			.btn-sm {
+				margin-right: 10px;
+			}
+			
+			@media screen and (max-width: 600px) {
+				.btn-group-sm>.btn,
+				.btn-sm {
+					margin-bottom: 5px;
+				}
+			}
+		</style>-->
+	</head>
+
+	<body>
+		<div class="topPanel" id="form1">
+			<ul id="myTab" class="nav nav-tabs" style="padding-left:20px;">
+				<li class="active">
+					<a href="#home" data-toggle="tab">单据信息</a>
+				</li>
+				<li>
+					<a href="#define" data-toggle="tab">自定义项</a>
+				</li>
+			</ul>
+			<div id="myTabContent" class="tab-content">
+
+				<div id="home" role="tabpanel" class="tab-pane fade in active">
+					<div class="app-form-wrap" style="padding-top:30px;">
+						<div class="col-md-3 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">单据号
+								<font face="宋体">*</font>
+							</div>
+							<input id="OrderNo" type="text" class="form-control" readonly placeholder="保存后自动生成" />
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">单据日期
+								<font face="宋体">*</font>
+							</div>
+							<input id="Date" type="text" class="form-control app-input-wdatepicker" onfocus="WdatePicker()" isvalid="yes" checkexpession="NotNull" />
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">制单人
+								<font face="宋体">*</font>
+							</div>
+							<input id="Maker" type="text" class="form-control" disabled="disabled"/>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">仓库
+								<font face="宋体">*</font>
+							</div>
+							<div id="WarehouseId" isvalid="yes" checkexpession="NotNull"></div>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">客户
+							</div>
+							<div id="CustomerId"></div>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">权属
+							</div>
+							<div id="OwnerId"></div>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">入库类别
+							</div>
+							<div id="Type" class="form-control">
+								<ul>
+									<li data-value="0">散货</li>
+									<li data-value="1">整箱</li>
+								</ul>
+							</div>
+							<!--<div>
+								<select id="Type">
+									<option value="">==请选择==</option>
+									<option value="0">散货</option>
+									<option value="1">整箱</option>
+								</select>-->
+								<!--<ul>
+							<li data-value="0">无来源</li>
+							<li data-value="1">入库通知单</li>							
+						</ul>-->
+							<!--</div>-->
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">收发类别
+							</div>
+							<div id="SrTypeId"></div>
+						</div>
+						<div class="col-md-12 col-sm-12 col-xs-12 app-form-item beizhu" style="padding-left:40px">
+							<textarea id="Description" data-wfname="备注信息" placeholder="暂无备注信息" class="form-control" style="height: 80px;"></textarea>
+						</div>
+						<!--<div class="col-md-4 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">备注
+							</div>
+							<input id="Description" type="text" class="form-control" />
+						</div>-->
+					</div>
+
+					<div class="top-btn-tool">
+						<a id="select" class="btn btn-primary">选择物料</a>
+						<a id="save" class="btn btn-success">保存单据</a>
+					</div>
+				</div>
+
+				<div id="define" role="tabpanel" class="tab-pane fade">
+					<div class="app-form-wrap">
+						<div class="col-md-3 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项2
+							</div>
+							<input id="Define1" type="text" class="form-control" />
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项2
+							</div>
+							<input id="Define2" type="text" class="form-control" />
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项3
+							</div>
+							<input id="Define3" type="text" class="form-control" />
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项4
+							</div>
+							<input id="Define4" type="text" class="form-control" />
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项5
+							</div>
+							<input id="Define5" type="text" class="form-control" />
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项6
+							</div>
+							<input id="Define6" type="text" class="form-control" />
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项7
+							</div>
+							<input id="Define7" type="text" class="form-control" />
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项8
+							</div>
+							<input id="Define8" type="text" class="form-control" />
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项9
+							</div>
+							<input id="Define9" type="text" class="form-control" />
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项10
+							</div>
+							<input id="Define10" type="text" class="form-control" />
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12 col-sm-12 col-xs-12 app-form-item app-form-item-grid">
+					<div id="productgird" class="aa"></div>
+					<div id="productgird1" class="aa" style="display: none;"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../../../../assets/plugin/layx/layx.min.js"></script>
+	<script src="../../../../assets/plugin/jquery/jquery-1.10.2.min.js"></script>
+	<script src="../../../../assets/plugin/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../../../../assets/plugin/jquery/jquery.md5.min.js"></script>
+	<script src="../../../../assets/plugin/datepicker/WdatePicker.js"></script>
+	<script src="../../../../assets/plugin/resize/resize.js"></script>
+	<script src="../../../../assets/plugin/mousewheel/mousewheel.js"></script>
+	<script src="../../../../assets/plugin/app-scroll/app-scroll.js"></script>
+	<script src="../../../../utils/app-validator.js"></script>
+	<script src="../../../../assets/plugin/wizard/wizard.js"></script>
+	<script src="../../../../assets/plugin/app-select/app-select.js"></script>
+	<script src="../../../../assets/plugin/app-tree/app-tree.js"></script>
+	<script src="../../../../utils/app-form.js"></script>
+	<script src="../../../../assets/plugin/timeline/app-timeline.js"></script>
+	<script src="../../../../assets/plugin/app-formselect/app-formselect.js"></script>
+	<script src="../../../../assets/plugin/inputsearch/app-isearch.js"></script>
+	<script src="../../../../assets/plugin/app-grid/app-grid.js"></script>
+	<script src="../js/form.js"></script>
+
+</html>

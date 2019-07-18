@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DCDBCAD0-065D-41D6-AD37-868396364FF7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KGMFramework.WebApp</RootNamespace>
+    <AssemblyName>KGMFramework.WebApp.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntLibContrib.Data.Dm">
+      <HintPath>..\KGMFramework.ExternalReference\EntLibContrib.Data.Dm.dll</HintPath>
+    </Reference>
+    <Reference Include="EntLibContrib.Data.MySql, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KGMFramework.ExternalReference\EntLibContrib.Data.MySql.dll</HintPath>
+    </Reference>
+    <Reference Include="EntLibContrib.Data.SQLite, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KGMFramework.ExternalReference\EntLibContrib.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="KGM.Framework.Commons, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KGMFramework.ExternalReference\KGM.Framework.Commons.dll</HintPath>
+    </Reference>
+    <Reference Include="KGM.Framework.ControlUtil, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KGMFramework.ExternalReference\KGM.Framework.ControlUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="KGM.Pager.Entity">
+      <HintPath>..\KGMFramework.ExternalReference\KGM.Pager.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KGMFramework.ExternalReference\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KGMFramework.ExternalReference\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51206.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KGMFramework.ExternalReference\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=5.0.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KGMFramework.ExternalReference\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Data.SQLite, Version=1.0.61.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KGMFramework.ExternalReference\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\AppCommon\AppCommon.cs" />
+    <Compile Include="BLL\SystemManage\Sys_Area.cs" />
+    <Compile Include="BLL\SystemManage\Sys_Duty.cs" />
+    <Compile Include="BLL\SystemManage\Sys_Items.cs" />
+    <Compile Include="BLL\SystemManage\Sys_ItemsDetail.cs" />
+    <Compile Include="BLL\SystemManage\Sys_Module.cs" />
+    <Compile Include="BLL\SystemManage\Sys_ModuleButton.cs" />
+    <Compile Include="BLL\SystemManage\Sys_ModuleForm.cs" />
+    <Compile Include="BLL\SystemManage\Sys_ModuleFormInstance.cs" />
+    <Compile Include="BLL\SystemManage\Sys_Organize.cs" />
+    <Compile Include="BLL\SystemManage\Sys_Platform.cs" />
+    <Compile Include="BLL\SystemManage\Sys_Role.cs" />
+    <Compile Include="BLL\SystemManage\Sys_RoleAuthorize.cs" />
+    <Compile Include="BLL\SystemManage\Sys_User.cs" />
+    <Compile Include="BLL\SystemManage\Sys_UserToken.cs" />
+    <Compile Include="BLL\SystemSecurity\Sys_DbBackup.cs" />
+    <Compile Include="BLL\SystemSecurity\Sys_FilterIP.cs" />
+    <Compile Include="BLL\SystemSecurity\Sys_Log.cs" />
+    <Compile Include="BLL\WmsManage\InStockNotice_Body.cs" />
+    <Compile Include="BLL\WmsManage\InStockNotice_Head.cs" />
+    <Compile Include="BLL\WmsManage\InStock_Body.cs" />
+    <Compile Include="BLL\WmsManage\InStock_Head.cs" />
+    <Compile Include="BLL\WmsManage\Mst_Customer.cs" />
+    <Compile Include="BLL\WmsManage\Mst_Position.cs" />
+    <Compile Include="BLL\WmsManage\Mst_Product.cs" />
+    <Compile Include="BLL\WmsManage\Mst_SrType.cs" />
+    <Compile Include="BLL\WmsManage\Mst_Supplier.cs" />
+    <Compile Include="BLL\WmsManage\Mst_Warehouse.cs" />
+    <Compile Include="BLL\WmsManage\OutStockNotice_Body.cs" />
+    <Compile Include="BLL\WmsManage\OutStockNotice_Head.cs" />
+    <Compile Include="BLL\WmsManage\OutStock_Body.cs" />
+    <Compile Include="BLL\WmsManage\OutStock_Head.cs" />
+    <Compile Include="BLL\WmsManage\PackList_Body.cs" />
+    <Compile Include="BLL\WmsManage\PackList_Head.cs" />
+    <Compile Include="BLL\WmsManage\Sm_CompOnStock.cs" />
+    <Compile Include="BLL\WmsManage\Sm_CurrentStock.cs" />
+    <Compile Include="BLL\WmsManage\V_InStockNoticeHead.cs" />
+    <Compile Include="BLL\WmsManage\V_OutStockNoticeHead.cs" />
+    <Compile Include="BLL\WmsManage\V_PACKLISTSEL.cs" />
+    <Compile Include="BLL\WmsManage\V_PACKLISTBODYSEL.cs" />
+    <Compile Include="BLL\WmsManage\V_InStockHead.cs" />
+    <Compile Include="DAL\AppCommon\AppCommon.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\InStockNotice_Body.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\InStockNotice_Head.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\InStock_Body.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\InStock_Head.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_Platform.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_Area.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_UserToken.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Mst_Customer.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Mst_Position.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Sm_CompOnStock.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Sm_CurrentStock.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\V_InStockNoticeHead.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\V_OutStockNoticeHead.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\V_PACKLISTBODYSEL.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Mst_Product.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Mst_SrType.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Mst_Supplier.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Mst_Warehouse.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\OutStockNotice_Body.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\OutStockNotice_Head.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\OutStock_Body.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\OutStock_Head.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\PackList_Body.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\PackList_Head.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\V_InStockHead.cs" />
+    <Compile Include="DAL\SystemSecurity\Sys_DbBackup.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_Duty.cs" />
+    <Compile Include="DAL\SystemSecurity\Sys_FilterIP.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_Items.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_ItemsDetail.cs" />
+    <Compile Include="DAL\SystemSecurity\Sys_Log.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_Module.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_ModuleButton.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_ModuleForm.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_ModuleFormInstance.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_Organize.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_Role.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_RoleAuthorize.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_User.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\V_PACKLISTSE.cs" />
+    <Compile Include="Entity\AppCommon\TreeInfoEntity.cs" />
+    <Compile Include="Entity\Base\LoginModel.cs" />
+    <Compile Include="Entity\Base\AppBaseEntity.cs" />
+    <Compile Include="Entity\Base\Result.cs" />
+    <Compile Include="Entity\SystemManage\Sys_PlatformInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_AreaInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_UserTokenInfo.cs" />
+    <Compile Include="Entity\SystemManage\Tree.cs" />
+    <Compile Include="Entity\SystemSecurity\Sys_DbBackupInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_DutyInfo.cs" />
+    <Compile Include="Entity\SystemSecurity\Sys_FilterIPInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_ItemsDetailInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_ItemsInfo.cs" />
+    <Compile Include="Entity\SystemSecurity\Sys_LogInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_ModuleButtonInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_ModuleFormInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_ModuleFormInstanceInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_ModuleInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_OrganizeInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_RoleAuthorizeInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_RoleInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_UserInfo.cs" />
+    <Compile Include="Entity\Base\VerifyListEntity.cs" />
+    <Compile Include="Entity\WmsManage\InStockNotice_BodyInfo.cs" />
+    <Compile Include="Entity\WmsManage\InStockNotice_HeadInfo.cs" />
+    <Compile Include="Entity\WmsManage\InStock_BodyInfo.cs" />
+    <Compile Include="Entity\WmsManage\InStock_HeadInfo.cs" />
+    <Compile Include="Entity\WmsManage\Mst_CustomerInfo.cs" />
+    <Compile Include="Entity\WmsManage\Mst_PositionInfo.cs" />
+    <Compile Include="Entity\WmsManage\Sm_CompOnStockInfo.cs" />
+    <Compile Include="Entity\WmsManage\Sm_CurrentStockInfo.cs" />
+    <Compile Include="Entity\WmsManage\V_InStockNoticeHeadInfo.cs" />
+    <Compile Include="Entity\WmsManage\V_OutStockNoticeHeadInfo.cs" />
+    <Compile Include="Entity\WmsManage\V_PACKLISTSELInfo.cs" />
+    <Compile Include="Entity\WmsManage\V_PACKLISTBODYSELInfo.cs" />
+    <Compile Include="Entity\WmsManage\Mst_ProductInfo.cs" />
+    <Compile Include="Entity\WmsManage\Mst_SrTypeInfo.cs" />
+    <Compile Include="Entity\WmsManage\Mst_SupplierInfo.cs" />
+    <Compile Include="Entity\WmsManage\Mst_WarehouseInfo.cs" />
+    <Compile Include="Entity\WmsManage\OutStockNotice_BodyInfo.cs" />
+    <Compile Include="Entity\WmsManage\OutStockNotice_HeadInfo.cs" />
+    <Compile Include="Entity\WmsManage\OutStock_BodyInfo.cs" />
+    <Compile Include="Entity\WmsManage\OutStock_HeadInfo.cs" />
+    <Compile Include="Entity\WmsManage\PackList_BodyInfo.cs" />
+    <Compile Include="Entity\WmsManage\PackList_HeadInfo.cs" />
+    <Compile Include="Entity\WmsManage\V_InStockHeadInfo.cs" />
+    <Compile Include="IDAL\AppCommon\IAppCommon.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_Area.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_Duty.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_Items.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_ItemsDetail.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_Module.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_ModuleButton.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_ModuleForm.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_ModuleFormInstance.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_Organize.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_Platform.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_Role.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_RoleAuthorize.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_User.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_UserToken.cs" />
+    <Compile Include="IDAL\SystemSecurity\ISys_DbBackup.cs" />
+    <Compile Include="IDAL\SystemSecurity\ISys_FilterIP.cs" />
+    <Compile Include="IDAL\SystemSecurity\ISys_Log.cs" />
+    <Compile Include="IDAL\WmsManage\IInStockNotice_Body.cs" />
+    <Compile Include="IDAL\WmsManage\IInStockNotice_Head.cs" />
+    <Compile Include="IDAL\WmsManage\IInStock_Body.cs" />
+    <Compile Include="IDAL\WmsManage\IInStock_Head.cs" />
+    <Compile Include="IDAL\WmsManage\IMst_Customer.cs" />
+    <Compile Include="IDAL\WmsManage\IMst_Position.cs" />
+    <Compile Include="IDAL\WmsManage\IMst_Product.cs" />
+    <Compile Include="IDAL\WmsManage\IMst_SrType.cs" />
+    <Compile Include="IDAL\WmsManage\IMst_Supplier.cs" />
+    <Compile Include="IDAL\WmsManage\IMst_Warehouse.cs" />
+    <Compile Include="IDAL\WmsManage\IOutStockNotice_Body.cs" />
+    <Compile Include="IDAL\WmsManage\IOutStockNotice_Head.cs" />
+    <Compile Include="IDAL\WmsManage\IOutStock_Body.cs" />
+    <Compile Include="IDAL\WmsManage\IOutStock_Head.cs" />
+    <Compile Include="IDAL\WmsManage\IPackList_Body.cs" />
+    <Compile Include="IDAL\WmsManage\IPackList_Head.cs" />
+    <Compile Include="IDAL\WmsManage\ISm_CompOnStock.cs" />
+    <Compile Include="IDAL\WmsManage\ISm_CurrentStock.cs" />
+    <Compile Include="IDAL\WmsManage\IV_InStockNoticeHead.cs" />
+    <Compile Include="IDAL\WmsManage\IV_OutStockNoticeHead.cs" />
+    <Compile Include="IDAL\WmsManage\IV_PACKLISTBODYSEL.cs" />
+    <Compile Include="IDAL\WmsManage\IV_InStockHead.cs" />
+    <Compile Include="IDAL\WmsManage\IV_PACKLISTSEL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KGMFramework.WebApp.Library\KGMFramework.WebApp.Library.csproj">
+      <Project>{fdee7c13-741b-478f-9f61-6e5c9094cc4d}</Project>
+      <Name>KGMFramework.WebApp.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

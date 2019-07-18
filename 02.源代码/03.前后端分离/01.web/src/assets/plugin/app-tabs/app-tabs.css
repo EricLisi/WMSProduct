@@ -1,0 +1,100 @@
+/*tabs条*/
+.app-frame-tabs {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    z-index: 1;
+    border-bottom: 1px solid #cccccc;
+    background: #fff;
+    padding: 0px 32px 0px 85px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+.app-uitheme-default .app-frame-tabs {
+    top: 5px;
+    left: 0px;
+    padding: 0px 32px 0px 100px;
+
+}
+
+.app-frame-tabs-wrap {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.app-frame-tabs-wrap ul {
+    position: relative;
+    height: 100%;
+    white-space: nowrap;
+}
+
+
+.app-frame-tabItem {
+    position: relative;
+    padding:  0px 18px 0px 12px;
+    margin-left: 0;
+    display: inline-block;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background: #fff;
+    height: 29px;
+    line-height: 29px;
+    color: #333; 
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+
+.app-frame-tabItem.active {
+    border: 1px solid #cccccc;
+    border-bottom: 0px;
+    height: 30px;
+    background: #f8f8f8;
+    color: #3999d9;
+}
+ 
+.app-frame-tabItem .reomve {
+    position: absolute;
+    width: 12px;
+    height: 13px;
+    display: none;
+    top: 8px;
+    right: 3px;
+    background: url(../../images/tab/tab_close.png) no-repeat;
+} 
+
+.app-frame-tabItem .reomve:hover {
+    background-position: 0 -12px;
+}
+
+
+.app-frame-tabItem i {
+    color: #333;
+    display: none;
+}
+
+
+
+.app-frame-tabItem:hover .reomve {
+    display: inline-block;
+    border-radius: 50%;
+    margin-left: 5px;
+    width: 13px;
+    height: 13px;
+    background-position: 0px 0px;
+    background-size: 98%;
+} 
+
+.app-frame-tabs-wrap {
+    height: 30px;
+}
+ 

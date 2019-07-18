@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "Out";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<form id="form1">
+    <div style="margin-top: 10px; margin-left: 0px; margin-right: 10px;">
+        <table class="form">
+            
+            <tr>
+                <th class="formTitle">产品名称</th>
+                <td class="formValue">
+                    <input id="F_GoodsName" readonly="readonly" name="F_GoodsName" type="text" class="form-control required" placeholder="请输入产品名称" />
+                     
+                </td>
+                </tr>
+            <tr>
+                <th class="formTitle">货位名称</th>
+                <td class="formValue">
+                    <input id="F_CargoPositionName" readonly="readonly" name="F_CargoPositionName" type="text" class="form-control required" placeholder="请输入数量" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)" />
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">仓库名称</th>
+                <td class="formValue">
+                    <input id="F_WarehouseName" readonly="readonly" name="F_WarehouseName" type="text" class="form-control required" placeholder="请输入数量" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)" />
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">  物品数量</th>
+                <td class="formValue">
+                    <input id="F_Number" readonly="readonly" name="F_Number" type="text" class="form-control required" placeholder="请输入数量" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)" />
+                    <br />
+                  </td>
+            </tr>
+            
+            <tr style="border-bottom:2px solid #ccc0c0;">
+    
+            </tr>
+            <tr >
+                <th><br /></th>
+                <td><br /></td>
+            </tr>
+            <tr>
+                <th class="formTitle">选择仓库</th>
+                <td class="formValue">
+                    <select id="F_TransferWarHouseId" name="F_TransferWarHouseId" class="form-control required">
+                        <option value="">==请选择==</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">选择货位</th>
+                <td class="formValue">
+                    <select id="F_TransferCargoId" name="F_TransferCargoId" class="form-control required">
+                        <option value="">==请选择==</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">转移数量</th>
+                <td class="formValue">
+                    <input id="F_TransferNum" name="F_TransferNum" type="text" class="form-control required" placeholder="请输入数量" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)" />
+                </td>
+            </tr>
+        </table>
+        <input id="F_TransferCargo" style="display:none;" name="F_TransferCargo" type="text" class="form-control required" placeholder="请输入数量" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)" />
+        <input id="F_TransferWarHouse" style="display:none;" name="F_TransferWarHouse" type="text" class="form-control required" placeholder="请输入数量" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)" />
+        <input id="F_Id" style="display:none;" name="F_Id" type="text" class="form-control required" placeholder="请输入数量" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)" />
+        <input id="F_GoodsId" style="display:none;" name="F_GoodsId" type="text" class="form-control required" placeholder="请输入数量" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)" />
+
+    </div>
+</form>
+<script src="~/Content/js/framework-FormVar.js"></script>
+<script src="~/Areas/WmsManage/Content/js/Stock/Form.js"></script>
+<script src="~/Content/js/framework-Form.js"></script>

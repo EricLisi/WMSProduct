@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CE6E13C5-ADE5-4516-BF0B-2325D7682C07}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KGMFramework.WebApp.Core</RootNamespace>
+    <AssemblyName>KGMFramework.WebApp.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>D:\X 项目管理\G 固定资产管理%28Web%29\02.源代码\03.WebApi\KGMFramework.WebApp.WebApi\KGMFramework.WebApp.WebApi\App_Data\KGMFramework.WebApp.Core.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="KGM.Framework.Commons">
+      <HintPath>..\packages\KgmUtil\KGM.Framework.Commons.dll</HintPath>
+    </Reference>
+    <Reference Include="KGM.Framework.ControlUtil">
+      <HintPath>..\packages\KgmUtil\KGM.Framework.ControlUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="KGM.Pager.Entity">
+      <HintPath>..\packages\KgmUtil\KGM.Pager.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\KgmUtil\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\packages\KgmUtil\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder">
+      <HintPath>..\packages\KgmUtil\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\AppCommon\AppCommon.cs" />
+    <Compile Include="BLL\SystemManage\Sys_Area.cs" />
+    <Compile Include="BLL\SystemManage\SYS_BarcodeSettingDetail.cs" />
+    <Compile Include="BLL\SystemManage\SYS_BarcodeSettingMain.cs" />
+    <Compile Include="BLL\SystemManage\Sys_Duty.cs" />
+    <Compile Include="BLL\SystemManage\Sys_GridColumnSetting.cs" />
+    <Compile Include="BLL\SystemManage\Sys_Items.cs" />
+    <Compile Include="BLL\SystemManage\Sys_ItemsDetail.cs" />
+    <Compile Include="BLL\SystemManage\Sys_Module.cs" />
+    <Compile Include="BLL\SystemManage\Sys_ModuleButton.cs" />
+    <Compile Include="BLL\SystemManage\Sys_ModuleForm.cs" />
+    <Compile Include="BLL\SystemManage\Sys_ModuleFormInstance.cs" />
+    <Compile Include="BLL\SystemManage\Sys_Organize.cs" />
+    <Compile Include="BLL\SystemManage\Sys_Platform.cs" />
+    <Compile Include="BLL\SystemManage\Sys_Role.cs" />
+    <Compile Include="BLL\SystemManage\Sys_RoleAuthorize.cs" />
+    <Compile Include="BLL\SystemManage\Sys_TerminalGridColumnSetting.cs" />
+    <Compile Include="BLL\SystemManage\Sys_TerminalListSetting.cs" />
+    <Compile Include="BLL\SystemManage\Sys_User.cs" />
+    <Compile Include="BLL\SystemManage\Sys_UserToken.cs" />
+    <Compile Include="BLL\SystemManage\Sys_VouchType.cs" />
+    <Compile Include="BLL\SystemManage\Sys_VouchTypeDefault.cs" />
+    <Compile Include="BLL\SystemManage\Sys_VouchTypeSetting.cs" />
+    <Compile Include="BLL\SystemSecurity\Sys_DbBackup.cs" />
+    <Compile Include="BLL\SystemSecurity\Sys_FilterIP.cs" />
+    <Compile Include="BLL\SystemSecurity\Sys_Log.cs" />
+    <Compile Include="BLL\WmsManage\Allocation_Body.cs" />
+    <Compile Include="BLL\WmsManage\Allocation_Head.cs" />
+    <Compile Include="BLL\WmsManage\Mst_CargoPosition.cs" />
+    <Compile Include="BLL\WmsManage\Mst_Category.cs" />
+    <Compile Include="BLL\WmsManage\Mst_CusterCategory.cs" />
+    <Compile Include="BLL\WmsManage\Mst_Customer.cs" />
+    <Compile Include="BLL\WmsManage\Mst_Goods.cs" />
+    <Compile Include="BLL\WmsManage\Mst_SperCategory.cs" />
+    <Compile Include="BLL\WmsManage\Mst_Suppliers.cs" />
+    <Compile Include="BLL\WmsManage\Mst_Warehouse.cs" />
+    <Compile Include="BLL\WmsManage\PI_Body.cs" />
+    <Compile Include="BLL\WmsManage\PI_Head.cs" />
+    <Compile Include="BLL\WmsManage\PI_ReturnBody.cs" />
+    <Compile Include="BLL\WmsManage\PI_ReturnHead.cs" />
+    <Compile Include="BLL\WmsManage\SO_Body.cs" />
+    <Compile Include="BLL\WmsManage\SO_Head.cs" />
+    <Compile Include="BLL\WmsManage\SO_ReturnedStockBody.cs" />
+    <Compile Include="BLL\WmsManage\SO_ReturnedStockHead.cs" />
+    <Compile Include="BLL\WmsManage\SO_StockMakeBody.cs" />
+    <Compile Include="BLL\WmsManage\SO_StockMakeHead.cs" />
+    <Compile Include="BLL\WmsManage\Sys_AllocationHistory.cs" />
+    <Compile Include="BLL\WmsManage\Sys_InRecords.cs" />
+    <Compile Include="BLL\WmsManage\Sys_InReturnHistory.cs" />
+    <Compile Include="BLL\WmsManage\Sys_OutRecords.cs" />
+    <Compile Include="BLL\WmsManage\Sys_OutReturn.cs" />
+    <Compile Include="BLL\WmsManage\Sys_Stock.cs" />
+    <Compile Include="BLL\WmsManage\Sys_StockHistory.cs" />
+    <Compile Include="BLL\WmsManage\Sys_StockMaskHistory.cs" />
+    <Compile Include="BLL\WmsManage\Sys_Transfer.cs" />
+    <Compile Include="DAL\AppCommon\AppCommon.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_Area.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\SYS_BarcodeSettingDetail.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\SYS_BarcodeSettingMain.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_Duty.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_GridColumnSetting.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_Items.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_ItemsDetail.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_Module.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_ModuleButton.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_ModuleForm.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_ModuleFormInstance.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_Organize.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_Platform.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_Role.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_RoleAuthorize.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_TerminalGridColumnSetting.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_TerminalListSetting.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_User.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_UserToken.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_VouchType.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_VouchTypeDefault.cs" />
+    <Compile Include="DAL\SystemManage\DALSQL\Sys_VouchTypeSetting.cs" />
+    <Compile Include="DAL\SystemSecurity\Sys_DbBackup.cs" />
+    <Compile Include="DAL\SystemSecurity\Sys_FilterIP.cs" />
+    <Compile Include="DAL\SystemSecurity\Sys_Log.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Allocation_Body.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Allocation_Head.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Mst_CargoPosition.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Mst_Category.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Mst_CusterCategory.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Mst_Customer.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Mst_Goods.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Mst_SperCategory.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Mst_Suppliers.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Mst_Warehouse.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\PI_Body.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\PI_Head.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\PI_ReturnBody.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\PI_ReturnHead.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\SO_Body.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\SO_Head.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\SO_ReturnedStockBody.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\SO_ReturnedStockHead.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\SO_StockMakeBody.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\SO_StockMakeHead.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Sys_AllocationHistory.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Sys_InRecords.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Sys_InReturnHistory.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Sys_OutRecords.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Sys_OutReturn.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Sys_Stock.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Sys_StockHistory.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Sys_StockMaskHistory.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Sys_Transfer.cs" />
+    <Compile Include="DAL\WmsManage\DALSQL\Sys_Users.cs" />
+    <Compile Include="Entity\AppCommon\SaveTempScanEntity.cs" />
+    <Compile Include="Entity\AppCommon\TreeInfoEntity.cs" />
+    <Compile Include="Entity\Base\AdvSearchCondtion.cs" />
+    <Compile Include="Entity\Base\AdvSearchCondtionEntity.cs" />
+    <Compile Include="Entity\Base\AppBaseEntity.cs" />
+    <Compile Include="Entity\Base\ExportDataConditionModel.cs" />
+    <Compile Include="Entity\Base\KeywordValueModel.cs" />
+    <Compile Include="Entity\Base\LoginModel.cs" />
+    <Compile Include="Entity\Base\Result.cs" />
+    <Compile Include="Entity\Base\ResultEntity.cs" />
+    <Compile Include="Entity\Base\VerifyListEntity.cs" />
+    <Compile Include="Entity\SaveTempScanModel.cs" />
+    <Compile Include="Entity\SystemManage\Sys_AreaInfo.cs" />
+    <Compile Include="Entity\SystemManage\SYS_BarcodeSettingDetailInfo.cs" />
+    <Compile Include="Entity\SystemManage\SYS_BarcodeSettingMainInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_DutyInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_GridColumnSettingInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_ItemsDetailInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_ItemsInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_ModuleButtonInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_ModuleFormInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_ModuleFormInstanceInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_ModuleInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_OrganizeInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_PlatformInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_RoleAuthorizeInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_RoleInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_TerminalGridColumnSettingInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_TerminalListSettingInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_UserInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_UserTokenInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_VouchTypeDefaultInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_VouchTypeInfo.cs" />
+    <Compile Include="Entity\SystemManage\Sys_VouchTypeSettingInfo.cs" />
+    <Compile Include="Entity\SystemManage\Tree.cs" />
+    <Compile Include="Entity\SystemSecurity\Sys_DbBackupInfo.cs" />
+    <Compile Include="Entity\SystemSecurity\Sys_FilterIPInfo.cs" />
+    <Compile Include="Entity\SystemSecurity\Sys_LogInfo.cs" />
+    <Compile Include="Entity\WmsManage\Allocation_BodyInfo.cs" />
+    <Compile Include="Entity\WmsManage\Allocation_HeadInfo.cs" />
+    <Compile Include="Entity\WmsManage\CarGoEntity.cs" />
+    <Compile Include="Entity\WmsManage\FinishTempScanDto.cs" />
+    <Compile Include="Entity\WmsManage\Mst_CargoPositionInfo.cs" />
+    <Compile Include="Entity\WmsManage\Mst_CategoryInfo.cs" />
+    <Compile Include="Entity\WmsManage\Mst_CusterCategoryInfo.cs" />
+    <Compile Include="Entity\WmsManage\Mst_CustomerInfo.cs" />
+    <Compile Include="Entity\WmsManage\Mst_GoodsInfo.cs" />
+    <Compile Include="Entity\WmsManage\Mst_SperCategoryInfo.cs" />
+    <Compile Include="Entity\WmsManage\Mst_SuppliersInfo.cs" />
+    <Compile Include="Entity\WmsManage\Mst_WarehouseInfo.cs" />
+    <Compile Include="Entity\WmsManage\PI_BodyInfo.cs" />
+    <Compile Include="Entity\WmsManage\PI_HeadInfo.cs" />
+    <Compile Include="Entity\WmsManage\PI_ReturnBodyInfo.cs" />
+    <Compile Include="Entity\WmsManage\PI_ReturnHeadInfo.cs" />
+    <Compile Include="Entity\WmsManage\SO_BodyInfo.cs" />
+    <Compile Include="Entity\WmsManage\SO_HeadInfo.cs" />
+    <Compile Include="Entity\WmsManage\SO_ReturnedStockBodyInfo.cs" />
+    <Compile Include="Entity\WmsManage\SO_ReturnedStockHeadInfo.cs" />
+    <Compile Include="Entity\WmsManage\SO_StockMakeBodyInfo.cs" />
+    <Compile Include="Entity\WmsManage\SO_StockMakeHeadInfo.cs" />
+    <Compile Include="Entity\WmsManage\Sys_AllocationHistoryInfo.cs" />
+    <Compile Include="Entity\WmsManage\Sys_InRecordsInfo.cs" />
+    <Compile Include="Entity\WmsManage\Sys_InReturnHistoryInfo.cs" />
+    <Compile Include="Entity\WmsManage\Sys_OutRecordsInfo.cs" />
+    <Compile Include="Entity\WmsManage\Sys_OutReturnInfo.cs" />
+    <Compile Include="Entity\WmsManage\Sys_StockHistoryInfo.cs" />
+    <Compile Include="Entity\WmsManage\Sys_StockInfo.cs" />
+    <Compile Include="Entity\WmsManage\Sys_StockMaskHistoryInfo.cs" />
+    <Compile Include="Entity\WmsManage\Sys_TransferInfo.cs" />
+    <Compile Include="Entity\WmsManage\Sys_UsersInfo.cs" />
+    <Compile Include="IDAL\AppCommon\IAppCommon.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_Area.cs" />
+    <Compile Include="IDAL\SystemManage\ISYS_BarcodeSettingDetail.cs" />
+    <Compile Include="IDAL\SystemManage\ISYS_BarcodeSettingMain.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_Duty.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_GridColumnSetting.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_Items.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_ItemsDetail.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_Module.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_ModuleButton.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_ModuleForm.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_ModuleFormInstance.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_Organize.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_Platform.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_Role.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_RoleAuthorize.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_TerminalGridColumnSetting.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_TerminalListSetting.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_User.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_UserToken.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_VouchType.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_VouchTypeDefault.cs" />
+    <Compile Include="IDAL\SystemManage\ISys_VouchTypeSetting.cs" />
+    <Compile Include="IDAL\SystemSecurity\ISys_DbBackup.cs" />
+    <Compile Include="IDAL\SystemSecurity\ISys_FilterIP.cs" />
+    <Compile Include="IDAL\SystemSecurity\ISys_Log.cs" />
+    <Compile Include="IDAL\WmsManage\IAllocation_Body.cs" />
+    <Compile Include="IDAL\WmsManage\IAllocation_Head.cs" />
+    <Compile Include="IDAL\WmsManage\IMst_CargoPosition.cs" />
+    <Compile Include="IDAL\WmsManage\IMst_Category.cs" />
+    <Compile Include="IDAL\WmsManage\IMst_CusterCategory.cs" />
+    <Compile Include="IDAL\WmsManage\IMst_Customer.cs" />
+    <Compile Include="IDAL\WmsManage\IMst_Goods.cs" />
+    <Compile Include="IDAL\WmsManage\IMst_SperCategory.cs" />
+    <Compile Include="IDAL\WmsManage\IMst_Suppliers.cs" />
+    <Compile Include="IDAL\WmsManage\IMst_Warehouse.cs" />
+    <Compile Include="IDAL\WmsManage\IPI_Body.cs" />
+    <Compile Include="IDAL\WmsManage\IPI_Head.cs" />
+    <Compile Include="IDAL\WmsManage\IPI_ReturnBody.cs" />
+    <Compile Include="IDAL\WmsManage\IPI_ReturnHead.cs" />
+    <Compile Include="IDAL\WmsManage\ISO_Body.cs" />
+    <Compile Include="IDAL\WmsManage\ISO_Head.cs" />
+    <Compile Include="IDAL\WmsManage\ISO_ReturnedStockBody.cs" />
+    <Compile Include="IDAL\WmsManage\ISO_ReturnedStockHead.cs" />
+    <Compile Include="IDAL\WmsManage\ISO_StockMakeBody.cs" />
+    <Compile Include="IDAL\WmsManage\ISO_StockMakeHead.cs" />
+    <Compile Include="IDAL\WmsManage\ISys_AllocationHistory.cs" />
+    <Compile Include="IDAL\WmsManage\ISys_InRecords.cs" />
+    <Compile Include="IDAL\WmsManage\ISys_InReturnHistory.cs" />
+    <Compile Include="IDAL\WmsManage\ISys_OutRecords.cs" />
+    <Compile Include="IDAL\WmsManage\ISys_OutReturn.cs" />
+    <Compile Include="IDAL\WmsManage\ISys_Stock.cs" />
+    <Compile Include="IDAL\WmsManage\ISys_StockHistory.cs" />
+    <Compile Include="IDAL\WmsManage\ISys_StockMaskHistory.cs" />
+    <Compile Include="IDAL\WmsManage\ISys_Transfer.cs" />
+    <Compile Include="IDAL\WmsManage\ISys_Users.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KGMFramework.WebApp.Library\KGMFramework.WebApp.Library.csproj">
+      <Project>{2b07654f-df77-45b1-ad1a-2e82de3e5691}</Project>
+      <Name>KGMFramework.WebApp.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

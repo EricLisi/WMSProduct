@@ -1,0 +1,214 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{545B654C-31C7-420F-B9BB-F31E706FFB57}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KgmSoft.Scan.Project</RootNamespace>
+    <AssemblyName>KgmSoft.Scan.Project</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>WindowsCE</PlatformFamilyName>
+    <PlatformID>E2BECB1F-8C8C-41ba-B736-9BE7D946A398</PlatformID>
+    <OSVersion>5.0</OSVersion>
+    <DeployDirSuffix>Storage Card\QS_YUSHI</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NativePlatformName>Windows CE</NativePlatformName>
+    <FormFactorID>
+    </FormFactorID>
+    <ApplicationIcon>POWER2.ICO</ApplicationIcon>
+    <DeployDirPrefix>\</DeployDirPrefix>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Honeywell.DataCollection.WinCE.Common, Version=2.103.30001.0, Culture=neutral, PublicKeyToken=f20d6e658fef9348, processorArchitecture=MSIL" />
+    <Reference Include="Honeywell.DataCollection.WinCE.Decoding, Version=2.103.30001.0, Culture=neutral, PublicKeyToken=f20d6e658fef9348, processorArchitecture=MSIL" />
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="KgmSoft.DeviceFramework, Version=1.0.6197.28902, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="KgmSoft.DeviceFrameworkControl, Version=1.0.4920.27880, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.WindowsCE.Forms" />
+    <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json.Compact, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="NLog, Version=1.0.0.505, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL" />
+    <Reference Include="Reader_Ce_Net, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Resco.SmartGrid.CF2, Version=5.6.0.0, Culture=neutral, PublicKeyToken=7444f602060105f9, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataGrid" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api相关类\BuScanInfo.cs" />
+    <Compile Include="Api相关类\KgmApiResultEntity.cs" />
+    <Compile Include="Api相关类\LoginSystemModel.cs" />
+    <Compile Include="Api相关类\PrintHistoryInfo.cs" />
+    <Compile Include="Api相关类\SaveScan.cs" />
+    <Compile Include="Api相关类\ScanFinishEntity.cs" />
+    <Compile Include="Api相关类\ScanFinishModel.cs" />
+    <Compile Include="Api相关类\Mst_TempScanInfo.cs" />
+    <Compile Include="Api相关类\Mst_HistoryInfo.cs" />
+    <Compile Include="Api相关类\SearchEntity.cs" />
+    <Compile Include="Api相关类\SO_HeadInfo.cs" />
+    <Compile Include="Api相关类\SYS_MODULEInfo.cs" />
+    <Compile Include="Api相关类\SYS_USERSInfo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="程序界面\参数设置\FrmConnSetting.resx">
+      <DependentUpon>FrmConnSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="程序界面\系统扫描\FrmHead.resx">
+      <DependentUpon>FrmHead.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="程序界面\系统扫描\FrmScan.resx">
+      <DependentUpon>FrmScan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="程序界面\系统登录\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="程序界面\菜单界面\FrmMenu.resx">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="程序界面\高权限密码\FrmPwd.resx">
+      <DependentUpon>FrmPwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="共通类\AppUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="共通类\QSCommonValue.cs" />
+    <Compile Include="共通类\QSConstValue.cs" />
+    <Compile Include="共通类\WebAPIUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="程序界面\参数设置\FrmConnSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="程序界面\参数设置\FrmConnSetting.designer.cs">
+      <DependentUpon>FrmConnSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="程序界面\系统扫描\FrmHead.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="程序界面\系统扫描\FrmHead.designer.cs">
+      <DependentUpon>FrmHead.cs</DependentUpon>
+    </Compile>
+    <Compile Include="程序界面\系统扫描\FrmScan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="程序界面\系统扫描\FrmScan.designer.cs">
+      <DependentUpon>FrmScan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="程序界面\系统登录\FrmLogin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="程序界面\系统登录\FrmLogin.designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="程序界面\菜单界面\FrmMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="程序界面\菜单界面\FrmMenu.designer.cs">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="程序界面\高权限密码\FrmPwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="程序界面\高权限密码\FrmPwd.designer.cs">
+      <DependentUpon>FrmPwd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="自定义控件类\FrmBaseSelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="自定义控件类\StatusLable.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ConnSettings.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\1.bmp" />
+    <Content Include="img\2.bmp" />
+    <Content Include="img\3.bmp" />
+    <Content Include="img\4.bmp" />
+    <Content Include="img\5.bmp" />
+    <Content Include="img\6.png" />
+    <Content Include="img\7.bmp" />
+    <Content Include="img\8.png" />
+    <Content Include="img\exit.bmp" />
+    <Content Include="img\logout.bmp" />
+    <Content Include="POWER2.ICO" />
+    <Content Include="Title.jpg" />
+    <Content Include="引用dll\Honeywell.DataCollection.WinCE.Common.dll" />
+    <Content Include="引用dll\Honeywell.DataCollection.WinCE.Decoding.dll" />
+    <Content Include="引用dll\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="引用dll\KgmSoft.DeviceFramework.dll" />
+    <Content Include="引用dll\KgmSoft.DeviceFrameworkControl.dll" />
+    <Content Include="引用dll\KgmSoft.DeviceFrameworkControl.WindowsCE.asmmeta.dll" />
+    <Content Include="引用dll\Microsoft.ApplicationBlocks.Data.dll" />
+    <Content Include="引用dll\Newtonsoft.Json.Compact.dll" />
+    <Content Include="引用dll\NLog.dll" />
+    <Content Include="引用dll\Reader_Ce_Net.DLL" />
+    <Content Include="引用dll\Resco.SmartGrid.CF2.dll" />
+    <Content Include="引用dll\System.Data.SQLite.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

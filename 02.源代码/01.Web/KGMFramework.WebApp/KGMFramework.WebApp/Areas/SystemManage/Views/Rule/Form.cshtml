@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<style type="text/css">
+    .ui-jqgrid .ui-jqgrid-hdiv {
+        overflow-y: hidden;
+    }
+</style>
+<form id="form1">
+    <div style="margin-top: 10px; margin-left: -35px; margin-right: 10px;">
+        <table class="form">
+            <tr>
+                <th class="formTitle">编码</th>
+                <td class="formValue">
+                    <input id="F_EnCode" name="F_EnCode" type="text" class="form-control required" placeholder="请输入编码" />
+                </td>
+                <th class="formTitle">规则名称</th>
+                <td class="formValue">
+                    <input id="F_FullName" name="F_FullName" type="text" class="form-control required" placeholder="请输入名称" />
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">类型</th>
+                <td class="formValue">
+                    <select id="F_Type" name="F_Type" class="form-control required" onchange="Sel_Change()">
+                        <option value="0">符号分隔</option>
+                        <option value="1">定长分隔</option>
+                    </select>
+                </td>
+                <th class="formTitle">
+                    分隔符
+                </th>
+                <td class="formValue">
+                    <input id="F_Split" name="F_Split" type="text" class="form-control required" placeholder="请输入分隔符" />
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle" valign="top" style="padding-top: 5px;">
+                    描述
+                </th>
+                <td class="formValue" colspan="3">
+                    <textarea id="F_Description" name="F_Description" class="form-control" style="height: 60px;"></textarea>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="margin-left: 10px; margin-right: 10px;overflow-y: hidden;">
+        <table id="gridData" style="overflow-y: hidden;"></table>
+    </div>
+
+
+    <div class="form-button" id="wizard-actions">
+        <ul>
+            <li class="pull-left" style="list-style:none;margin-left:-30px">
+                <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+                <a id="NF-edit" onclick="btn_SaveRuleDetail(true)" class="btn btn-warning btn-prev">修改规则</a>
+                <a id="NF-delete1" onclick="btn_delDetail()" class="btn btn-danger">删除规则</a>
+            </li>
+            <li style="list-style:none">
+                <a id="btn_AddRuleDetail" class="btn btn-default btn-prev" onclick="btn_SaveRuleDetail(false)">新增</a>
+                <a id="btn_next" class="btn btn-default btn-next" onclick="submitMuti()">保存</a>
+                <a id="btn_close" class="btn btn-danger" onclick="btn_close()">关闭</a>
+            </li>
+        </ul>
+    </div>
+</form>
+<script src="~/Content/js/framework-FormVar.js"></script>
+<script src="~/Areas/SystemManage/Content/js/Rule/Form.js"></script>
+<script src="~/Content/js/framework-Form.js"></script>

@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "高级查询";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+
+
+<form id="form1">
+    <div>
+        <table class="form" id="SearchTable">
+        </table>
+    </div>
+    <div class="form-button" style="position:fixed;bottom:0px">
+        <div class="pull-left" style="margin-left:5px">
+            <a id="btn_reset" class="btn btn-warning btn-prev" onclick="btn_reset()">重置条件</a>
+            <a id="btn_add" class="btn btn-success btn-next" onclick="btn_add()">新增条件</a>
+            @*<a id="btn_showSql" class="btn btn-success btn-next" onclick="btn_showSql()">显示SQL</a>*@
+        </div>
+        <div class="pull-right" style="margin-right:5px;">
+            <a id="btn_advSearch" class="btn btn-primary" onclick="btn_advSearch()">确定</a>
+            <a id="btn_close" class="btn btn-danger" onclick="btn_close()">关闭</a>
+        </div>
+    </div>
+</form>
+
+<script src="~/Content/js/framework-GridSearch.js"></script>

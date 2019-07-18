@@ -1,0 +1,122 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<form id="form1">
+    <div class="form row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle">编码前缀</th>
+                    <td class="formValue">
+                        <input id="F_Prefix" name="F_Prefix" type="text" class="form-control required" placeholder="请输入编码前缀" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle">起始序号</th>
+                    <td class="formValue">
+                        <input id="F_BenginNum" name="F_BenginNum" type="text" class="form-control required" placeholder="请输入起始编码" />
+                    </td>
+                    <th class="formTitle">结束序号</th>
+                    <td class="formValue">
+                        <input id="F_EndNum" name="F_EndNum" type="text" class="form-control required" placeholder="请输入结束编码" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle">名称</th>
+                    <td class="formValue">
+                        <input id="F_FullName" name="F_FullName" type="text" class="form-control required" placeholder="请输入名称" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle">上级货位</th>
+                    <td class="formValue">
+                        <select id="F_ParentId" name="F_ParentId" class="form-control required">
+                            <option value="0">父节点</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle">类型</th>
+                    <td class="formValue">
+                        <select id="F_Type" name="F_Type" class="form-control required">
+                            <option value="0">整箱区</option>
+                            <option value="1">散装区</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle">属性</th>
+                    <td class="formValue">
+                        <select id="F_Property" name="F_Property" class="form-control required">
+                            <option value="0">正常品</option>
+                            <option value="1">待定区</option>
+                            <option value="2">坏品区</option>
+
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle">所属仓库</th>
+                    <td class="formValue">
+                        <select id="F_WarehouseId" name="F_WarehouseId" class="form-control required"></select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle" valign="top" style="padding-top: 5px;">
+                        描述
+                    </th>
+                    <td class="formValue" colspan="3">
+                        <textarea id="F_Description" name="F_Description" class="form-control" style="height: 100px;"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle" style="height: 35px;">选项</th>
+                    <td class="formValue" colspan="3">
+                        <div class="ckbox">
+                            <input id="F_EnabledMark" name="F_EnabledMark" type="checkbox" checked="checked"><label for="F_EnabledMark">启用货位</label>
+                        </div>
+                        
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</form>
+
+<script src="~/Content/js/framework-FormVar.js"></script>
+<script src="~/Areas/WmsManage/Content/js/Position/Form.js"></script>
+<script src="~/Content/js/framework-Form.js"></script>

@@ -1,0 +1,93 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/css/framework-dashboard.css" rel="stylesheet" />
+
+<div id="areascontent">
+    <div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-line-chart fa-lg"></i>待办事项
+            </div>
+            <div class="panel-body rows">
+                <div class="dashboard-stats col-md-3 col-sm-3">
+                    <div class="dashboard-stats-item dashboard-stats-item-red">
+                        <h2 class="m-top-none" id="pdj">8</h2>
+                        <h5>入库待审核单据</h5>
+                        <div class="stat-icon">
+                            <i class="fa fa-user fa-3x"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-stats col-md-3 col-sm-3">
+                    <div class="dashboard-stats-item dashboard-stats-item-blue" style="">
+                        <h2 class="m-top-none" id="pzy">12</h2>
+                        <h5>出库待审核单据</h5>
+                        <div class="stat-icon">
+                            <i class="fa fa-truck fa-3x"></i>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-stats col-md-3 col-sm-3">
+                    <div class="dashboard-stats-item dashboard-stats-item-yellow">
+                        <h2 class="m-top-none" id="pcz">2</h2>
+                        <h5>调拨待审核单据</h5>
+                        <div class="stat-icon">
+                            <i class="fa fa-hdd-o fa-3x"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-stats col-md-3 col-sm-3">
+                    <div class="dashboard-stats-item dashboard-stats-item-green" style="">
+                        <h2 class="m-top-none" id="pcz">2</h2>
+                        <h5>盘点待审核单据</h5>
+                        <div class="stat-icon">
+                            <i class="fa fa-hdd-o fa-3x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rows">
+        <div class="col-md-8 col-sm-8 chartData">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-area-chart fa-lg" style="padding-right: 5px;"></i>商品流转统计
+                    <div class="assetChart">
+                        <span><i class="fa fa-square" style="color: #00ff90;"></i>产品采购数量</span>
+                        <span><i class="fa fa-square" style="color: #f7f204;"></i>产品销售数量</span>
+                        <span><i class="fa fa-square" style="color: #ff0000;"></i>采购退货数量</span>
+                        <span><i class="fa fa-square" style="color: #808080;"></i>销售退货数量</span>
+                    </div>
+                </div>
+                <div class="panel-body" style="padding-bottom: 0px;">
+                    <canvas id="salarychart" style="height: 285px; width: 100%; padding-right: 10px;"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4 chartData">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-area-chart fa-lg" style="padding-right: 5px;"></i>商品流转统计
+                    <div class="assetChart">
+                        <span><i class="fa fa-square" style="color: #00ff90;"></i>产品采购数量</span>
+                        <span><i class="fa fa-square" style="color: #f7f204;"></i>产品销售数量</span>
+                        <span><i class="fa fa-square" style="color: #ff0000;"></i>采购退货数量</span>
+                        <span><i class="fa fa-square" style="color: #808080;"></i>销售退货数量</span>
+                    </div>
+                </div>
+                <div class="panel-body" style="padding-bottom: 0px;">
+                    <canvas id="salarychart" style="height: 285px; width: 100%; padding-right: 10px;"></canvas>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="~/Content/plugins/charts/Chart.min.js"></script>
+    <script>
+
+    </script>
+</div>

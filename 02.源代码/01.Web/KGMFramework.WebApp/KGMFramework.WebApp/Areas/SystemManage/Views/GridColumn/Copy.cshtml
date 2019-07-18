@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+
+<form id="form1">
+    <div style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+        <div style="padding-top: 20px; margin-right: 30px;">
+            <table class="form">
+                <tr>
+                    <th class="formTitle">上级</th>
+                    <td class="formValue">
+                        <select id="F_ParentId" name="F_ParentId" class="form-control required">
+                            <option value="0">父节点</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">名称</th>
+                    <td class="formValue">
+                        <input id="F_FullName" name="F_FullName" type="text" class="form-control required" placeholder="请输入名称" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">编号</th>
+                    <td class="formValue">
+                        <input id="F_EnCode" name="F_EnCode" type="text" class="form-control required" placeholder="请输入编号" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">所属页面</th>
+                    <td class="formValue">
+                        <input id="F_Page" name="F_Page" type="text" class="form-control required" placeholder="请输入所属页面" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">表格ID</th>
+                    <td class="formValue">
+                        <input id="F_GridId" name="F_GridId" type="text" class="form-control required" placeholder="请输入表格ID" value="gridList" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</form>
+
+<script>
+    $(function () {
+        $("#F_ParentId").bindSelect({});
+    })
+    function Copy() {
+        $.ajax({
+            url: "/SystemManage/GridColumn/Copys",
+            data: { F_Id: $.request('F_Id'), F_FullName: $("#F_FullName").val(), F_EnCode: $("#F_EnCode").val(), F_Page: $("#F_Page").val(), F_GridId: $("#F_GridId").val() },
+            type: "post",
+            dataType: "json",
+            success: function (data) {
+                $.currentWindow().$("#gridList").trigger("reloadGrid");
+                $.modalMsg("复制成功！", "success");
+                $.modalClose();
+            }
+        })
+    }
+</script>

@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+
+<form id="form1">
+    <div class="topPanel">
+        <div class="row form">
+            <div class="col-md-4 col-sm-8 col-xs-12">
+                <table>
+                    <tr>
+                        <th class="formTitle">单据号</th>
+                        <td class="formValue">
+                            <input id="F_EnCode" name="F_EnCode" type="text" class="form-control" placeholder="保存后自动生成" readonly />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-4 col-sm-8 col-xs-12">
+                <table>
+                    <tr>
+                        <th class="formTitle">供应商</th>
+                        <td class="formValue">
+                            <select id="F_SupplierId" name="F_SupplierId" class="form-control required">
+                                <option value="">==请选择==</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-4 col-sm-8 col-xs-12">
+                <table>
+                    <tr>
+                        <th class="formTitle">单据日期</th>
+                        <td class="formValue">
+                            <input id="F_Date" name="F_Date" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker()" required />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <table>
+                    <tr>
+                        <th class="formTitle">
+                            备注
+                        </th>
+                        <td class="formValue">
+                            <input id="F_Description" name="F_Description" type="text" class="form-control" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="toolbar row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 hidden-xs">
+                        <div class="pull-left">
+                            <div class="btn-group">
+                                <a id="NF-addRow" authorize="yes" class="btn btn-info"><i class="fa fa-plus"></i>新增行</a>
+                            </div>
+                            <div class="btn-group">
+                                <a id="NF-deleteRow" authorize="yes" class="btn btn-danger"><i class="fa fa-trash-o"></i>删除行</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <div class="pull-right">
+                            <div class="btn-group">
+                                <a id="NF-Save" authorize="yes" class="btn btn-primary"><i class="fa fa-save"></i>保存单据</a>
+                            </div>
+                            <div class="btn-group">
+                                <a id="NF-verify" authorize="yes" class="btn btn-primary hidden-xs"><i class="fa fa-check"></i>审核单据</a>
+                            </div>
+                            <div class="btn-group">
+                                <a id="NF-deny" authorize="yes" class="btn btn-danger hidden-xs"><i class="fa fa-check"></i>弃审单据</a>
+                            </div>
+                            <div class="btn-group">
+                                <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i>更多操作</a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a id="NF-addRow" authorize="yes" class="hidden-sm hidden-md hidden-md hidden-lg"><i class="fa fa-plus"></i>新增行</a></li>
+                                    <li><a id="NF-deleteRow" authorize="yes" class="hidden-sm hidden-md hidden-md hidden-lg"><i class="fa fa-trash-o"></i>删除行</a></li>
+                                    <li><a id="NF-verify" class="hidden-sm hidden-md hidden-md hidden-lg" authorize="yes"><i class="fa fa-check"></i>审核单据</a></li>
+                                    <li><a id="NF-deny" class="hidden-sm hidden-md hidden-md hidden-lg" authorize="yes"><i class="fa fa-check"></i>弃审单据</a></li>
+                                    <li><a id="NF-print" authorize="yes" onclick="btn_print()"><i class="fa fa-print"></i>打印单据</a></li>
+                                    <li><a id="NF-printbarcode" authorize="yes" onclick="btn_print()"><i class="fa fa-print"></i>打印条码</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gridPanel">
+        <table id="gridList"></table>
+    </div>
+</form>
+
+<script src="~/Content/js/framework-FormVar.js"></script>
+<script src="~/Areas/WmsManage/Content/js/InStockNotice/Form.js"></script>
+<script src="~/Content/js/framework-Form.js"></script>

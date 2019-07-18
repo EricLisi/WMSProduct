@@ -1,0 +1,110 @@
+body {
+    padding:10px;
+    background: #f8f8f8;
+}
+
+.app-desktop-panel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 0px 22px;
+    border-radius: 2px;
+}
+.app-uitheme-accordion .app-desktop-panel {
+    border-radius: 0px;
+}
+.app-uitheme-windos .app-desktop-panel {
+    border-radius: 3px;
+}
+.app-uitheme-default .app-desktop-panel {
+    border-radius: 3px;
+}
+.portal-panel-title {
+    padding-top: 10px;
+    line-height: 45px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    color: #4a4a4a;
+    font-weight: 300;
+    font-size: 14px;
+}
+.portal-panel-content {
+    position:relative;
+    width:100%;
+    padding:20px 5px 5px 5px;
+}
+
+.portal-panel-content .app-item-20:hover{
+    cursor: pointer;
+}
+.app-item-20 {
+    position:relative;
+    float:left;
+    width:20%;
+    padding:10px;
+}
+.task-stat {
+    position:relative;
+    height:104px;
+    width:100%;
+    border-radius: 5px;
+    font-family: "Open Sans", sans-serif;
+    overflow: hidden;
+    color: #FFFFFF;
+    
+}
+.task-stat .visual {
+    position:absolute;
+    top:0;
+    left:0;
+    padding:10px 0 0 10px;
+}
+.task-stat .visual > i {
+    color: #FFFFFF;
+    opacity: 0.4;
+    filter: alpha(opacity=10);
+    font-size: 60px;
+    line-height: 65px;
+}
+.task-stat .details {
+    position: absolute;
+    right: 10px;
+    top:10px;
+}
+.task-stat .details .number {
+    text-align: right;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: -1px;
+    margin-bottom: 0px;
+    font-weight: 300;
+}
+ 
+ 
+.app-msg-line {
+    position:relative;
+    width:100%;
+    line-height: 39px; 
+    border-bottom: 1px solid #ccc;
+}
+.app-msg-line > a {
+    cursor:pointer;
+    color: #333;
+    font-size: 12px;
+}
+.app-msg-line > label {
+    position:absolute;
+    top:0;
+    right:0;
+    margin-bottom: 0px;
+    color: #333;
+    font-size: 12px;
+    font-weight: 400;
+}
+.app-chart-container {
+    position:relative;
+    height:400px;
+    width:100%;
+}

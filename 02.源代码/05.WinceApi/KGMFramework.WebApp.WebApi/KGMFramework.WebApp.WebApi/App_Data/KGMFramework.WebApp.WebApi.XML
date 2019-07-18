@@ -1,0 +1,2268 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KGMFramework.WebApp.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:KGMFramework.WebApp.WebApi.Controllers.BaseController`2">
+            <summary>
+            基础控制器
+            </summary>
+        </member>
+        <member name="F:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.m_tokenInfo">
+            <summary>
+            token信息 
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.currentUserId">
+            <summary>
+            当前登录用户Id
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.bAdmin">
+            <summary>
+            是否超级管理员
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.companyId">
+            <summary>
+            公司
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.getCurrentUserId">
+            <summary>
+            获取当前用户id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.getAdmin">
+            <summary>
+            获取当前用户id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.getCompanyId">
+            <summary>
+            获取当前公司
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.GetKeywordConditionObj(System.String,System.String,System.Char,System.Char)">
+            <summary>
+            获取关键字查询条件
+            </summary>
+            <param name="keyword">查询值</param>
+            <param name="searchFiled">查询字段</param>
+            <param name="mutiConditionSplitChar">查询字段多条件分隔符 默认|</param>
+            <param name="filedSplitChar">查询字段分隔符 默认/</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.GetKeywordCondition(System.String,System.String,System.Char,System.Char)">
+            <summary>
+            获取关键字信息
+            </summary>
+            <param name="keyword"></param>
+            <param name="searchFiled"></param>
+            <param name="mutiConditionSplitChar"></param>
+            <param name="filedSplitChar"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.BuilderConditionStr(KGM.Framework.Commons.SearchCondition)">
+            <summary>
+            获取查询条件
+            </summary>
+            <param name="condition">过滤条件对象</param>
+            <returns>查询字符串</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.GetPagerDataAsync``1(System.Collections.Generic.List{``0},KGM.Pager.Entity.PagerInfo)">
+            <summary>
+            获取分页对象
+            </summary>
+            <typeparam name="E">需要返回的集合泛型</typeparam>
+            <param name="list">返回的集合</param>
+            <param name="pager">分页对象 为空时，不分页返回</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.GetPagerDataAsync``1(System.Data.DataSet,KGM.Pager.Entity.PagerInfo)">
+            <summary>
+            获取分页对象
+            </summary>
+            <typeparam name="E">需要返回的集合泛型</typeparam>
+            <param name="ds">使用SQL Server分页存储过程后返回的对象</param>
+            <param name="pager">分页对象 为空时，不分页返回</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.GetPagerDataAysnc``1(System.Data.DataTable,System.Int32,KGM.Pager.Entity.PagerInfo)">
+            <summary>
+            获取分页对象
+            </summary>
+            <typeparam name="E">需要返回的集合泛型</typeparam>
+            <param name="dt">数据集合datatable</param>
+            <param name="recordcount">记录总数</param>
+            <param name="pager">分页对象 为空时，不分页返回</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.GetPagerDataAsync(KGM.Framework.Commons.SearchCondition,KGM.Pager.Entity.PagerInfo)">
+            <summary>
+            获取分页对象
+            </summary> 
+            <param name="condition">过滤条件</param>
+            <param name="pager">分页对象 为空时，不分页返回</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.GetPagerDataAsync``2(KGM.Framework.Commons.SearchCondition,KGM.Pager.Entity.PagerInfo)">
+            <summary>
+            获取分页对象
+            </summary> 
+            <typeparam name="D">BLL类型</typeparam>
+            <typeparam name="E">实体对象类型</typeparam>
+            <param name="condition">过滤条件</param>
+            <param name="pager">分页对象 为空时，不分页返回</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.GetAdvConditionStr(System.Collections.Generic.List{KGMFramework.WebApp.WebApi.Models.SearchEntity})">
+            <summary>
+            返回查询字符串
+            </summary>
+            <param name="list">查询对象集合</param>
+            <returns>查询字符串</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.GetAdvCondition(System.Collections.Generic.List{KGMFramework.WebApp.WebApi.Models.SearchEntity})">
+            <summary>
+            查询对象
+            </summary>
+            <param name="list">list</param>
+            <returns>查询对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.GetConditionStr(KGM.Framework.Commons.SearchCondition)">
+            <summary>
+            将searchcondition对象转换为字符串
+            </summary>
+            <param name="condition"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.GetTreeGridJsonStr(System.Collections.Generic.List{`1})">
+            <summary>
+            获取treegridjson的字符串
+            </summary>
+            <param name="data">数据对象集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.GetTreeJsonStr(System.Collections.Generic.List{`1})">
+            <summary>
+            获取树形结构Json
+            </summary>
+            <param name="data">数据对象集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.GetTreeSelectJsonStr(System.Collections.Generic.List{`1})">
+            <summary>
+            获取treegridjson的字符串
+            </summary>
+            <param name="data">数据对象集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.FindByIdAsync(System.String)">
+            <summary>
+            异步根据Id获取对象
+            </summary>  
+            <param name="id">对象id</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.FindByIdAsync``2(System.String)">
+            <summary>
+            异步根据Id获取对象
+            </summary>
+            <typeparam name="D">BLL类型</typeparam>
+            <typeparam name="E">实体对象类型</typeparam>
+            <param name="id">对象id</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.FindSingleAsync(KGM.Framework.Commons.SearchCondition)">
+            <summary>
+            异步根据条件获取对象
+            </summary>  
+            <param name="condition">过滤条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.FindSingleAsync``2(KGM.Framework.Commons.SearchCondition)">
+            <summary>
+            异步根据条件获取对象
+            </summary>  
+            <typeparam name="D">BLL类型</typeparam>
+            <typeparam name="E">实体对象类型</typeparam>
+            <param name="condition">过滤条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.FindAsync(KGM.Framework.Commons.SearchCondition,KGM.Pager.Entity.PagerInfo)">
+            <summary>
+            异步根据条件获取分页后的集合
+            </summary> 
+            <param name="condition">过滤条件 对象为空时，则查询全部</param>
+            <param name="pager">分页对象 对象为空时，则不分页</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.FindAsync``2(KGM.Framework.Commons.SearchCondition,KGM.Pager.Entity.PagerInfo)">
+            <summary>
+            异步根据条件获取分页后的集合
+            </summary> 
+            <typeparam name="D">BLL类型</typeparam>
+            <typeparam name="E">实体对象类型</typeparam>
+            <param name="condition">过滤条件 对象为空时，则查询全部</param>
+            <param name="pager">分页对象 对象为空时，则不分页</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.FindToDataTableAsync(KGM.Framework.Commons.SearchCondition,KGM.Pager.Entity.PagerInfo)">
+            <summary>
+            异步根据条件获取DataTable
+            </summary>  
+            <param name="condition">过滤条件 对象为空时，返回所有集合</param>
+            <param name="pager">分页对象 对象为空时，则不分页</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.FindToDataTableAsync``1(KGM.Framework.Commons.SearchCondition,KGM.Pager.Entity.PagerInfo)">
+            <summary>
+            异步根据条件获取DataTable
+            </summary>  
+            <typeparam name="D">BLL类型</typeparam>
+            <param name="condition">过滤条件 对象为空时，返回所有集合</param>
+            <param name="pager">分页对象 对象为空时，则不分页</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.FindToDataTableAsync``1(System.String,System.String,System.Boolean,KGM.Framework.Commons.SearchCondition,KGM.Pager.Entity.PagerInfo)">
+            <summary>
+            异步根据条件从视图获取DataTable
+            </summary>  
+            <typeparam name="D">BLL类型</typeparam>
+            <param name="condition">过滤条件 对象为空时，返回所有集合</param>
+            <param name="pager">分页对象 对象为空时，则不分页</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.SaveEntityAsync(`1,System.String)">
+            <summary>
+            异步保存对象
+            </summary> 
+            <param name="model">实体对象</param>
+            <param name="id">主键值 为空时 则为新增</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.SaveEntityAsync``2(``1,System.String)">
+            <summary>
+            异步保存对象
+            </summary> 
+            <typeparam name="D">BLL类型</typeparam>
+            <typeparam name="E">实体对象类型</typeparam>
+            <param name="model">实体对象</param>
+            <param name="id">主键值 为空时 则为新增</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.DeleteByIdAsync(System.String)">
+            <summary>
+            异步根据Id删除对象
+            </summary> 
+            <param name="id">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.DeleteByIdAsync``1(System.String)">
+            <summary>
+            异步根据Id删除对象
+            </summary> 
+            <typeparam name="D">BLL类型</typeparam> 
+            <param name="id">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.DeleteByConditionAsync(KGM.Framework.Commons.SearchCondition)">
+            <summary>
+            异步根据条件删除对象
+            </summary> 
+            <param name="condition">过滤条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.DeleteByConditionAsync``1(KGM.Framework.Commons.SearchCondition)">
+            <summary>
+            异步根据条件删除对象
+            </summary> 
+            <typeparam name="D">BLL类型</typeparam> 
+            <param name="condition">过滤条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.IsExistRecordAsync(KGM.Framework.Commons.SearchCondition)">
+            <summary>
+            异步根据条件判断是否存在
+            </summary> 
+            <param name="condition">过滤条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.IsExistRecordAsync``1(KGM.Framework.Commons.SearchCondition)">
+            <summary>
+            异步根据条件判断是否存在
+            </summary> 
+            <typeparam name="D">BLL类型</typeparam> 
+            <param name="condition">过滤条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.GetGridJsonPaginationExtend``2(System.String,System.String,System.String,KGMFramework.WebApp.Library.Pagination,System.String,System.String)">
+            <summary>
+            获取列表分页显示扩展
+            </summary>
+            <param name="keyword"></param>
+            <param name="searchFiled"></param>
+            <param name="list"></param>
+            <param name="pagination"></param>
+            <param name="sidx"></param>
+            <param name="sord"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.GetPageInfo(KGMFramework.WebApp.Library.Pagination)">
+            <summary>
+            获取分页信息
+            </summary>
+            <param name="pagination">页面分页信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.GetPagerContent``1(System.Collections.Generic.List{``0},KGM.Pager.Entity.PagerInfo)">
+            <summary>
+            获取分页对象
+            </summary>
+            <param name="list">集合</param>
+            <param name="pager">分页对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.SetExportConditionToObj(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="condition"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.GetAdvConditionObj(System.Collections.Generic.List{KGMFramework.WebApp.Library.AdvSearchEntity})">
+            <summary>
+            获取关键字查询条件
+            </summary>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseController`2.TreeViewJson(System.Collections.Generic.List{KGMFramework.WebApp.WebApi.Models.GetTreeModel},System.String)">
+            <summary>
+            转化为json格式
+            </summary>
+            <param name="data"></param>
+            <param name="parentId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Controllers.BaseListController`4">
+            <summary>
+            
+            </summary>
+            <typeparam name="B"></typeparam>
+            <typeparam name="T"></typeparam>
+            <typeparam name="D"></typeparam>
+            <typeparam name="E"></typeparam>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseListController`4.GetHeadAll">
+            <summary>
+            查询主表信息 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseListController`4.GetBodyByHeadid(System.String,`1,`3)">
+            <summary>
+            根据主表ID获取子表信息
+            </summary>
+            <param name="id"></param>
+            <param name="head"></param>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseListController`4.DelHead(System.String)">
+            <summary>
+            根据ID删除主表
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseListController`4.SetHeadData(`1)">
+            <summary>
+            设置主表信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Controllers.BaseTableController`2">
+            <summary>
+            单表基本控制器
+            </summary>
+            <typeparam name="B"></typeparam>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseTableController`2.GetEntity">
+            <summary>
+            返回实体对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseTableController`2.GetEntity(System.String)">
+            <summary>
+            查看
+            </summary>
+            <param name="keyValue">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseTableController`2.SubmitForm(`1)">
+            <summary>
+            插入一个对象
+            </summary>
+            <param name="entity">对象</param>
+            <returns>对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseTableController`2.SubmitForm(System.String,`1)">
+            <summary>
+            根据ID修改
+            </summary>
+            <param name="entity"></param>
+            <param name="keyValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseTableController`2.Delete(System.String)">
+            <summary>
+            删除
+            </summary>
+            <param name="keyValue"></param>
+            <returns>主键</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseTableController`2.GetGridJsonPagination(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            获取分页数据
+            </summary>
+            <param name="keyword"></param>
+            <param name="searchFiled"></param>
+            <param name="list"></param>
+            <param name="page"></param>
+            <param name="rows"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.BaseTableController`2.GetAdvCondition(System.Collections.Generic.List{KGMFramework.WebApp.Library.AdvSearchEntity})">
+            <summary>
+            
+            </summary>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Controllers.HomeController">
+            <summary>
+            首页
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.HomeController.Index">
+            <summary>
+            首页
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Controllers.AppController">
+            <summary>
+            业务模块
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.AppController.SaveTempScan(KGMFramework.WebApp.Entity.SaveTempScanModel)">
+            <summary>
+            保存扫描记录
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.AppController.GetBoolPostion(System.String,System.String,System.String)">
+            <summary>
+            判断货位是否存在
+            </summary>
+            <param name="orderNo">单据号</param>
+            <param name="orderType">单据类型</param>
+            <param name="PositionCode">货位编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.AppController.GetTempScanList(System.String,System.String)">
+            <summary>
+            获取扫描列表
+            </summary>
+            <param name="orderNo">单据号</param>
+            <param name="orderType">单据类型PI 入库，S0 出库，CW盘点</param> 
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.AppController.GetScanCyList(System.String,System.String)">
+            <summary>
+            获取差异列表
+            </summary>
+            <param name="orderNo">单据号</param>
+            <param name="orderType">单据类型PI 入库，S0 出库，CW盘点</param> 
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.AppController.TempScanFinish(KGMFramework.WebApp.Entity.FinishTempScanDto)">
+            <summary>
+            完成扫描记录
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Controllers.SearchController">
+            <summary>
+            查询列表
+            </summary> 
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.SearchController.GetList(KGMFramework.WebApp.WebApi.Models.SearchModel)">
+            <summary>
+            获取数据列表
+            </summary>
+            <param name="model">查询条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.SearchController.GetWarSelectList">
+             <summary>
+            获取仓库下拉框列表
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Controllers.ScanController">
+            <summary>
+            系统认证模块
+            </summary> 
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.ScanController.GetList(System.String,System.String)">
+            <summary>
+            获取单据信息
+            </summary>
+            <param name="orderNo"></param>
+            <param name="orderType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.ScanController.GetTempScan(System.String,System.String)">
+            <summary>
+            获取单据信息
+            </summary>
+            <param name="orderNo"></param>
+            <param name="operUser"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.ScanController.GetTempScanCy(System.String,System.String)">
+            <summary>
+            获取单据信息
+            </summary>
+            <param name="orderNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.ScanController.TempScanFinish(KGMFramework.WebApp.Entity.FinishTempScanDto)">
+            <summary>
+            保存扫描记录
+            </summary>
+            <param name="dto">扫描参数</param>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Controllers.AuthController">
+            <summary>
+            系统认证模块
+            </summary> 
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.AuthController.GetRegInfo">
+            <summary>
+            获取注册序号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.AuthController.LoginSystem(KGMFramework.WebApp.WebApi.Models.LoginSystemModel)">
+            <summary>
+            获取用户Token 系统登录
+            </summary>
+            <param name="loginModel">登录用户</param>
+            <returns>成功返回token值 失败返回错误信息</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.AuthController.bRegister(System.String@)">
+            <summary>
+            判断是否注册
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.AuthController.loginSystemAsync(KGMFramework.WebApp.WebApi.Models.LoginSystemModel)">
+            <summary>
+            登录系统
+            </summary>
+            <param name="loginModel">登录对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.AuthController.SaveLoginLog(System.String,System.String,System.String,System.Boolean,System.String)">
+            <summary>
+            记录登录日志
+            </summary>
+            <param name="account">账户</param>
+            <param name="nickname">昵称</param>
+            <param name="loginSys">登录系统</param>
+            <param name="result">结果</param>
+            <param name="desc">结果描述</param>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Controllers.ModuleController">
+            <summary>
+            获取树菜单
+            </summary> 
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.ModuleController.GetModuleTree">
+            <summary>
+            获取菜单树
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.ModuleController.GetCurrentUserMenu">
+            <summary>
+            获取当前用户可操作菜单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.ModuleController.GetTreeJsonStr(System.Collections.Generic.List{KGMFramework.WebApp.Entity.Sys_ModuleInfo})">
+            <summary>
+            获取树形结构JSon
+            </summary>
+            <param name="data">数据对象集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.ModuleController.TreeViewJson(System.Collections.Generic.List{KGMFramework.WebApp.WebApi.Models.GetTreeModel},System.String)">
+            <summary>
+            转化为json格式
+            </summary>
+            <param name="data"></param>
+            <param name="parentId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Controllers.UserController">
+            <summary>
+            系统登录模块
+            </summary> 
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.UserController.GetCurrentUser(KGMFramework.WebApp.Entity.LoginModel)">
+            <summary>
+            登录获取token
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.UserController.Text">
+            <summary>
+            测试
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.UserController.GetUser(System.String)">
+            <summary>
+            获取用户信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.UserController.UpdatePassWord(KGMFramework.WebApp.WebApi.Models.UserFiledEntity)">
+            <summary>
+            修改密码
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.UserController.Encrypt(System.String)">
+            <summary>
+            加密
+            </summary>
+            <param name="Text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Controllers.UserController.Encrypt(System.String,System.String)">
+            <summary> 
+            加密数据 
+            </summary> 
+            <param name="Text"></param> 
+            <param name="sKey"></param> 
+            <returns></returns> 
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.BundleConfig">
+            <summary>
+            资源引入配置
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.BundleConfig.RegisterBundles(System.Web.Optimization.BundleCollection)">
+            <summary>
+            注册资源
+            </summary>
+            <param name="bundles"></param>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.FilterConfig">
+            <summary>
+            过滤器配置
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.FilterConfig.RegisterGlobalFilters(System.Web.Mvc.GlobalFilterCollection)">
+            <summary>
+            注册过滤器
+            </summary>
+            <param name="filters"></param>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.WebApiAuthorizeAttribute">
+            <summary>
+            JWT认证
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.WebApiAuthorizeAttribute.IsAuthorized(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            认证方式
+            </summary>
+            <param name="actionContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.WebApiAuthorizeAttribute.GetRequestParms(System.IO.Stream)">
+            <summary>
+            获取Request参数
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.WebApiAuthorizeAttribute.WriteLog(System.String)">
+            <summary>
+            写日志
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.WebApiExceptionFilterAttribute">
+            <summary>
+            程序错误处理句柄
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.WebApiExceptionFilterAttribute.OnActionExecuted(System.Web.Http.Filters.HttpActionExecutedContext)">
+            <summary>
+            异常过滤处理
+            </summary>
+            <param name="actionExecutedContext"></param>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.WebApiExceptionFilterAttribute.GetRequestParms(System.IO.Stream)">
+            <summary>
+            获取Request参数
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.RouteConfig">
+            <summary>
+            路由配置
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.RouteConfig.RegisterRoutes(System.Web.Routing.RouteCollection)">
+            <summary>
+            注册路由
+            </summary>
+            <param name="routes"></param>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.WebApiConfig">
+            <summary>
+            api配置类
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.WebApiConfig.Register(System.Web.Http.HttpConfiguration)">
+            <summary>
+            注册
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.ApiDescriptionExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
+            </summary>
+            <param name="description">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The ID as a string.</returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageConfig">
+            <summary>
+            Use this class to customize the Help Page.
+            For example you can set a custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> to supply the documentation
+            or you can provide the samples for the requests/responses.
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageConfig.Register(System.Web.Http.HttpConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.Controllers.HelpController">
+            <summary>
+            The controller that will handle requests for the help page.
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.Controllers.HelpController.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.Controllers.HelpController.#ctor(System.Web.Http.HttpConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.Controllers.HelpController.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.Controllers.HelpController.Index">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.Controllers.HelpController.Api(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="apiId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.Controllers.HelpController.ResourceModel(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="modelName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageAreaRegistration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageAreaRegistration.AreaName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageAreaRegistration.RegisterArea(System.Web.Mvc.AreaRegistrationContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetDocumentationProvider(System.Web.Http.HttpConfiguration,System.Web.Http.Description.IDocumentationProvider)">
+            <summary>
+            Sets the documentation provider for help page.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="documentationProvider">The documentation provider.</param>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleObjects(System.Web.Http.HttpConfiguration,System.Collections.Generic.IDictionary{System.Type,System.Object})">
+            <summary>
+            Sets the objects that will be used by the formatters to produce sample requests/responses.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleObjects">The sample objects.</param>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type and action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample request directly for the specified media type and action with parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type of the action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample response directly for the specified media type of the action with specific parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForMediaType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Sets the sample directly for all actions with the specified media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Sets the sample directly for all actions with the specified type and media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The parameter type or return type of an action.</param>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <returns>The help page sample generator.</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration,KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleGenerator)">
+            <summary>
+            Sets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleGenerator">The help page sample generator.</param>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.GetModelDescriptionGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the model description generator.
+            </summary>
+            <param name="config">The configuration.</param>
+            <returns>The <see cref="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator"/></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageApiModel(System.Web.Http.HttpConfiguration,System.String)">
+            <summary>
+            Gets the model that represents an API displayed on the help page. The model is initialized on the first call and cached for subsequent calls.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="apiDescriptionId">The <see cref="T:System.Web.Http.Description.ApiDescription"/> ID.</param>
+            <returns>
+            An <see cref="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.Models.HelpPageApiModel"/>
+            </returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.CollectionModelDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.CollectionModelDescription.ElementDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ComplexTypeModelDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ComplexTypeModelDescription.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ComplexTypeModelDescription.Properties">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.DictionaryModelDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.EnumTypeModelDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.EnumTypeModelDescription.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.EnumTypeModelDescription.Values">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.EnumValueDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.EnumValueDescription.Documentation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.EnumValueDescription.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.EnumValueDescription.Value">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.IModelDocumentationProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.IModelDocumentationProvider.GetDocumentation(System.Reflection.MemberInfo)">
+            <summary>
+            
+            </summary>
+            <param name="member"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.IModelDocumentationProvider.GetDocumentation(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.KeyValuePairModelDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.KeyValuePairModelDescription.KeyModelDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.KeyValuePairModelDescription.ValueModelDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ModelDescription">
+            <summary>
+            Describes a type model.
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ModelDescription.Documentation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ModelDescription.ModelType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ModelDescription.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator">
+            <summary>
+            Generates model descriptions for given types.
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator.#ctor(System.Web.Http.HttpConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator.GeneratedModels">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator.GetOrCreateModelDescription(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="modelType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ModelNameAttribute">
+            <summary>
+            Use this attribute to change the name of the <see cref="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ModelDescription"/> generated for a type.
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ModelNameAttribute.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ModelNameAttribute.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ParameterAnnotation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ParameterAnnotation.AnnotationAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ParameterAnnotation.Documentation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ParameterDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ParameterDescription.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ParameterDescription.Annotations">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ParameterDescription.Documentation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ParameterDescription.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ParameterDescription.TypeDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.SimpleTypeModelDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.Models.HelpPageApiModel">
+            <summary>
+            The model that represents an API displayed on the help page.
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.Models.HelpPageApiModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.Models.HelpPageApiModel"/> class.
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription">
+            <summary>
+            Gets or sets the <see cref="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription"/> that describes the API.
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.Models.HelpPageApiModel.UriParameters">
+            <summary>
+            Gets or sets the <see cref="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ParameterDescription"/> collection that describes the URI parameters for the API.
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.Models.HelpPageApiModel.RequestDocumentation">
+            <summary>
+            Gets or sets the documentation for the request.
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.Models.HelpPageApiModel.RequestModelDescription">
+            <summary>
+            Gets or sets the <see cref="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the request body.
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.Models.HelpPageApiModel.RequestBodyParameters">
+            <summary>
+            Gets the request body parameter descriptions.
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.Models.HelpPageApiModel.ResourceDescription">
+            <summary>
+            Gets or sets the <see cref="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the resource.
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.Models.HelpPageApiModel.ResourceProperties">
+            <summary>
+            Gets the resource property descriptions.
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.Models.HelpPageApiModel.SampleRequests">
+            <summary>
+            Gets the sample requests associated with the API.
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.Models.HelpPageApiModel.SampleResponses">
+            <summary>
+            Gets the sample responses associated with the API.
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.Models.HelpPageApiModel.ErrorMessages">
+            <summary>
+            Gets the error messages associated with this model.
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleGenerator">
+            <summary>
+            This class will generate the samples for the help page.
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleGenerator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleGenerator"/> class.
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleGenerator.ActualHttpMessageTypes">
+            <summary>
+            Gets CLR types that are used as the content of <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/>.
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples">
+            <summary>
+            Gets the objects that are used directly as samples for certain actions.
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects">
+            <summary>
+            Gets the objects that are serialized as samples by the supported formatters.
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories">
+            <summary>
+            Gets factories for the objects that the supported formatters will serialize as samples. Processed in order,
+            stopping when the factory successfully returns a non-<see langref="null"/> object.
+            </summary>
+            <remarks>
+            Collection includes just <see cref="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)"/> initially. Use
+            <code>SampleObjectFactories.Insert(0, func)</code> to provide an override and
+            <code>SampleObjectFactories.Add(func)</code> to provide a fallback.</remarks>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleGenerator.GetSampleRequests(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the request body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleGenerator.GetSampleResponses(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the response body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleGenerator.GetSample(System.Web.Http.Description.ApiDescription,KGMFramework.WebApp.WebApi.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Gets the request or response body samples.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleGenerator.GetActionSample(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Type,System.Net.Http.Formatting.MediaTypeFormatter,System.Net.Http.Headers.MediaTypeHeaderValue,KGMFramework.WebApp.WebApi.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Search for samples that are provided directly through <see cref="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples"/>.
+            </summary>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="type">The CLR type.</param>
+            <param name="formatter">The formatter.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The sample that matches the parameters.</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleGenerator.GetSampleObject(System.Type)">
+            <summary>
+            Gets the sample object that will be serialized by the formatters. 
+            First, it will look at the <see cref="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects"/>. If no sample object is found, it will try to create
+            one using <see cref="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleGenerator.DefaultSampleObjectFactory(KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleGenerator,System.Type)"/> (which wraps an <see cref="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.ObjectGenerator"/>) and other
+            factories in <see cref="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The sample object.</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleGenerator.ResolveHttpRequestMessageType(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Resolves the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The type.</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleGenerator.ResolveType(System.Web.Http.Description.ApiDescription,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},KGMFramework.WebApp.WebApi.Areas.HelpPage.SampleDirection,System.Collections.ObjectModel.Collection{System.Net.Http.Formatting.MediaTypeFormatter}@)">
+            <summary>
+            Resolves the type of the action parameter or return value when <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/> is used.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or a response.</param>
+            <param name="formatters">The formatters.</param>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleGenerator.WriteSampleObjectUsingFormatter(System.Net.Http.Formatting.MediaTypeFormatter,System.Object,System.Type,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Writes the sample object using formatter.
+            </summary>
+            <param name="formatter">The formatter.</param>
+            <param name="value">The value.</param>
+            <param name="type">The type.</param>
+            <param name="mediaType">Type of the media.</param>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleKey">
+            <summary>
+            This is used to identify the place where the sample should be applied.
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Creates a new <see cref="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleKey"/> based on media type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Creates a new <see cref="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleKey"/> based on media type and CLR type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The CLR type.</param>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleKey.#ctor(KGMFramework.WebApp.WebApi.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleKey"/> based on <see cref="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="sampleDirection">The <see cref="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,KGMFramework.WebApp.WebApi.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleKey"/> based on media type, <see cref="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The <see cref="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleKey.ControllerName">
+            <summary>
+            Gets the name of the controller.
+            </summary>
+            <value>
+            The name of the controller.
+            </value>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleKey.ActionName">
+            <summary>
+            Gets the name of the action.
+            </summary>
+            <value>
+            The name of the action.
+            </value>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleKey.MediaType">
+            <summary>
+            Gets the media type.
+            </summary>
+            <value>
+            The media type.
+            </value>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleKey.ParameterNames">
+            <summary>
+            Gets the parameter names.
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleKey.ParameterType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection">
+            <summary>
+            Gets the <see cref="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleKey.Equals(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.HelpPageSampleKey.GetHashCode">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.ImageSample">
+            <summary>
+            This represents an image sample on the help page. There's a display template named ImageSample associated with this class.
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.ImageSample.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.ImageSample"/> class.
+            </summary>
+            <param name="src">The URL of an image.</param>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.ImageSample.Src">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.ImageSample.Equals(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.ImageSample.GetHashCode">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.ImageSample.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.InvalidSample">
+            <summary>
+            This represents an invalid sample on the help page. There's a display template named InvalidSample associated with this class.
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.InvalidSample.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="errorMessage"></param>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.InvalidSample.ErrorMessage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.InvalidSample.Equals(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.InvalidSample.GetHashCode">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.InvalidSample.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.ObjectGenerator">
+            <summary>
+            This class will create an object of a given type and populate it with sample data.
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)">
+            <summary>
+            Generates an object for a given type. The type needs to be public, have a public default constructor and settable public properties/fields. Currently it supports the following types:
+            Simple types: <see cref="T:System.Int32"/>, <see cref="T:System.String"/>, <see cref="T:System.Enum"/>, <see cref="T:System.DateTime"/>, <see cref="T:System.Uri"/>, etc.
+            Complex types: POCO types.
+            Nullables: <see cref="T:System.Nullable`1"/>.
+            Arrays: arrays of simple types or complex types.
+            Key value pairs: <see cref="T:System.Collections.Generic.KeyValuePair`2"/>
+            Tuples: <see cref="T:System.Tuple`1"/>, <see cref="T:System.Tuple`2"/>, etc
+            Dictionaries: <see cref="T:System.Collections.Generic.IDictionary`2"/> or anything deriving from <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            Collections: <see cref="T:System.Collections.Generic.IList`1"/>, <see cref="T:System.Collections.Generic.IEnumerable`1"/>, <see cref="T:System.Collections.Generic.ICollection`1"/>, <see cref="T:System.Collections.IList"/>, <see cref="T:System.Collections.IEnumerable"/>, <see cref="T:System.Collections.ICollection"/> or anything deriving from <see cref="T:System.Collections.Generic.ICollection`1"/> or <see cref="T:System.Collections.IList"/>.
+            Queryables: <see cref="T:System.Linq.IQueryable"/>, <see cref="T:System.Linq.IQueryable`1"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>An object of the given type.</returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.SampleDirection">
+            <summary>
+            Indicates whether the sample is used for request or response
+            </summary>
+        </member>
+        <member name="F:KGMFramework.WebApp.WebApi.Areas.HelpPage.SampleDirection.Request">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:KGMFramework.WebApp.WebApi.Areas.HelpPage.SampleDirection.Response">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.TextSample">
+            <summary>
+            This represents a preformatted text sample on the help page. There's a display template named TextSample associated with this class.
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.TextSample.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Areas.HelpPage.TextSample.Text">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.TextSample.Equals(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.TextSample.GetHashCode">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.TextSample.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.XmlDocumentationProvider">
+            <summary>
+            A custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> that reads the API documentation from an XML documentation file.
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.XmlDocumentationProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.XmlDocumentationProvider"/> class.
+            </summary>
+            <param name="documentPath">The physical path to XML document.</param>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.XmlDocumentationProvider.GetDocumentation(System.Web.Http.Controllers.HttpControllerDescriptor)">
+            <summary>
+            
+            </summary>
+            <param name="controllerDescriptor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.XmlDocumentationProvider.GetDocumentation(System.Web.Http.Controllers.HttpActionDescriptor)">
+            <summary>
+            
+            </summary>
+            <param name="actionDescriptor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.XmlDocumentationProvider.GetDocumentation(System.Web.Http.Controllers.HttpParameterDescriptor)">
+            <summary>
+            
+            </summary>
+            <param name="parameterDescriptor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.XmlDocumentationProvider.GetResponseDocumentation(System.Web.Http.Controllers.HttpActionDescriptor)">
+            <summary>
+            
+            </summary>
+            <param name="actionDescriptor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.XmlDocumentationProvider.GetDocumentation(System.Reflection.MemberInfo)">
+            <summary>
+            
+            </summary>
+            <param name="member"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.XmlDocumentationProvider.GetDocumentation(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Areas.HelpPage.MultiXmlDocumentationProvider">
+            <summary>
+            多页文档配置
+            </summary>
+        </member>
+        <member name="F:KGMFramework.WebApp.WebApi.Areas.HelpPage.MultiXmlDocumentationProvider.Providers">
+            <summary>The internal documentation providers for specific files.</summary>    
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.MultiXmlDocumentationProvider.#ctor(System.String[])">
+            <summary>Construct an instance.</summary>    
+            <param name="paths">The physical paths to the XML documents.</param>    
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.MultiXmlDocumentationProvider.GetDocumentation(System.Reflection.MemberInfo)">
+            <summary>Gets the documentation for a subject.</summary>    
+            <param name="subject">The subject to document.</param>    
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.MultiXmlDocumentationProvider.GetDocumentation(System.Type)">
+            <summary>Gets the documentation for a subject.</summary>    
+            <param name="subject">The subject to document.</param>    
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.MultiXmlDocumentationProvider.GetDocumentation(System.Web.Http.Controllers.HttpControllerDescriptor)">
+            <summary>Gets the documentation for a subject.</summary>    
+            <param name="subject">The subject to document.</param>    
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.MultiXmlDocumentationProvider.GetDocumentation(System.Web.Http.Controllers.HttpActionDescriptor)">
+            <summary>Gets the documentation for a subject.</summary>    
+            <param name="subject">The subject to document.</param>    
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.MultiXmlDocumentationProvider.GetDocumentation(System.Web.Http.Controllers.HttpParameterDescriptor)">
+            <summary>Gets the documentation for a subject.</summary>    
+            <param name="subject">The subject to document.</param>    
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.MultiXmlDocumentationProvider.GetResponseDocumentation(System.Web.Http.Controllers.HttpActionDescriptor)">
+            <summary>Gets the documentation for a subject.</summary>    
+            <param name="subject">The subject to document.</param>    
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.Areas.HelpPage.MultiXmlDocumentationProvider.GetFirstMatch(System.Func{KGMFramework.WebApp.WebApi.Areas.HelpPage.XmlDocumentationProvider,System.String})">
+            <summary>Get the first valid result from the collection of XML documentation providers.</summary>    
+            <param name="expr">The method to invoke.</param>    
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.WebApiApplication">
+            <summary>
+            api应用类
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.WebApi.WebApiApplication.Application_Start">
+            <summary>
+            开始模块
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Models.BartendPrintModel">
+            <summary>
+            打印对象
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.BartendPrintModel.printContent">
+            <summary>
+            打印内容
+            以键值对的方式 变量:值  
+            例如 模板上存在3个变量 a b c  
+            此处传值为 [{"a":"a的值","b":"b的值","c":"c的值"}]
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.BartendPrintModel.printModel">
+            <summary>
+            打印的模板名称
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.BartendPrintModel.copies">
+            <summary>
+            打印的份数
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.BartendPrintModel.printName">
+            <summary>
+            调用的打印机名
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Models.GetAssetHeadModel">
+            <summary>
+            获取单据表头的对象
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetAssetHeadModel.SearchCondition">
+            <summary>
+            过滤条件
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetAssetHeadModel.Type">
+            <summary>
+            单据类型
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetAssetHeadModel.pager">
+            <summary>
+            分页对象
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Models.MyEnum">
+            <summary>
+            枚举类
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Models.MyEnum.LoginSystemEnum">
+            <summary>
+            登录系统
+            </summary>
+        </member>
+        <member name="F:KGMFramework.WebApp.WebApi.Models.MyEnum.LoginSystemEnum.后台管理系统">
+            <summary>
+            后台管理系统
+            </summary>
+        </member>
+        <member name="F:KGMFramework.WebApp.WebApi.Models.MyEnum.LoginSystemEnum.移动端系统">
+            <summary>
+            移动端系统
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Models.MyEnum.orderType">
+            <summary>
+            单据类型
+            </summary>
+        </member>
+        <member name="F:KGMFramework.WebApp.WebApi.Models.MyEnum.orderType.资产登记">
+            <summary>
+            资产登记
+            </summary>
+        </member>
+        <member name="F:KGMFramework.WebApp.WebApi.Models.MyEnum.orderType.资产领用">
+            <summary>
+            资产领用
+            </summary>
+        </member>
+        <member name="F:KGMFramework.WebApp.WebApi.Models.MyEnum.orderType.资产借用">
+            <summary>
+            资产借用
+            </summary>
+        </member>
+        <member name="F:KGMFramework.WebApp.WebApi.Models.MyEnum.orderType.资产归还">
+            <summary>
+            资产归还
+            </summary>
+        </member>
+        <member name="F:KGMFramework.WebApp.WebApi.Models.MyEnum.orderType.资产调出">
+            <summary>
+            资产调出
+            </summary>
+        </member>
+        <member name="F:KGMFramework.WebApp.WebApi.Models.MyEnum.orderType.资产调入">
+            <summary>
+            资产调入
+            </summary>
+        </member>
+        <member name="F:KGMFramework.WebApp.WebApi.Models.MyEnum.orderType.资产维修">
+            <summary>
+            资产维修
+            </summary>
+        </member>
+        <member name="F:KGMFramework.WebApp.WebApi.Models.MyEnum.orderType.资产处置">
+            <summary>
+            资产处置
+            </summary>
+        </member>
+        <member name="F:KGMFramework.WebApp.WebApi.Models.MyEnum.orderType.资产盘点">
+            <summary>
+            资产盘点
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Models.VerifyOrderModel">
+            <summary>
+            转移主子表审核单据对象
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.VerifyOrderModel.F_Id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.VerifyOrderModel.userName">
+            <summary>
+            登录人
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.VerifyOrderModel.orderType">
+            <summary>
+            单据类型
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.VerifyOrderModel.Owner">
+            <summary>
+            存放地点
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Models.PageModel">
+            <summary>
+            分页对象
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.PageModel.pageIndex">
+            <summary>
+            当前显示第几页
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.PageModel.pageSize">
+            <summary>
+            一页显示多少行
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Models.UploadPictureModel">
+            <summary>
+            上传文件对象
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.UploadPictureModel.id">
+            <summary>
+            资产表id
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.UploadPictureModel.barcode">
+            <summary>
+            条码
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.UploadPictureModel.imgs">
+            <summary>
+            图片集合
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Models.PrintLabelModel">
+            <summary>
+            打印对象
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.PrintLabelModel.CCCusCode">
+            <summary>
+            客户编码
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.PrintLabelModel.MaterialType">
+            <summary>
+            物料型号
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Models.GetNCOrderModel">
+            <summary>
+            获取NC销售出库单条件对象
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetNCOrderModel.orderNo">
+            <summary>
+            单据号
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetNCOrderModel.dSDate">
+            <summary>
+            开始日期
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetNCOrderModel.dEDate">
+            <summary>
+            结束日期
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Models.PrintModel">
+            <summary>
+            打印对象
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.PrintModel.fileName">
+            <summary>
+            文件模板名
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.PrintModel.sourceName">
+            <summary>
+            数据源名
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.PrintModel.sourceData">
+            <summary>
+            数据库数据源
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Models.AuditEntity">
+            <summary>
+            审核实体
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.AuditEntity.F_Id">
+            <summary>
+            Id主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.AuditEntity.state">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.CheckModel.F_Id">
+            <summary>
+            Id主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.CheckModel.state">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.CheckModel.msg">
+            <summary>
+            信息
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Models.KeyFiledEntity">
+            <summary>
+            根据值过滤数据的对象
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.KeyFiledEntity.keyword">
+            <summary>
+            值 多个值and的关系 使用|分隔
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.KeyFiledEntity.searchFiled">
+            <summary>
+            字段名 or的关系使用/分隔 多个值and的关系 使用|分隔
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Models.RoleEntity">
+            <summary>
+            提交角色参数
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.RoleEntity.info">
+            <summary>
+            表体对象
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.RoleEntity.promiss">
+            <summary>
+            permissionIds
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Models.ScanCyModel">
+            <summary>
+            扫描差异类
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.ScanCyModel.cInvCode">
+            <summary>
+            货号
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.ScanCyModel.qty">
+            <summary>
+            单据数量
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.ScanCyModel.doneqty">
+            <summary>
+            扫描数量
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.ScanCyModel.cyqty">
+            <summary>
+            差异数量
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Models.SearchEntity">
+            <summary>
+            查询对象
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.SearchEntity.filed">
+            <summary>
+            字段
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.SearchEntity.value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.SearchEntity.oper">
+            <summary>
+            操作符
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.UserFiledEntity.userPassword">
+            <summary>
+            用户密码
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.UserFiledEntity.keyValue">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Models.SelectModel">
+            <summary>
+            下拉框
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.SelectModel.id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.SelectModel.text">
+            <summary>
+            文本名称
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Models.GetModel">
+            <summary>
+            树形结构图
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetModel.icon">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetModel.title">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetModel.src">
+            <summary>
+            文本名称
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetModel.parent">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Models.GetTreeModel">
+            <summary>
+            树形结构图
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetTreeModel.parentId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetTreeModel.id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetTreeModel.text">
+            <summary>
+            文本名称
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetTreeModel.value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetTreeModel.checkstate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetTreeModel.showcheck">
+            <summary>
+            是否有复选框
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetTreeModel.complete">
+            <summary>
+            是否展开
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetTreeModel.isexpand">
+            <summary>
+            是否展开
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetTreeModel.hasChildren">
+            <summary>
+            是否有子节点
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetTreeModel.img">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetTreeModel.title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Models.GetModuleModel">
+            <summary>
+            树菜单结构
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetModuleModel.module">
+            <summary>
+            菜单
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetModuleModel.FromList">
+            <summary>
+            页面
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetModuleModel.FromInsList">
+            <summary>
+             按钮
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetModuleModel.ButtonList">
+            <summary>
+             按钮
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Models.GetSoModel">
+            <summary>
+            出库单主子表
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetSoModel.info">
+            <summary>
+            表头
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.GetSoModel.dInfo">
+            <summary>
+            表体
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Models.ResultModel">
+            <summary>
+            树形结构图
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.ResultModel.r">
+            <summary>
+            返回结果
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.ResultModel.msg">
+            <summary>
+            返回信息
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Models.SearchModel">
+            <summary>
+            查询字段
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.SearchModel.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.SearchModel.orderNo">
+            <summary>
+            单据号
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.SearchModel.orderType">
+            <summary>
+            单据类型(PI 入库,SO 出库,CW 盘点)
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.SearchModel.list">
+            <summary>
+            查询集合
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Models.CurrentUser">
+            <summary>
+            当前登录用户
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.CurrentUser.userName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.CurrentUser.realName">
+            <summary>
+            用户姓名
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.WebApi.Models.LoginSystemModel">
+            <summary>
+            返回对象
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.LoginSystemModel.Account">
+            <summary>
+            登录用户
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.LoginSystemModel.Password">
+            <summary>
+            登录密码
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.WebApi.Models.LoginSystemModel.LoginSystem">
+            <summary>
+            登录系统
+            </summary>
+        </member>
+    </members>
+</doc>

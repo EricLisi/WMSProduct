@@ -1,0 +1,107 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+
+<form id="form1">
+    <div style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+        <div style="padding-top: 20px; margin-right: 30px;">
+            <table class="form" >
+                <tr>
+                    <th class="formTitle">名称</th>
+                    <td class="formValue" colspan="2">
+                        <select id="F_FullName" name="F_FullName" class="form-control required">
+                            <option value="">==请选择==</option>
+                        </select>
+                    </td>
+                    <th class="formTitle">编码</th>
+                    <td class="formValue">
+                        <input id="F_EnCode" name="F_EnCode" type="text" class="form-control required" placeholder="请输入编码" />
+                    </td>
+                    <th class="formTitle">类型</th>
+                    <td class="formValue">
+                        <select id="F_Type" name="F_Type" class="form-control required">
+                            <option value="0">文本</option>
+                            <option value="1">数字</option>
+                            <option value="2">时间</option>
+                        </select>
+                    </td>
+                    <th class="formTitle">长度</th>
+                    <td class="formValue">
+                        <input id="F_Length" name="F_Length" type="text" class="form-control required" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">解析标识</th>
+                    <td class="formValue">
+                        <div class="ckbox">
+                            <input id="F_AnalyzeMark" name="F_AnalyzeMark" type="checkbox" onchange="AnalyCheck(this.checked)"><label for="F_AnalyzeMark"></label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">对应U8表</th>
+                    <td class="formValue" colspan="2">
+                        <input id="F_Table" name="F_Table" type="text" readonly="readonly" class="form-control required" />
+                    </td>
+                    <th class="formTitle">映射字段</th>
+                    <td class="formValue" colspan="2">
+                        <input id="F_ValueFiled" name="F_ValueFiled" readonly="readonly" type="text" class="form-control required" />
+                    </td>
+                    <th class="formTitle">显示字段</th>
+                    <td class="formValue" colspan="2">
+                        <input id="F_DisplayFiled" name="F_DisplayFiled" readonly="readonly" type="text" class="form-control required" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">过滤条件</th>
+                    <td class="formValue" colspan="8">
+                        <textarea id="F_Condition" name="F_Condition" readonly="readonly" class="form-control required" style="height: 60px;"></textarea>
+                    </td>
+                </tr>
+                <tr> 
+                    <th class="formTitle">自动生成</th>
+                    <td class="formValue">
+                        <div class="ckbox">
+                            <input id="F_GenerateMark" name="F_GenerateMark" type="checkbox" onchange="GenerateCheck(this.checked)"><label for="F_GenerateMark"></label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">生成规则</th>
+                    <td class="formValue" colspan="2">
+                        <select id="F_GenerateRule" name="F_GenerateRule" class="form-control required" disabled="disabled">
+                            <option value="0">按时间</option>
+                            <option value="1">按流水号</option>
+                        </select>
+                    </td>
+                    <th class="formTitle">生成格式</th>
+                    <td class="formValue" colspan="2">
+                        <select id="F_GenerateFormatter" name="F_GenerateFormatter" class="form-control required" disabled="disabled">
+                            <option value="yyyy">yyyy</option>
+                            <option value="yyyyMM">yyyyMM</option>
+                            <option value="yyyyMMdd">yyyyMMdd</option>
+                        </select>
+                    </td>
+                    <th class="formTitle">生成长度</th>
+                    <td class="formValue" colspan="2">
+                        <input id="F_GenerateLength" name="F_GenerateLength" type="text" class="form-control" readonly="readonly"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle" valign="top" style="padding-top: 5px;">
+                        备注
+                    </th>
+                    <td class="formValue" colspan="8">
+                        <textarea id="F_Description" name="F_Descriptions" class="form-control" style="height: 60px;"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</form>
+
+
+<script src="~/Content/js/framework-FormVar.js"></script>
+<script src="~/Areas/SystemManage/Content/js/RuleDeatil/Form.js"></script>
+<script src="~/Content/js/framework-Form.js"></script>

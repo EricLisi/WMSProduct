@@ -1,0 +1,4276 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KGMFramework.WebApp.Core</name>
+    </assembly>
+    <members>
+        <member name="T:KGMFramework.WebApp.BLL.AppCommon">
+            <summary>
+            行政区域表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.BLL.AppCommon.GetTreeInfo(KGMFramework.WebApp.Entity.TreeInfoEntity)">
+            <summary>
+            获取属性结构
+            </summary>
+            <param name="entity">参数对象</param>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Asset_InfoPhoto">
+            <summary>
+            资产信息照片表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Asset_Information">
+            <summary>
+            资产信息表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Asset_Records">
+            <summary>
+            资产流转履历表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Asset_RegisterBody">
+            <summary>
+            资产登记子表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Asset_RegisterHead">
+            <summary>
+            资产登记主表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.BLL.Asset_RegisterHead.GetAsset_RegisterHead(System.Int32,System.Int32)">
+            <summary>
+            分页获取已审核的登记单主表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.BLL.Asset_RegisterHead.GetAsset_RegisterBody(System.String)">
+            <summary>
+            按单据号获取登记单子表
+            </summary>
+            <param name="orderNo">单号</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.BLL.Asset_RegisterHead.GetAsset_TransforHead(System.Int32,System.Int32,System.String)">
+            <summary>
+            分页获取未审核的转移表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.BLL.Asset_RegisterHead.GetAsset_TransforBody(System.String)">
+            <summary>
+            按单据号获取转移表子表
+            </summary>
+            <param name="orderNo">单号</param>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Asset_TransforBody">
+            <summary>
+            资产转移子表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Asset_TransforHead">
+            <summary>
+            资产转移主表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.BLL.Asset_TransforHead.VerifyOrder(System.String,System.String,System.String,System.String)">
+            <summary>
+            转移资产审核单据
+            </summary>
+            <param name="F_Id">审核单ID</param>
+            <param name="userName">当前登录人名</param>
+            <param name="types">单据类型</param>
+            <param name="dept"></param>
+            <param name="comId"></param>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Sys_Area">
+            <summary>
+            行政区域表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.SYS_BarcodeSettingDetail">
+            <summary>
+            SYS_BarcodeSettingDetail
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.BLL.SYS_BarcodeSettingDetail.deleteDeatail(System.String)">
+            <summary>
+            根据主表的分隔类型删除子表的信息
+            </summary>
+            <param name="keyValue"></param>
+        </member>
+        <member name="M:KGMFramework.WebApp.BLL.SYS_BarcodeSettingDetail.deleteId(System.String)">
+            <summary>
+            删除子表信息
+            </summary>
+            <param name="keyValue"></param>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.SYS_BarcodeSettingMain">
+            <summary>
+            SYS_BarcodeSettingMain
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.BLL.SYS_BarcodeSettingMain.Delete(System.String,System.Boolean)">
+            <summary>
+            批量删除主子表
+            </summary>
+            <param name="keyValue"></param>
+        </member>
+        <member name="M:KGMFramework.WebApp.BLL.SYS_BarcodeSettingMain.Save(KGMFramework.WebApp.Entity.SYS_BarcodeSettingMainInfo,System.Collections.Generic.List{KGMFramework.WebApp.Entity.SYS_BarcodeSettingDetailInfo})">
+            <summary>
+            保存业务类型
+            </summary>
+            <param name="info"></param>
+            <param name="dInfo"></param>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Sys_Duty">
+            <summary>
+            岗位表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Sys_GridColumnSetting">
+            <summary>
+            列表显示设置
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Sys_Items">
+            <summary>
+            选项主表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.BLL.Sys_Items.GetNameByCode(System.String)">
+            <summary>
+            根据字典明细编码获取对应的字典类型
+            </summary>
+            <param name="itemcode"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Sys_ItemsDetail">
+            <summary>
+            选项明细表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Sys_Module">
+            <summary>
+            系统模块
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Sys_ModuleButton">
+            <summary>
+            模块按钮
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Sys_ModuleForm">
+            <summary>
+            模块表单
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Sys_ModuleFormInstance">
+            <summary>
+            模块表单实例
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Sys_Organize">
+            <summary>
+            组织表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Sys_Platform">
+            <summary>
+            行政区域表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Sys_Role">
+            <summary>
+            角色表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.BLL.Sys_Role.Save(KGMFramework.WebApp.Entity.Sys_RoleInfo,System.Collections.Generic.List{KGMFramework.WebApp.Entity.Sys_RoleAuthorizeInfo},System.String)">
+            <summary>
+            保存角色
+            </summary>
+            <param name="info"></param>
+            <param name="permissionIds"></param>
+            <param name="keyValue"></param>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Sys_RoleAuthorize">
+            <summary>
+            角色授权表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.BLL.Sys_RoleAuthorize.GetUserMenu(System.String)">
+            <summary>
+            获取用户菜单
+            </summary>
+            <param name="USERID">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.BLL.Sys_RoleAuthorize.GetUserButton(System.String)">
+            <summary>
+            获取用户按钮
+            </summary>
+            <param name="USERID">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Sys_TerminalGridColumnSetting">
+            <summary>
+            终端列表显示设置
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Sys_TerminalListSetting">
+            <summary>
+            终端列表显示设置
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Sys_User">
+            <summary>
+            用户表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.BLL.Sys_User.LoginSystem(KGMFramework.WebApp.Entity.LoginModel)">
+            <summary>
+            系统登录
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.BLL.Sys_User.GetUserMenu(System.String,System.Int32)">
+            <summary>
+            获取用户菜单
+            </summary>
+            <param name="roleId">角色编码</param>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Sys_UserToken">
+            <summary>
+            用户令牌
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Sys_VouchType">
+            <summary>
+            业务类型
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.BLL.Sys_VouchType.GetVouchTree">
+            <summary>
+            获取业务类型设置树形结构
+            </summary>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.BLL.Sys_VouchType.Save(KGMFramework.WebApp.Entity.Sys_VouchTypeInfo,System.Collections.Generic.List{KGMFramework.WebApp.Entity.Sys_VouchTypeDefaultInfo},System.String)">
+            <summary>
+            保存业务数据
+            </summary>
+            <param name="entity"></param>
+            <param name="details"></param>
+        </member>
+        <member name="M:KGMFramework.WebApp.BLL.Sys_VouchType.DeleteBatch(System.String,System.Boolean)">
+            <summary>
+            批量删除主子表
+            </summary>
+            <param name="keyValue"></param>
+        </member>
+        <member name="M:KGMFramework.WebApp.BLL.Sys_VouchType.GetTypeByParent(System.String)">
+            <summary>
+            根据选中父节点的值获取对应的出入库类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Sys_VouchTypeDefault">
+            <summary>
+            业务类型默认值表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Sys_VouchTypeSetting">
+            <summary>
+            业务类型选项表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Sys_DbBackup">
+            <summary>
+            数据库备份
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.BLL.Sys_DbBackup.BackUpDB(KGMFramework.WebApp.Entity.Sys_DbBackupInfo)">
+            <summary>
+            备份数据
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Sys_FilterIP">
+            <summary>
+            过滤IP
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.BLL.Sys_Log">
+            <summary>
+            系统日志
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.AppCommon">
+            <summary>
+            行政区域表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.IAppCommon">
+            <summary>
+            共通类
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.AppCommon.GetTreeInfo(KGMFramework.WebApp.Entity.TreeInfoEntity)">
+            <summary>
+            获取属性结构
+            </summary>
+            <param name="entity">参数对象</param>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Asset_InfoPhoto">
+            <summary>
+            资产信息照片表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.IAsset_InfoPhoto">
+            <summary>
+            资产信息照片表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Asset_InfoPhoto.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Asset_InfoPhoto.GetHashByEntity(KGMFramework.WebApp.Entity.Asset_InfoPhotoInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Asset_InfoPhoto.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Asset_Information">
+            <summary>
+            资产信息表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.IAsset_Information">
+            <summary>
+            资产信息表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Asset_Information.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Asset_Information.GetHashByEntity(KGMFramework.WebApp.Entity.Asset_InformationInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Asset_Information.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Asset_Records">
+            <summary>
+            资产流转履历表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.IAsset_Records">
+            <summary>
+            资产流转履历表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Asset_Records.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Asset_Records.GetHashByEntity(KGMFramework.WebApp.Entity.Asset_RecordsInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Asset_Records.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Asset_RegisterBody">
+            <summary>
+            资产登记子表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.IAsset_RegisterBody">
+            <summary>
+            资产登记子表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Asset_RegisterBody.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Asset_RegisterBody.GetHashByEntity(KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Asset_RegisterBody.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Asset_RegisterHead">
+            <summary>
+            资产登记主表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.IAsset_RegisterHead">
+            <summary>
+            资产登记主表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.IDAL.IAsset_RegisterHead.GetAsset_RegisterHead(System.Int32,System.Int32)">
+            <summary>
+            分页获取已审核的登记单主表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.IDAL.IAsset_RegisterHead.GetAsset_RegisterBody(System.String)">
+            <summary>
+            按单据号获取登记单子表
+            </summary>
+            <param name="orderNo">单号</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.IDAL.IAsset_RegisterHead.GetAsset_TransforHead(System.Int32,System.Int32,System.String)">
+            <summary>
+            分页获取未审核的转移表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.IDAL.IAsset_RegisterHead.GetAsset_TransforBody(System.String)">
+            <summary>
+            按单据号获取转移表子表
+            </summary>
+            <param name="orderNo">单号</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Asset_RegisterHead.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Asset_RegisterHead.GetHashByEntity(KGMFramework.WebApp.Entity.Asset_RegisterHeadInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Asset_RegisterHead.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Asset_RegisterHead.GetAsset_RegisterHead(System.Int32,System.Int32)">
+            <summary>
+            分页获取已审核的登记单主表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Asset_RegisterHead.GetAsset_RegisterBody(System.String)">
+            <summary>
+            按单据号获取登记单子表
+            </summary>
+            <param name="orderNo">单号</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Asset_RegisterHead.GetAsset_TransforHead(System.Int32,System.Int32,System.String)">
+            <summary>
+            分页获取未审核的转移表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Asset_RegisterHead.GetAsset_TransforBody(System.String)">
+            <summary>
+            按单据号获取转移表子表
+            </summary>
+            <param name="orderNo">单号</param>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Asset_TransforBody">
+            <summary>
+            资产转移子表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.IAsset_TransforBody">
+            <summary>
+            资产转移子表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Asset_TransforBody.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Asset_TransforBody.GetHashByEntity(KGMFramework.WebApp.Entity.Asset_TransforBodyInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Asset_TransforBody.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Asset_TransforHead">
+            <summary>
+            资产转移主表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.IAsset_TransforHead">
+            <summary>
+            资产转移主表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Asset_TransforHead.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Asset_TransforHead.GetHashByEntity(KGMFramework.WebApp.Entity.Asset_TransforHeadInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Asset_TransforHead.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Asset_TransforHead.VerifyOrder(System.String,System.String,System.String,System.String)">
+             <summary>
+            审核单据
+             </summary>
+             <param name="F_Id"></param>
+             <param name="userName"></param>
+             <param name="types"></param>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Sys_Area">
+            <summary>
+            行政区域表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.ISys_Area">
+            <summary>
+            行政区域表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_Area.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_Area.GetHashByEntity(KGMFramework.WebApp.Entity.Sys_AreaInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_Area.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.SYS_BarcodeSettingDetail">
+            <summary>
+            SYS_BarcodeSettingDetail
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.ISYS_BarcodeSettingDetail">
+            <summary>
+            SYS_BarcodeSettingDetail
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.IDAL.ISYS_BarcodeSettingDetail.insert(KGMFramework.WebApp.Entity.SYS_BarcodeSettingDetailInfo,System.String)">
+            <summary>
+            增加子表
+            </summary>
+            <param name="info"></param>
+            <param name="keyValue"></param>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.SYS_BarcodeSettingDetail.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.SYS_BarcodeSettingDetail.GetHashByEntity(KGMFramework.WebApp.Entity.SYS_BarcodeSettingDetailInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.SYS_BarcodeSettingDetail.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.SYS_BarcodeSettingDetail.insert(KGMFramework.WebApp.Entity.SYS_BarcodeSettingDetailInfo,System.String)">
+            <summary>
+            增加子表
+            </summary>
+            <param name="info"></param>
+            <param name="keyValue"></param>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.SYS_BarcodeSettingDetail.deleteDeatail(System.String)">
+            <summary>
+            根据主表的分隔类型删除子表的信息
+            </summary>
+            <param name="keyValue"></param>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.SYS_BarcodeSettingDetail.deleteId(System.String)">
+            <summary>
+            删除子表信息
+            </summary>
+            <param name="keyValue"></param>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.SYS_BarcodeSettingDetail.insertDetail(KGMFramework.WebApp.Entity.SYS_BarcodeSettingDetailInfo,System.String,System.String)">
+            <summary>
+            修改子表
+            </summary>
+            <param name="info"></param>
+            <param name="keyword"></param>
+            <param name="keyValue"></param>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.SYS_BarcodeSettingMain">
+            <summary>
+            SYS_BarcodeSettingMain
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.ISYS_BarcodeSettingMain">
+            <summary>
+            SYS_BarcodeSettingMain
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.IDAL.ISYS_BarcodeSettingMain.Delete(System.String,System.Boolean)">
+            <summary>
+            删除主子表
+            </summary>
+            <param name="keyValue">主键</param>
+            <param name="bLogicDelete"></param>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.SYS_BarcodeSettingMain.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.SYS_BarcodeSettingMain.GetHashByEntity(KGMFramework.WebApp.Entity.SYS_BarcodeSettingMainInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.SYS_BarcodeSettingMain.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.SYS_BarcodeSettingMain.Delete(System.String,System.Boolean)">
+            <summary>
+            删除主子表
+            </summary>
+            <param name="keyValue">主键</param>
+            <param name="bLogicDelete"></param>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.SYS_BarcodeSettingMain.Save(KGMFramework.WebApp.Entity.SYS_BarcodeSettingMainInfo,System.Collections.Generic.List{KGMFramework.WebApp.Entity.SYS_BarcodeSettingDetailInfo})">
+            <summary>
+            保存
+            </summary>
+            <param name="info"></param>
+            <param name="dInfo"></param>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Sys_Duty">
+            <summary>
+            岗位表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.ISys_Duty">
+            <summary>
+            岗位表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_Duty.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_Duty.GetHashByEntity(KGMFramework.WebApp.Entity.Sys_DutyInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Sys_GridColumnSetting">
+            <summary>
+            列表显示设置
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.ISys_GridColumnSetting">
+            <summary>
+            列表显示设置
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_GridColumnSetting.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_GridColumnSetting.GetHashByEntity(KGMFramework.WebApp.Entity.Sys_GridColumnSettingInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_GridColumnSetting.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Sys_Items">
+            <summary>
+            选项主表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.ISys_Items">
+            <summary>
+            选项主表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.IDAL.ISys_Items.GetNameByCode(System.String)">
+             <summary>
+            根据字典明细获取对应的字典类型
+             </summary>
+             <param name="itemcode"></param>
+             <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_Items.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_Items.GetHashByEntity(KGMFramework.WebApp.Entity.Sys_ItemsInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_Items.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Sys_ItemsDetail">
+            <summary>
+            选项明细表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.ISys_ItemsDetail">
+            <summary>
+            选项明细表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_ItemsDetail.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_ItemsDetail.GetHashByEntity(KGMFramework.WebApp.Entity.Sys_ItemsDetailInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_ItemsDetail.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Sys_Module">
+            <summary>
+            系统模块
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.ISys_Module">
+            <summary>
+            系统模块
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_Module.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_Module.GetHashByEntity(KGMFramework.WebApp.Entity.Sys_ModuleInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_Module.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Sys_ModuleButton">
+            <summary>
+            模块按钮
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.ISys_ModuleButton">
+            <summary>
+            模块按钮
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_ModuleButton.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_ModuleButton.GetHashByEntity(KGMFramework.WebApp.Entity.Sys_ModuleButtonInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_ModuleButton.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Sys_ModuleForm">
+            <summary>
+            模块表单
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.ISys_ModuleForm">
+            <summary>
+            模块表单
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_ModuleForm.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_ModuleForm.GetHashByEntity(KGMFramework.WebApp.Entity.Sys_ModuleFormInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_ModuleForm.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Sys_ModuleFormInstance">
+            <summary>
+            模块表单实例
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.ISys_ModuleFormInstance">
+            <summary>
+            模块表单实例
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_ModuleFormInstance.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_ModuleFormInstance.GetHashByEntity(KGMFramework.WebApp.Entity.Sys_ModuleFormInstanceInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_ModuleFormInstance.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Sys_Organize">
+            <summary>
+            组织表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.ISys_Organize">
+            <summary>
+            组织表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_Organize.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_Organize.GetHashByEntity(KGMFramework.WebApp.Entity.Sys_OrganizeInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_Organize.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Sys_Platform">
+            <summary>
+            行政区域表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.ISys_Platform">
+            <summary>
+            行政区域表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_Platform.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_Platform.GetHashByEntity(KGMFramework.WebApp.Entity.Sys_PlatformInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_Platform.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Sys_Role">
+            <summary>
+            角色表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.ISys_Role">
+            <summary>
+            角色表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_Role.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_Role.GetHashByEntity(KGMFramework.WebApp.Entity.Sys_RoleInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_Role.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_Role.Save(KGMFramework.WebApp.Entity.Sys_RoleInfo,System.Collections.Generic.List{KGMFramework.WebApp.Entity.Sys_RoleAuthorizeInfo},System.String)">
+            <summary>
+            保存角色
+            </summary>
+            <param name="info"></param>
+            <param name="permissionIds"></param>
+            <param name="keyValue"></param>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Sys_RoleAuthorize">
+            <summary>
+            角色授权表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.ISys_RoleAuthorize">
+            <summary>
+            角色授权表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.IDAL.ISys_RoleAuthorize.GetUserMenu(System.String)">
+            <summary>
+            获取用户菜单
+            </summary>
+            <param name="USERID">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.IDAL.ISys_RoleAuthorize.GetUserButton(System.String)">
+            <summary>
+            获取用户按钮
+            </summary>
+            <param name="USERID">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_RoleAuthorize.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_RoleAuthorize.GetHashByEntity(KGMFramework.WebApp.Entity.Sys_RoleAuthorizeInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_RoleAuthorize.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_RoleAuthorize.GetUserMenu(System.String)">
+            <summary>
+            获取用户菜单
+            </summary>
+            <param name="USERID">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_RoleAuthorize.GetUserButton(System.String)">
+            <summary>
+            获取用户按钮权限
+            </summary>
+            <param name="USERID">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Sys_TerminalGridColumnSetting">
+            <summary>
+            终端列表显示设置
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.ISys_TerminalGridColumnSetting">
+            <summary>
+            终端列表显示设置
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_TerminalGridColumnSetting.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_TerminalGridColumnSetting.GetHashByEntity(KGMFramework.WebApp.Entity.Sys_TerminalGridColumnSettingInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_TerminalGridColumnSetting.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Sys_TerminalListSetting">
+            <summary>
+            终端列表显示设置
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.ISys_TerminalListSetting">
+            <summary>
+            终端列表显示设置
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_TerminalListSetting.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_TerminalListSetting.GetHashByEntity(KGMFramework.WebApp.Entity.Sys_TerminalListSettingInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_TerminalListSetting.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Sys_User">
+            <summary>
+            用户表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.ISys_User">
+            <summary>
+            用户表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_User.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_User.GetHashByEntity(KGMFramework.WebApp.Entity.Sys_UserInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_User.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_User.LoginSystem(KGMFramework.WebApp.Entity.LoginModel)">
+            <summary>
+            系统登录
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_User.GetUserMenu(System.String,System.Int32)">
+            <summary>
+            获取用户菜单
+            </summary>
+            <param name="roleId">角色编码</param>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Sys_UserToken">
+            <summary>
+            用户令牌
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.ISys_UserToken">
+            <summary>
+            用户令牌
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_UserToken.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_UserToken.GetHashByEntity(KGMFramework.WebApp.Entity.Sys_UserTokenInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_UserToken.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Sys_VouchType">
+            <summary>
+            业务类型
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.ISys_VouchType">
+            <summary>
+            业务类型
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.IDAL.ISys_VouchType.DeleteBatch(System.String,System.Boolean)">
+            <summary>
+            批量删除主子表
+            </summary>
+            <param name="keyValue"></param>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_VouchType.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_VouchType.GetHashByEntity(KGMFramework.WebApp.Entity.Sys_VouchTypeInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_VouchType.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_VouchType.GetVouchTree">
+            <summary>
+            获取业务类型设置树形结构
+            </summary>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_VouchType.DeleteBatch(System.String,System.Boolean)">
+            <summary>
+            批量删除主子表
+            </summary>
+            <param name="keyValue"></param>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_VouchType.GetTypeByParent(System.String)">
+            <summary>
+            根据选中父节点的值获取对应的出入库类型
+            </summary>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Sys_VouchTypeDefault">
+            <summary>
+            业务类型默认值表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.ISys_VouchTypeDefault">
+            <summary>
+            业务类型默认值表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_VouchTypeDefault.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_VouchTypeDefault.GetHashByEntity(KGMFramework.WebApp.Entity.Sys_VouchTypeDefaultInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_VouchTypeDefault.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Sys_VouchTypeSetting">
+            <summary>
+            业务类型选项表
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.ISys_VouchTypeSetting">
+            <summary>
+            业务类型选项表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_VouchTypeSetting.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_VouchTypeSetting.GetHashByEntity(KGMFramework.WebApp.Entity.Sys_VouchTypeSettingInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_VouchTypeSetting.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Sys_DbBackup">
+            <summary>
+            数据库备份
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.ISys_DbBackup">
+            <summary>
+            数据库备份
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_DbBackup.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_DbBackup.GetHashByEntity(KGMFramework.WebApp.Entity.Sys_DbBackupInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_DbBackup.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_DbBackup.BackUpDB(KGMFramework.WebApp.Entity.Sys_DbBackupInfo)">
+            <summary>
+            备份数据
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Sys_FilterIP">
+            <summary>
+            过滤IP
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.ISys_FilterIP">
+            <summary>
+            过滤IP
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_FilterIP.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_FilterIP.GetHashByEntity(KGMFramework.WebApp.Entity.Sys_FilterIPInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_FilterIP.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.DALSQL.Sys_Log">
+            <summary>
+            系统日志
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.IDAL.ISys_Log">
+            <summary>
+            系统日志
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_Log.DataReaderToEntity(System.Data.IDataReader)">
+            <summary>
+            将DataReader的属性值转化为实体类的属性值，返回实体类
+            </summary>
+            <param name="dr">有效的DataReader对象</param>
+            <returns>实体类对象</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_Log.GetHashByEntity(KGMFramework.WebApp.Entity.Sys_LogInfo)">
+            <summary>
+            将实体对象的属性值转化为Hashtable对应的键值
+            </summary>
+            <param name="obj">有效的实体对象</param>
+            <returns>包含键值映射的Hashtable</returns>
+        </member>
+        <member name="M:KGMFramework.WebApp.DALSQL.Sys_Log.GetColumnNameAlias">
+            <summary>
+            获取字段中文别名（用于界面显示）的字典集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.TreeInfoEntity">
+            <summary>
+            行政区域表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.TreeInfoEntity.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.TreeInfoEntity.F_TableName">
+            <summary>
+            表名
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.TreeInfoEntity.F_KeyFiled">
+            <summary>
+            KEY字段
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.TreeInfoEntity.F_ParentFiled">
+            <summary>
+            父节点字段
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.TreeInfoEntity.F_Condition">
+            <summary>
+            过滤条件
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.TreeInfoEntity.F_SortCode">
+            <summary>
+            排序字段
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.TreeInfoEntity.F_CType">
+            <summary>
+            类别 0 父找子 1 子找父 2 不寻找直接全部查询
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Asset_InfoPhotoInfo">
+            <summary>
+            资产信息照片表
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.AppBaseEntity.F_Id">
+            <summary>
+            模块主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.AppBaseEntity.F_ParentId">
+            <summary>
+            父级
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.AppBaseEntity.F_EnCode">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.AppBaseEntity.F_FullName">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.AppBaseEntity.F_SortCode">
+            <summary>
+            排序码
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.AppBaseEntity.F_DeleteMark">
+            <summary>
+            删除标志
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.AppBaseEntity.F_EnabledMark">
+            <summary>
+            有效标志
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.AppBaseEntity.F_Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.AppBaseEntity.F_CreatorTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.AppBaseEntity.F_CreatorUserId">
+            <summary>
+            创建用户
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.AppBaseEntity.F_LastModifyTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.AppBaseEntity.F_LastModifyUserId">
+            <summary>
+            最后修改用户
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.AppBaseEntity.F_DeleteTime">
+            <summary>
+            删除时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.AppBaseEntity.F_DeleteUserId">
+            <summary>
+            删除用户
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Asset_InfoPhotoInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InfoPhotoInfo.F_Id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InfoPhotoInfo.F_EnCode">
+            <summary>
+            资产编码
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InfoPhotoInfo.F_PhotoUrl">
+            <summary>
+            照片地址
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InfoPhotoInfo.F_SortCode">
+            <summary>
+            排序码
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InfoPhotoInfo.F_DeleteMark">
+            <summary>
+            删除标志
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InfoPhotoInfo.F_EnabledMark">
+            <summary>
+            有效标志
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InfoPhotoInfo.F_CreatorTime">
+            <summary>
+            创建日期
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InfoPhotoInfo.F_CreatorUserId">
+            <summary>
+            创建用户主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InfoPhotoInfo.F_LastModifyUserId">
+            <summary>
+            最后修改用户
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InfoPhotoInfo.F_LastModifyTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InfoPhotoInfo.F_DeleteTime">
+            <summary>
+            删除时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InfoPhotoInfo.F_ParentId">
+            <summary>
+            父节点
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InfoPhotoInfo.F_DeleteUserId">
+            <summary>
+            删除用户
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Asset_InformationInfo">
+            <summary>
+            资产信息表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Asset_InformationInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_EnCode">
+            <summary>
+            资产编码
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_FullName">
+            <summary>
+            资产名称
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_ParentId">
+            <summary>
+            父节点
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_AssetType">
+            <summary>
+            资产类型
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Status">
+            <summary>
+            资产状态
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_GroupCode">
+            <summary>
+            组合条码
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Qty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Amount">
+            <summary>
+            金额
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Ddate">
+            <summary>
+            入账时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_OrderNo">
+            <summary>
+            入库单号
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_OrderDetailedId">
+            <summary>
+            入库单子表Id
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_BidNumber">
+            <summary>
+            申购单号
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Invoice">
+            <summary>
+            发票号
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Model">
+            <summary>
+            规格
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_NetWeight">
+            <summary>
+            净重
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_GrossWeight">
+            <summary>
+            毛重
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Length">
+            <summary>
+            长度
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Width">
+            <summary>
+            宽度
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Height">
+            <summary>
+            高度
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Supplier">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Unit">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Brand">
+            <summary>
+            品牌
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Owner">
+            <summary>
+            存放地点
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_CompanyId">
+            <summary>
+            使用公司
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_DepartmentId">
+            <summary>
+            使用部门
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Principal">
+            <summary>
+            使用人
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_BuyDate">
+            <summary>
+            购买时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_TimeService">
+            <summary>
+            保修期限
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Depreciation">
+            <summary>
+            折旧率
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_LifeYears">
+            <summary>
+            使用年限
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Cdefine1">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Cdefine2">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Cdefine3">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Cdefine4">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Cdefine5">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Cdefine6">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Cdefine7">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Cdefine8">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Cdefine9">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Cdefine10">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Cdefine11">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Cdefine12">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Cdefine13">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Cdefine14">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Cdefine15">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Cdefine16">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Cdefine17">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Cdefine18">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Cdefine19">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_Cdefine20">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_SortCode">
+            <summary>
+            排序码
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_DeleteMark">
+            <summary>
+            删除标志
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_EnabledMark">
+            <summary>
+            有效标志
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_CreatorTime">
+            <summary>
+            创建日期
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_CreatorUserId">
+            <summary>
+            创建用户主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_LastModifyUserId">
+            <summary>
+            最后修改用户
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_LastModifyTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_DeleteTime">
+            <summary>
+            删除时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_InformationInfo.F_DeleteUserId">
+            <summary>
+            删除用户
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Asset_RecordsInfo">
+            <summary>
+            资产流转履历表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Asset_RecordsInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_SourceCode">
+            <summary>
+            来源单号
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Source">
+            <summary>
+            来源单据类型
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_EnCode">
+            <summary>
+            资产编码
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_FullName">
+            <summary>
+            资产名称
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_ParentId">
+            <summary>
+            父节点
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_AssetType">
+            <summary>
+            资产类型
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Status">
+            <summary>
+            资产状态
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_GroupCode">
+            <summary>
+            组合条码
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Qty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Amount">
+            <summary>
+            金额
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Ddate">
+            <summary>
+            入账时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_OrderNo">
+            <summary>
+            入库单号
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_BidNumber">
+            <summary>
+            申购单号
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Invoice">
+            <summary>
+            发票号
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Model">
+            <summary>
+            规格
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Volume">
+            <summary>
+            体积
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Supplier">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Unit">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Brand">
+            <summary>
+            品牌
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Owner">
+            <summary>
+            存放地点
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_CompanyId">
+            <summary>
+            使用公司
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_DepartmentId">
+            <summary>
+            使用部门
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Principal">
+            <summary>
+            使用负责人
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_BuyDate">
+            <summary>
+            购买时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_TimeService">
+            <summary>
+            保修期限
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Depreciation">
+            <summary>
+            折旧率
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_LifeYears">
+            <summary>
+            使用年限
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_RepairUnit">
+            <summary>
+            维修单位
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_MendMoney">
+            <summary>
+            维修费用
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_RepairdDate">
+            <summary>
+            维修时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Cdefine1">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Cdefine2">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Cdefine3">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Cdefine4">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Cdefine5">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Cdefine6">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Cdefine7">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Cdefine8">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Cdefine9">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Cdefine10">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Cdefine11">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Cdefine12">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Cdefine13">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Cdefine14">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Cdefine15">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Cdefine16">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Cdefine17">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Cdefine18">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Cdefine19">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_Cdefine20">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_SortCode">
+            <summary>
+            排序码
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_DeleteMark">
+            <summary>
+            删除标志
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_EnabledMark">
+            <summary>
+            有效标志
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_CreatorTime">
+            <summary>
+            创建日期
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_CreatorUserId">
+            <summary>
+            创建用户主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_LastModifyUserId">
+            <summary>
+            最后修改用户
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_LastModifyTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_DeleteTime">
+            <summary>
+            删除时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RecordsInfo.F_DeleteUserId">
+            <summary>
+            删除用户
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo">
+            <summary>
+            资产登记子表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_HId">
+            <summary>
+            主表Id
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_OrderNo">
+            <summary>
+            单据号
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_AssetType">
+            <summary>
+            资产类型
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Status">
+            <summary>
+            资产状态
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_GroupCode">
+            <summary>
+            组合条码
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Qty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Amount">
+            <summary>
+            金额
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Ddate">
+            <summary>
+            入账时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Model">
+            <summary>
+            规格
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_NetWeight">
+            <summary>
+            净重
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_GrossWeight">
+            <summary>
+            毛重
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Length">
+            <summary>
+            长度
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Width">
+            <summary>
+            宽度
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Height">
+            <summary>
+            高度
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Supplier">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Unit">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Brand">
+            <summary>
+            品牌
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Owner">
+            <summary>
+            存放地点
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_CompanyId">
+            <summary>
+            使用公司
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_DepartmentId">
+            <summary>
+            使用部门
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Principal">
+            <summary>
+            使用负责人
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_BuyDate">
+            <summary>
+            购买时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_TimeService">
+            <summary>
+            保修期限
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Depreciation">
+            <summary>
+            折旧率
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_LifeYears">
+            <summary>
+            使用年限
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Cdefine1">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Cdefine2">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Cdefine3">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Cdefine4">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Cdefine5">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Cdefine6">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Cdefine7">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Cdefine8">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Cdefine9">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Cdefine10">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Cdefine11">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Cdefine12">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Cdefine13">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Cdefine14">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Cdefine15">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Cdefine16">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Cdefine17">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Cdefine18">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Cdefine19">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterBodyInfo.F_Cdefine20">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Asset_RegisterHeadInfo">
+            <summary>
+            资产登记主表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Asset_RegisterHeadInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterHeadInfo.F_Maker">
+            <summary>
+            制单人
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterHeadInfo.F_Date">
+            <summary>
+            单据日期
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterHeadInfo.F_Vendor">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterHeadInfo.F_Invoice">
+            <summary>
+            发票号
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterHeadInfo.F_AccountDate">
+            <summary>
+            入账日期
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterHeadInfo.F_Status">
+            <summary>
+            单据状态
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterHeadInfo.F_Verify">
+            <summary>
+            审核人
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterHeadInfo.F_VeriDate">
+            <summary>
+            审核时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_RegisterHeadInfo.F_Orgnization">
+            <summary>
+            所属机构
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo">
+            <summary>
+            资产转移子表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_HId">
+            <summary>
+            主表Id
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_OrderNo">
+            <summary>
+            单据号
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_AssetType">
+            <summary>
+            资产类型
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Status">
+            <summary>
+            资产状态
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_GroupCode">
+            <summary>
+            组合条码
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Qty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Amount">
+            <summary>
+            金额
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Ddate">
+            <summary>
+            入账时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Model">
+            <summary>
+            规格
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Volume">
+            <summary>
+            体积
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Supplier">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Unit">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Brand">
+            <summary>
+            品牌
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Owner">
+            <summary>
+            存放地点
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_CompanyId">
+            <summary>
+            使用公司
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_DepartmentId">
+            <summary>
+            使用部门
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Principal">
+            <summary>
+            使用负责人
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_BuyDate">
+            <summary>
+            购买时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_TimeService">
+            <summary>
+            保修期限
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_MendMoney">
+            <summary>
+            维修费用
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_RepairUnit">
+            <summary>
+            维修单位
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Depreciation">
+            <summary>
+            折旧率
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_LifeYears">
+            <summary>
+            使用年限
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Cdefine1">
+            <summary>
+            自定义项1   借用归还状态
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Cdefine2">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Cdefine3">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Cdefine4">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Cdefine5">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Cdefine6">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Cdefine7">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Cdefine8">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Cdefine9">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Cdefine10">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Cdefine11">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Cdefine12">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Cdefine13">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Cdefine14">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Cdefine15">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Cdefine16">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Cdefine17">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Cdefine18">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Cdefine19">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforBodyInfo.F_Cdefine20">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo">
+            <summary>
+            资产转移主表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_OrderType">
+            <summary>
+            单据类型
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_Maker">
+            <summary>
+            制单人
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_Date">
+            <summary>
+            单据日期
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_Company">
+            <summary>
+            领用公司
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_Department">
+            <summary>
+            领用部门
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_Principal">
+            <summary>
+            领用人
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_ReturnDate">
+            <summary>
+            预计归还日期
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_DueDate">
+            <summary>
+            领用日期
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_RepairUnit">
+            <summary>
+            维修单位
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_MendMoney">
+            <summary>
+            维修费用
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_RepairdDate">
+            <summary>
+            维修时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_DisposalMethod">
+            <summary>
+            处置方式
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_SourceCode">
+            <summary>
+            来源单据
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_Source">
+            <summary>
+            来源类型
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_ReturnStatus">
+            <summary>
+            归还状态
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_Status">
+            <summary>
+            单据状态
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_Verify">
+            <summary>
+            审核人
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_VeriDate">
+            <summary>
+            审核时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_Orgnization">
+            <summary>
+            所属机构
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_Cdefine1">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_Cdefine2">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_Cdefine3">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_Cdefine4">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_Cdefine5">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_Cdefine6">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_Cdefine7">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_Cdefine8">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_Cdefine9">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Asset_TransforHeadInfo.F_Cdefine10">
+            <summary>
+            自定义项1
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Sys_AreaInfo">
+            <summary>
+            行政区域表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Sys_AreaInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_AreaInfo.F_Layers">
+            <summary>
+            层次
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_AreaInfo.F_SimpleSpelling">
+            <summary>
+            简拼
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.SYS_BarcodeSettingDetailInfo">
+            <summary>
+            业务类型
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.SYS_BarcodeSettingDetailInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.SYS_BarcodeSettingDetailInfo.F_Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.SYS_BarcodeSettingDetailInfo.F_Length">
+            <summary>
+            长度
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.SYS_BarcodeSettingDetailInfo.F_AnalyzeMark">
+            <summary>
+            解析标识
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.SYS_BarcodeSettingDetailInfo.F_Table">
+            <summary>
+            映射表名
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.SYS_BarcodeSettingDetailInfo.F_ValueFiled">
+            <summary>
+            映射字段名
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.SYS_BarcodeSettingDetailInfo.F_DisplayFiled">
+            <summary>
+            显示字段
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.SYS_BarcodeSettingDetailInfo.F_Condition">
+            <summary>
+            过滤条件
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.SYS_BarcodeSettingDetailInfo.F_GenerateMark">
+            <summary>
+            自动生成标识
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.SYS_BarcodeSettingDetailInfo.F_GenerateRule">
+            <summary>
+            生成规则
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.SYS_BarcodeSettingDetailInfo.F_GenerateFormatter">
+            <summary>
+            生成格式
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.SYS_BarcodeSettingDetailInfo.F_GenerateLength">
+            <summary>
+            生成长度
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.SYS_BarcodeSettingDetailInfo.F_IndexSpilt">
+            <summary>
+            位置截取数
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.SYS_BarcodeSettingMainInfo">
+            <summary>
+            业务类型
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.SYS_BarcodeSettingMainInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.SYS_BarcodeSettingMainInfo.F_Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.SYS_BarcodeSettingMainInfo.F_Split">
+            <summary>
+            分隔符
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Sys_DutyInfo">
+            <summary>
+            岗位表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Sys_DutyInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_DutyInfo.F_OrganizeId">
+            <summary>
+            组织主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_DutyInfo.F_AllowEdit">
+            <summary>
+            允许编辑
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_DutyInfo.F_AllowDelete">
+            <summary>
+            允许删除
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Sys_GridColumnSettingInfo">
+            <summary>
+            列表显示设置
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Sys_GridColumnSettingInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_GridColumnSettingInfo.F_Page">
+            <summary>
+            所属页面
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_GridColumnSettingInfo.F_GridId">
+            <summary>
+            列表ID
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_GridColumnSettingInfo.F_Label">
+            <summary>
+            列显示
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_GridColumnSettingInfo.F_Name">
+            <summary>
+            列映射后台字段
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_GridColumnSettingInfo.F_Hidden">
+            <summary>
+            是否隐藏
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_GridColumnSettingInfo.F_Key">
+            <summary>
+            主键标识
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_GridColumnSettingInfo.F_Width">
+            <summary>
+            列宽
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_GridColumnSettingInfo.F_Align">
+            <summary>
+            对齐方式
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_GridColumnSettingInfo.F_Editable">
+            <summary>
+            是否可编辑
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_GridColumnSettingInfo.F_Formatter">
+            <summary>
+            显示格式
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_GridColumnSettingInfo.F_Formatoptions">
+            <summary>
+            显示格式选项
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Sys_ItemsDetailInfo">
+            <summary>
+            选项明细表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Sys_ItemsDetailInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ItemsDetailInfo.F_ItemId">
+            <summary>
+            主表主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ItemsDetailInfo.F_ItemCode">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ItemsDetailInfo.F_ItemName">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ItemsDetailInfo.F_SimpleSpelling">
+            <summary>
+            简拼
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ItemsDetailInfo.F_IsDefault">
+            <summary>
+            默认
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ItemsDetailInfo.F_Layers">
+            <summary>
+            层次
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Sys_ItemsInfo">
+            <summary>
+            选项主表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Sys_ItemsInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ItemsInfo.F_IsTree">
+            <summary>
+            树型
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ItemsInfo.F_Layers">
+            <summary>
+            层次
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Sys_ModuleButtonInfo">
+            <summary>
+            模块按钮
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Sys_ModuleButtonInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleButtonInfo.F_ModuleId">
+            <summary>
+            模块主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleButtonInfo.F_Layers">
+            <summary>
+            层次
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleButtonInfo.F_Icon">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleButtonInfo.F_Location">
+            <summary>
+            位置
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleButtonInfo.F_JsEvent">
+            <summary>
+            事件
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleButtonInfo.F_UrlAddress">
+            <summary>
+            连接
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleButtonInfo.F_Split">
+            <summary>
+            分开线
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleButtonInfo.F_IsPublic">
+            <summary>
+            公共
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleButtonInfo.F_AllowEdit">
+            <summary>
+            允许编辑
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleButtonInfo.F_AllowDelete">
+            <summary>
+            允许删除
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Sys_ModuleFormInfo">
+            <summary>
+            模块表单
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Sys_ModuleFormInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleFormInfo.F_Id">
+            <summary>
+            表单主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleFormInfo.F_ModuleId">
+            <summary>
+            模块主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleFormInfo.F_EnCode">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleFormInfo.F_FullName">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleFormInfo.F_FormJson">
+            <summary>
+            表单控件Json
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleFormInfo.F_SortCode">
+            <summary>
+            排序码
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleFormInfo.F_DeleteMark">
+            <summary>
+            删除标志
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleFormInfo.F_EnabledMark">
+            <summary>
+            有效标志
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleFormInfo.F_Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleFormInfo.F_CreatorTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleFormInfo.F_CreatorUserId">
+            <summary>
+            创建用户
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleFormInfo.F_LastModifyTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleFormInfo.F_LastModifyUserId">
+            <summary>
+            最后修改用户
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleFormInfo.F_DeleteTime">
+            <summary>
+            删除时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleFormInfo.F_DeleteUserId">
+            <summary>
+            删除用户
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Sys_ModuleFormInstanceInfo">
+            <summary>
+            模块表单实例
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Sys_ModuleFormInstanceInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleFormInstanceInfo.F_Id">
+            <summary>
+            表单实例主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleFormInstanceInfo.F_FormId">
+            <summary>
+            表单主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleFormInstanceInfo.F_ObjectId">
+            <summary>
+            对象主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleFormInstanceInfo.F_InstanceJson">
+            <summary>
+            表单实例Json
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleFormInstanceInfo.F_SortCode">
+            <summary>
+            排序码
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleFormInstanceInfo.F_CreatorTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleFormInstanceInfo.F_CreatorUserId">
+            <summary>
+            创建用户
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Sys_ModuleInfo">
+            <summary>
+            系统模块
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Sys_ModuleInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleInfo.F_ParentId">
+            <summary>
+            父级
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleInfo.F_Layers">
+            <summary>
+            层次
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleInfo.F_EnCode">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleInfo.F_FullName">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleInfo.F_Icon">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleInfo.F_UrlAddress">
+            <summary>
+            连接
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleInfo.F_Target">
+            <summary>
+            目标
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleInfo.F_IsMenu">
+            <summary>
+            菜单
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleInfo.F_IsExpand">
+            <summary>
+            展开
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleInfo.F_IsPublic">
+            <summary>
+            公共
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleInfo.F_AllowEdit">
+            <summary>
+            允许编辑
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleInfo.F_AllowDelete">
+            <summary>
+            允许删除
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_ModuleInfo.F_IsApp">
+            <summary>
+            是否App
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Sys_OrganizeInfo">
+            <summary>
+            组织表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Sys_OrganizeInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_OrganizeInfo.F_Layers">
+            <summary>
+            层次
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_OrganizeInfo.F_ShortName">
+            <summary>
+            简称
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_OrganizeInfo.F_CategoryId">
+            <summary>
+            分类
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_OrganizeInfo.F_ManagerId">
+            <summary>
+            负责人
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_OrganizeInfo.F_TelePhone">
+            <summary>
+            电话
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_OrganizeInfo.F_MobilePhone">
+            <summary>
+            手机
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_OrganizeInfo.F_WeChat">
+            <summary>
+            微信
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_OrganizeInfo.F_Fax">
+            <summary>
+            传真
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_OrganizeInfo.F_Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_OrganizeInfo.F_AreaId">
+            <summary>
+            归属区域
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_OrganizeInfo.F_Address">
+            <summary>
+            联系地址
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_OrganizeInfo.F_AllowEdit">
+            <summary>
+            允许编辑
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_OrganizeInfo.F_AllowDelete">
+            <summary>
+            允许删除
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Sys_PlatformInfo">
+            <summary>
+            行政区域表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Sys_PlatformInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Sys_RoleAuthorizeInfo">
+            <summary>
+            角色授权表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Sys_RoleAuthorizeInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_RoleAuthorizeInfo.F_Id">
+            <summary>
+            角色授权主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_RoleAuthorizeInfo.F_ItemType">
+            <summary>
+            项目类型1-模块2-按钮3-列表
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_RoleAuthorizeInfo.F_ItemId">
+            <summary>
+            项目主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_RoleAuthorizeInfo.F_ObjectType">
+            <summary>
+            对象分类1-角色2-部门-3用户
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_RoleAuthorizeInfo.F_ObjectId">
+            <summary>
+            对象主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_RoleAuthorizeInfo.F_SortCode">
+            <summary>
+            排序码
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_RoleAuthorizeInfo.F_CreatorTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_RoleAuthorizeInfo.F_CreatorUserId">
+            <summary>
+            创建用户
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Sys_RoleInfo">
+            <summary>
+            角色表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Sys_RoleInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_RoleInfo.F_Id">
+            <summary>
+            角色主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_RoleInfo.F_OrganizeId">
+            <summary>
+            组织主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_RoleInfo.F_Category">
+            <summary>
+            分类:1-角色2-岗位
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_RoleInfo.F_EnCode">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_RoleInfo.F_FullName">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_RoleInfo.F_Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_RoleInfo.F_AllowEdit">
+            <summary>
+            允许编辑
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_RoleInfo.F_AllowDelete">
+            <summary>
+            允许删除
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_RoleInfo.F_SortCode">
+            <summary>
+            排序码
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_RoleInfo.F_DeleteMark">
+            <summary>
+            删除标志
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_RoleInfo.F_EnabledMark">
+            <summary>
+            有效标志
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_RoleInfo.F_Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_RoleInfo.F_CreatorTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_RoleInfo.F_CreatorUserId">
+            <summary>
+            创建用户
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_RoleInfo.F_LastModifyTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_RoleInfo.F_LastModifyUserId">
+            <summary>
+            最后修改用户
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_RoleInfo.F_DeleteTime">
+            <summary>
+            删除时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_RoleInfo.F_DeleteUserId">
+            <summary>
+            删除用户
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Sys_TerminalGridColumnSettingInfo">
+            <summary>
+            终端列表显示设置
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Sys_TerminalGridColumnSettingInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_TerminalGridColumnSettingInfo.F_ModuleId">
+            <summary>
+            模块ID
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_TerminalGridColumnSettingInfo.F_ModuleName">
+            <summary>
+            模块名称
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_TerminalGridColumnSettingInfo.F_ModuleIcon">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_TerminalGridColumnSettingInfo.F_Url">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Sys_TerminalListSettingInfo">
+            <summary>
+            终端列表显示设置
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Sys_TerminalListSettingInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_TerminalListSettingInfo.F_Display">
+            <summary>
+            显示值
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_TerminalListSettingInfo.F_Type">
+            <summary>
+            文本框类型
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_TerminalListSettingInfo.F_Address">
+            <summary>
+            API方法地址
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_TerminalListSettingInfo.F_Required">
+            <summary>
+            是否必填
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Sys_UserInfo">
+            <summary>
+            用户表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Sys_UserInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserInfo.F_Account">
+            <summary>
+            账户
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserInfo.F_UserPassword">
+            <summary>
+            用户密码
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserInfo.F_RealName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserInfo.F_NickName">
+            <summary>
+            呢称
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserInfo.F_HeadIcon">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserInfo.F_Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserInfo.F_Birthday">
+            <summary>
+            生日
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserInfo.F_MobilePhone">
+            <summary>
+            手机
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserInfo.F_Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserInfo.F_WeChat">
+            <summary>
+            微信
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserInfo.F_ManagerId">
+            <summary>
+            主管主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserInfo.F_SecurityLevel">
+            <summary>
+            安全级别
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserInfo.F_Signature">
+            <summary>
+            个性签名
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserInfo.F_OrganizeId">
+            <summary>
+            组织主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserInfo.F_DepartmentId">
+            <summary>
+            部门主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserInfo.F_RoleId">
+            <summary>
+            角色主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserInfo.F_DutyId">
+            <summary>
+            岗位主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserInfo.F_IsAdministrator">
+            <summary>
+            是否管理员
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Sys_UserTokenInfo">
+            <summary>
+            用户令牌
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Sys_UserTokenInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserTokenInfo.F_UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserTokenInfo.F_Token">
+            <summary>
+            令牌
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserTokenInfo.F_Sortid">
+            <summary>
+            排序号
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserTokenInfo.F_DeleteMark">
+            <summary>
+            删除标志
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserTokenInfo.F_SortCode">
+            <summary>
+            排序码
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserTokenInfo.F_EnabledMark">
+            <summary>
+            有效标志
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserTokenInfo.F_CreatorTime">
+            <summary>
+            创建日期
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserTokenInfo.F_CreatorUserId">
+            <summary>
+            创建用户主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserTokenInfo.F_LastModifyTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserTokenInfo.F_LastModifyUserId">
+            <summary>
+            最后修改用户
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserTokenInfo.F_DeleteTime">
+            <summary>
+            删除时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_UserTokenInfo.F_DeleteUserId">
+            <summary>
+            删除用户
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Sys_VouchTypeDefaultInfo">
+            <summary>
+            业务类型默认值表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Sys_VouchTypeDefaultInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_VouchTypeDefaultInfo.F_VouchId">
+            <summary>
+            业务类型Id
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_VouchTypeDefaultInfo.F_VouchDefaultItemId">
+            <summary>
+            默认值项Id
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_VouchTypeDefaultInfo.F_DefaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Sys_VouchTypeInfo">
+            <summary>
+            业务类型
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Sys_VouchTypeInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_VouchTypeInfo.F_Layers">
+            <summary>
+            层次
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_VouchTypeInfo.F_Prefix">
+            <summary>
+            业务类型前缀
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_VouchTypeInfo.F_ModuleId">
+            <summary>
+            模块ID
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_VouchTypeInfo.F_InoutType">
+            <summary>
+            出入库类型
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_VouchTypeInfo.F_Source">
+            <summary>
+            来源类型
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_VouchTypeInfo.F_SourceDb">
+            <summary>
+            来源库
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_VouchTypeInfo.F_SourceTable">
+            <summary>
+            来源表
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_VouchTypeInfo.F_SourceBusiness">
+            <summary>
+            来源业务类型
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_VouchTypeInfo.F_BrbFlag">
+            <summary>
+            红字
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_VouchTypeInfo.F_IsNeedDverfy">
+            <summary>
+            审核
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_VouchTypeInfo.F_IsAllMatch">
+            <summary>
+            完全匹配
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_VouchTypeInfo.F_IsFiFo">
+            <summary>
+            先进先出
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_VouchTypeInfo.F_Bprint">
+            <summary>
+            是否打印
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_VouchTypeInfo.F_Bdefalut">
+            <summary>
+            默认来源
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Sys_VouchTypeSettingInfo">
+            <summary>
+            业务类型选项表
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Sys_VouchTypeSettingInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_VouchTypeSettingInfo.F_VouchId">
+            <summary>
+            业务类型Id
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_VouchTypeSettingInfo.F_VouchSettingItemId">
+            <summary>
+            选项Id
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_VouchTypeSettingInfo.F_ItemValue">
+            <summary>
+            选项值
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.GridColumnEntity.label">
+            <summary>
+            列显示
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.GridColumnEntity.name">
+            <summary>
+            映射字段
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.GridColumnEntity.hidden">
+            <summary>
+            是否隐藏
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.GridColumnEntity.key">
+            <summary>
+            是否主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.GridColumnEntity.width">
+            <summary>
+            宽度
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.GridColumnEntity.align">
+            <summary>
+            对齐方式
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.GridColumnEntity.formatter">
+            <summary>
+            格式化函数
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.GridColumnEntity.formatoptions">
+            <summary>
+            格式化函数
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Sys_DbBackupInfo">
+            <summary>
+            数据库备份
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Sys_DbBackupInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_DbBackupInfo.F_BackupType">
+            <summary>
+            备份类型
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_DbBackupInfo.F_DbName">
+            <summary>
+            数据库名称
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_DbBackupInfo.F_FileName">
+            <summary>
+            文件名称
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_DbBackupInfo.F_FileSize">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_DbBackupInfo.F_FilePath">
+            <summary>
+            文件路径
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_DbBackupInfo.F_BackupTime">
+            <summary>
+            备份时间
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Sys_FilterIPInfo">
+            <summary>
+            过滤IP
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Sys_FilterIPInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_FilterIPInfo.F_Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_FilterIPInfo.F_StartIP">
+            <summary>
+            开始IP
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_FilterIPInfo.F_EndIP">
+            <summary>
+            结束IP
+            </summary>
+        </member>
+        <member name="T:KGMFramework.WebApp.Entity.Sys_LogInfo">
+            <summary>
+            系统日志
+            </summary>
+        </member>
+        <member name="M:KGMFramework.WebApp.Entity.Sys_LogInfo.#ctor">
+            <summary>
+            默认构造函数（需要初始化属性的在此处理）
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_LogInfo.F_Id">
+            <summary>
+            日志主键
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_LogInfo.F_Date">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_LogInfo.F_Account">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_LogInfo.F_NickName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_LogInfo.F_Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_LogInfo.F_IPAddress">
+            <summary>
+            IP地址
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_LogInfo.F_IPAddressName">
+            <summary>
+            IP所在城市
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_LogInfo.F_ModuleId">
+            <summary>
+            系统模块Id
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_LogInfo.F_ModuleName">
+            <summary>
+            系统模块
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_LogInfo.F_Result">
+            <summary>
+            结果
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_LogInfo.F_Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_LogInfo.F_CreatorTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:KGMFramework.WebApp.Entity.Sys_LogInfo.F_CreatorUserId">
+            <summary>
+            创建用户
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,65 @@
+USE [KGM_WMS_DB]
+GO
+
+/****** Object:  StoredProcedure [dbo].[KGM_CREATEORDERNO]    Script Date: 2019/3/28 10:57:40 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+IF EXISTS(SELECT  * FROM SYS.PROCEDURES WHERE  OBJECT_ID = OBJECT_ID(N'[dbo].[KGM_CREATEORDERNO]'))
+   DROP PROC [dbo].[KGM_CREATEORDERNO]
+GO
+CREATE PROC [dbo].[KGM_CREATEORDERNO]
+@Prefix NVARCHAR(50),		--单据前缀
+@orderNo NVARCHAR(50) OUTPUT
+AS
+SET XACT_ABORT ON
+--开始事务
+BEGIN TRAN
+
+DECLARE @dDate DATETIME
+SET @dDate=GETDATE()
+DECLARE @nowdate NVARCHAR(20)
+SELECT @nowdate = CONVERT(NVARCHAR(10),@dDate,112)
+
+
+DECLARE @theno NVARCHAR(50)		
+IF EXISTS(SELECT * FROM SYS_serialNo WITH(UPDLOCK) WHERE Prefix = @Prefix 
+			AND CONVERT(NVARCHAR(10),date,20) = CONVERT(NVARCHAR(10),@dDate,20))
+BEGIN
+	SELECT @theno = seqNo + 1 FROM SYS_serialNo WHERE Prefix = @Prefix 
+			AND CONVERT(NVARCHAR(10),date,20) = CONVERT(NVARCHAR(10),@dDate,20)
+END
+ELSE
+BEGIN
+	SET @theno = '1'
+END
+
+DECLARE @vouchMaxValue INT
+SET @vouchMaxValue=4
+DECLARE @flowNo NVARCHAR(50) --流水号
+SET @flowNo = right('0000000000'+CONVERT(NVARCHAR,@theno),@vouchMaxValue)
+
+--处理SYS_SerialNo序列号表
+--判断是否表中已经存在
+IF NOT EXISTS (SELECT ID FROM SYS_SerialNo WHERE Prefix = @Prefix 
+			AND CONVERT(NVARCHAR(10),date,20) = CONVERT(NVARCHAR(10),@dDate,20))
+BEGIN
+	INSERT INTO SYS_SerialNo(ID,Prefix,date,seqNo)
+	VALUES (NEWID(),@Prefix,@dDate,1)
+END
+ELSE
+BEGIN
+	UPDATE SYS_SerialNo SET seqNo = seqNo + 1
+	WHERE Prefix = @Prefix AND CONVERT(NVARCHAR(10),date,20) = CONVERT(NVARCHAR(10),@dDate,20)
+END
+
+Select @orderNo = (@Prefix + @nowdate + @flowNo)
+
+COMMIT TRAN
+
+
+GO
+
+

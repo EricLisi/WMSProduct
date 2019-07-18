@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+
+<form id="form1" class="form-horizontal">
+    <div style="padding-top: 20px; margin-right: 20px;">
+        <table class="form">
+            <tr>
+                <th class="formTitle">项目号</th>
+                <td class="formValue">
+                    <input id="F_PROTOCOL_ID" name="F_PROTOCOL_ID" type="text" class="form-control">
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">标签号</th>
+                <td class="formValue">
+                    <input id="F_LABEL_ID" name="F_LABEL_ID" type="text" class="form-control">
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">版本号</th>
+                <td class="formValue">
+                    <input id="F_VERSION" name="F_VERSION" type="text" class="form-control">
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">语言版本</th>
+                <td class="formValue">
+                    <input id="F_COUNTRY" name="F_COUNTRY" type="text" class="form-control">
+                </td>
+            </tr>
+
+            <tr>
+                <th class="formTitle">审核状态</th>
+                <td class="formValue">
+                    <select id="STATE" name="STATE" class="form-control">
+                        <option value="">==请选择==</option>
+                        <option value="0" title="未审核">未审核</option>
+                        <option value="1" title="已审核">已审核</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+</form>
+
+<script>
+    $(function () {
+        $("#STATE").select2({
+            minimumResultsForSearch: -1
+        });
+    })
+    function Search() {
+        var xm, bq, yy, zt;
+        xm = $('#F_PROTOCOL_ID').val();
+        bq = $('#F_LABEL_ID').val();
+        bb = $('#F_VERSION').val();
+        yy = $('#F_COUNTRY').val();
+        zt = $('#STATE').val();
+        $.currentWindow().$('#' + $.request('gridId')).jqGrid('setGridParam', {
+            postData: { keyword: xm + "|" + bq + "|" + bb + "|" + yy + "|" + zt + "&0", searchFiled: "F_PROTOCOL_ID|F_LABEL_ID|F_VERSION|F_COUNTRY|F_EnabledMark" }
+        }).trigger('reloadGrid');
+        $.modalClose();
+    }
+</script>

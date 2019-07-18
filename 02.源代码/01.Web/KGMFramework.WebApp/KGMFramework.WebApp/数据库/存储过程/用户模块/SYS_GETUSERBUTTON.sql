@@ -1,0 +1,37 @@
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[SYS_GETUSERBUTTON]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+	DROP PROC [SYS_GETUSERBUTTON]
+GO
+/*
+	获取用户可操作按钮
+*/
+CREATE PROC [SYS_GETUSERBUTTON]
+@USERID NVARCHAR(50)	--用户ID
+AS
+IF @USERID = 'kgmAdmin' 
+BEGIN
+	SELECT * FROM Sys_ModuleButton ORDER BY F_SortCode
+END
+ELSE
+BEGIN
+	DECLARE @ROLEID NVARCHAR(50)	--角色ID
+	DECLARE @ISADMIN INT			--是否系统管理员
+
+	SELECT @ROLEID = F_RoleId,@ISADMIN = F_IsAdministrator
+	FROM Sys_User
+	WHERE F_Id = @USERID
+
+	IF @ISADMIN = 1
+	BEGIN
+		SELECT * FROM Sys_ModuleButton
+	END
+	ELSE
+	BEGIN
+		SELECT B.*
+		FROM Sys_RoleAuthorize AS A
+		INNER JOIN Sys_ModuleButton AS B ON A.F_ItemId = B.F_Id
+		WHERE A.F_ObjectId = @ROLEID AND F_ItemType = 2
+	END
+END
+
+
+ 

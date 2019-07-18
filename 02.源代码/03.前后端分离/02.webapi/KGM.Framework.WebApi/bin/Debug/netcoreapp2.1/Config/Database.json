@@ -1,0 +1,9 @@
+﻿{
+  "ConnectionStrings": { //连接设置
+    "DefaultConnection": "server=192.168.168.8,2433;database=KGM_WMS_PRODUCT;uid=sa;pwd=zzz;",
+    "sqlserverConnection": "server=192.168.168.8,2433;database=KGM_WMS_PRODUCT;uid=sa;pwd=zzz;",
+    // "sqlserverConnection": "server=192.168.168.8;database=PRODUCT_WMS_DB;uid=sa;pwd=zzz;",
+    "mysqlConnection": "Database=kgm_platformdb;Data Source=127.0.0.1;User Id=root;Password=zzzz;pooling=false;CharSet=utf8;port=3306;",
+    "DbType": "sqlserver"
+  }
+}

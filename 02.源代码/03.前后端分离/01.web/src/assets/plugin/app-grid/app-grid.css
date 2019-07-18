@@ -1,0 +1,455 @@
+﻿.appgrid-layout {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    color: #333;
+    overflow: hidden;
+    padding-top: 28px;
+}
+
+.appgrid-move-line {
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background: #666;
+    top: 0;
+    left: 10px;
+    display: none;
+    z-index: 11;
+    cursor: col-resize;
+}
+
+/*表头区域*/
+.appgrid-head {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: #f8f8f8;
+}
+/*交界区域*/
+.appgrid-border {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid #ccc;
+    height: 28px;
+    z-index: 2;
+    background-color: #f8f8f8;
+}
+.appgrid-border-cell {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    border-right: 1px solid #ccc;
+}
+
+.appgrid-border-cb {
+    text-align: center;
+}
+    .appgrid-border-cb img {
+        cursor: pointer;
+    }
+
+/*头部显示区域*/
+.appgrid-head-col {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+
+    position: absolute;
+    top: 0;
+    height: 100%;
+    z-index: 1;
+}
+
+.appgrid-head-cell {
+    position: absolute;
+    line-height: 27px;
+    height: 28px;
+    width: 100px;
+    top: 0;
+    left: 0;
+    padding: 0px 3px;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.appgrid-heed-sort {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    width: 16px;
+    text-align: center;
+    line-height: initial;
+    margin-top: -12px;
+    display: none;
+}
+
+    .appgrid-heed-sort > i {
+        font-size: 16px;
+        color: #B3B7BA;
+        display: block;
+    }
+
+        .appgrid-heed-sort > i.active {
+            color: #475059;
+        }
+
+        .appgrid-heed-sort > i.fa-caret-up {
+            margin-bottom: -8px;
+        }
+
+        .appgrid-heed-sort > i.fa-caret-down {
+            margin-top: -8px;
+        }
+
+.appgrid-heed-move {
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    top: 0;
+    right: -2px;
+    cursor: col-resize;
+    z-index: 10;
+}
+
+
+
+
+/*数据显示区域*/
+.appgrid-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+
+.appgrid-left {
+    position: absolute;
+    min-height: 100%;
+    width: 30px;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 2;
+}
+
+.appgrid-right {
+    position: relative;
+    min-height: 100%;
+    background-color: #fff;
+    z-index:1;
+}
+
+/*单元格*/
+.appgrid-data-cell {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 12px;
+    color: #333;
+    width: 30px;
+    line-height: 27px;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding: 0px 3px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.appgrid-layout:hover .appgrid-data-cell-over {
+    background-color: #eee;
+}
+.appgrid-selected {
+    background-color: #2F94EE !important;
+    border-bottom: 1px solid #2F94EE !important;
+    border-right: 1px solid #2F94EE !important;
+    color: #fff;
+}
+
+.appgrid-data-cell .fa-toggle-on {
+    color: #039cfd;
+    font-size: 13pt;
+    vertical-align: middle;
+}
+
+    .appgrid-data-cell .fa-toggle-off {
+        color: #aaa;
+        font-size: 13pt;
+        vertical-align: middle;
+    }
+
+
+.appgrid-edit-cell {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+    .appgrid-edit-cell > div {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border: 0 !important;
+    }
+
+    .appgrid-edit-cell > input {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border: 0 !important;
+        outline:0;
+        padding-left:4px;
+        
+    }
+
+    .appgrid-edit-cell .radio, .appgrid-edit-cell .checkbox {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        -khtml-user-select: none;
+        user-select: none;
+        margin-top: 6px;
+        margin-bottom: initial;
+    }
+
+        .appgrid-edit-cell .checkbox input[type=checkbox], .appgrid-edit-cell .radio input[type=radio] {
+            margin-top: 3px;
+            margin-left: -15px;
+        }
+
+
+    .appgrid-data-cell > .fa-ellipsis-h {
+        display: block;
+        position: absolute;
+        top: 9px;
+        right: 4px;
+        color: #888;
+        cursor: pointer;
+    }
+
+
+/*子表展开项*/
+.appgrid-sub {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 29px;
+    border-bottom: 1px solid #ccc;
+}
+    .appgrid-sub > div {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-left: 1px solid #ccc;
+    }
+
+/*列表底部区域*/
+.appgrid-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+/*翻页条*/
+.appgrid-page-bar {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 0px 0px 3px 3px;
+    z-index: 5;
+}
+
+.appgrid-page-bar-info {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 12px;
+    height: 100%;
+    line-height: 34px;
+    color: #475059;
+}
+
+    .appgrid-page-bar-info > span {
+        position: relative;
+        top: -1px;
+        color: #475059;
+    }
+
+.appgrid-page-bar .paginations {
+    margin: 0px;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    height: 26px;
+    line-height: 26px;
+}
+
+.appgrid-page-bar .pagination input {
+    display: block;
+    top: 0;
+    left: 0;
+    height: 26px;
+    margin: 0;
+    top: 0;
+    border-radius: 4px;
+    width: 45px;
+    line-height: 1.5;
+    position: relative;
+    float: left;
+    text-align: center;
+}
+
+
+.appgrid-page-bar .pagination {
+    margin: 0px;
+}
+
+    .appgrid-page-bar .pagination > li > a, .pagination > li > span {
+        color: #475059;
+    }
+
+.appgrid-page-bar .pagination-sm > li > a {
+    padding: 3px 8px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.appgrid-page-bar .pagination > li > span {
+    padding: 3px 0px;
+    font-size: 12px;
+    line-height: 1.5;
+    border: 0px;
+}
+
+.pagination > li > a.active,
+.pagination > li > a:focus {
+    color: #ffffff;
+    background-color: #3498DB;
+    border-color: #3498DB;
+}
+
+.pagination > li > span.active,
+.pagination > li > span:focus {
+    color: #475059;
+}
+
+.pagination > li > span:hover {
+    background-color: #fff;
+    color: #475059;
+}
+
+/*添加工具条*/
+.appgrid-toolbar {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    height: 29px;
+    width: 100%;
+    background: #f8f8f8;
+    border-top: 1px solid #ccc;
+    z-index: 2;
+}
+    .appgrid-toolbar > span {
+        line-height: 28px;
+        margin-left: 10px;
+        cursor: pointer;
+        color: #555;
+    }
+        .appgrid-toolbar > span:hover {
+            color: #000;
+        }
+
+
+/*树形*/
+.appgrid-data-cell-expend {
+    position: relative;
+    float: left;
+    text-align: right;
+    height: 100%;
+}
+
+    .appgrid-data-cell-expend > i {
+        width: 16px;
+        text-align: center;
+        height: 100%;
+        line-height: 28px;
+    }
+
+/*统计条*/
+.appgrid-statistic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 29px;
+    width: 100%;
+    border-top: 1px solid #ccc;
+    background: #f8f8f8;
+}
+.appgrid-statistic-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 28px;
+    background: #f8f8f8;
+    z-index:1;
+}
+.appgrid-statistic-right {
+    position: relative;
+    height: 28px;
+}
+.jfGird-statistic-cell {
+    position:absolute;
+    border-right: 1px solid #ccc;
+    height: 100%;
+    line-height: 27px;
+    padding: 0px 3px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/**/
+.appgrid-nodata-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 180px;
+    width: 380px;
+    margin: -90px 0px 0px -190px;
+    z-index: 1;
+}

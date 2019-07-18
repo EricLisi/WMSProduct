@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "AssetForm";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<form id="form1">
+    <div style="margin-top: 10px; margin-left: 0px; margin-right: 10px;">
+        <table class="form">
+            <tr>
+                <th class="formTitle">产品名称</th>
+                <td class="formValue">
+                    <input id="F_GoodsName" name="F_GoodsName" type="text" class="form-control required" placeholder="产品名称"  readonly="readonly"/>
+                </td>
+                <th class="formTitle">数量</th>
+                <td class="formValue">
+                    <input id="F_Number" name="F_Number" type="text" class="form-control required" placeholder="产品实际数量" />
+                </td>
+            </tr>
+
+
+            <tr>
+                <th class="formTitle">所属仓库</th>
+                <td class="formValue">
+                    <input id="F_WarehouseName" name="F_WarehouseName" type="text" class="form-control required" placeholder="所属仓库s" readonly="readonly" />
+                </td>
+                <th class="formTitle">所属货位</th>
+                <td class="formValue">
+                    <input id="F_CargoPositionName" name="F_CargoPositionName" type="text" class="form-control required" placeholder="所属货位" readonly="readonly" />
+                </td>
+            </tr>
+
+            <tr>
+                <th class="formTitle">生产日期</th>
+                <td class="formValue">
+                    <input id="F_ProDate" name="F_ProDate" type="text" class="form-control required" placeholder="生产日期" readonly="readonly" />
+                </td>
+                <th class="formTitle">失效日期</th>
+                <td class="formValue">
+                    <input id="F_ExpiratDate" name="F_ExpiratDate" type="text" class="form-control required" placeholder="失效日期" readonly="readonly" />
+                </td>
+            </tr>
+
+            <tr>
+                <th class="formTitle">单位</th>
+                <td class="formValue">
+                    <input id="F_Unit" name="F_Unit" type="text" class="form-control required" placeholder="单位" readonly="readonly" />
+                </td>
+                <th class="formTitle">规格</th>
+                <td class="formValue">
+                    <input id="F_SpecifModel" name="F_SpecifModel" type="text" class="form-control required" placeholder="规格" readonly="readonly" />
+                </td>
+            </tr>
+        </table>
+        <input id="F_Id" name="F_Id" type="text" class="form-control required" style="display:none" value="1" />
+
+    </div>
+</form>
+<script src="~/Content/js/framework-FormVar.js"></script>
+<script src="~/Areas/WmsManage/Content/js/StockMake/AssetForm.js"></script>
+<script src="~/Content/js/framework-Form.js"></script>

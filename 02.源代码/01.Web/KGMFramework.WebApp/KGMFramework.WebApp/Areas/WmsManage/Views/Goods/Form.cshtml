@@ -1,0 +1,134 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<form id="form1">
+    <div style="padding-top: 20px; margin-right: 20px;">
+        <table class="form">
+            <tr>
+                <th class="formTitle">产品编码</th>
+                <td class="formValue">
+                    <input id="F_EnCode" name="F_EnCode" type="text" class="form-control required" placeholder="请输入产品编码" onpaste="return false" ondragenter="return false"
+                           onkeyup="value=value.replace(/[\u4e00-\u9fa5]/ig,'')" />
+                </td>
+                <th class="formTitle">产品名称</th>
+                <td class="formValue">
+                    <input id="F_FullName" name="F_FullName" type="text" class="form-control required" placeholder="请输入产品名称" />
+                </td>
+            </tr>
+            <tr>
+                @*<th class="formTitle">产品分类</th>
+                <td class="formValue">
+                    <select id="F_CategoryID" name="F_CategoryID" class="form-control">
+                        <option value="">==请选择==</option>
+                    </select>
+                    @*<input id="F_CategoryID" name="F_CategoryID" type="text" class="form-control required" placeholder="请输入产品类型" />
+                </td>*@
+                <th class="formTitle">规格型号</th>
+                <td class="formValue">
+                    <input id="F_SpecifModel" name="F_SpecifModel" type="text" class="form-control " placeholder="请输入规格型号" />
+                </td>
+                <th class="formTitle">单位</th>
+                <td class="formValue">
+                    <input id="F_Unit" name="F_Unit" type="text" class="form-control" placeholder="请输入单位" />
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">基本税率</th>
+                <td class="formValue">
+                    <input id="F_BasicRate" name="F_BasicRate" type="number" class="form-control" placeholder="请输入基本税率" />
+                </td>
+                <th class="formTitle">保质期(天)</th>
+                <td class="formValue">
+                    <input id="F_ShelfLife" name="F_ShelfLife" type="number" class="form-control" placeholder="请输入保质期" />
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">销售价格</th>
+                <td class="formValue">
+                    <input id="F_SellingPrice" name="F_SellingPrice" type="text" class="form-control" placeholder="请输入销售价格" />
+                </td>
+                <th class="formTitle">采购价格</th>
+                <td class="formValue">
+                    <input id="F_PurchasePrice" name="F_PurchasePrice" type="text" class="form-control" placeholder="请输入采购价格" />
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">长(m)</th>
+                <td class="formValue">
+                    <input id="F_Long" name="F_Long" type="text" class="form-control" placeholder="请输入产品长度" />
+                </td>
+                <th class="formTitle">宽(m)</th>
+                <td class="formValue">
+                    <input id="F_Wide" name="F_Wide" type="text" class="form-control" placeholder="请输入产品宽度" />
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">高(m)</th>
+                <td class="formValue">
+                    <input id="F_Height" name="F_Height" type="text" class="form-control" placeholder="请输入产品高度" onblur="GetVolme()"/>
+                </td>
+                <th class="formTitle">体积(m³)</th>
+                <td class="formValue">
+                    <input id="F_Volume" name="F_Volume" type="text" class="form-control" placeholder="请输入体积" disabled="disabled"/>
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">净重(kg)</th>
+                <td class="formValue">
+                    <input id="F_NetWeight" name="F_NetWeight" type="text" class="form-control" placeholder="请输入净重" />
+                </td>
+                <th class="formTitle">毛重(kg)</th>
+                <td class="formValue">
+                    <input id="F_GrossWeight" name="F_GrossWeight" type="text" class="form-control" placeholder="请输入毛重" />
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">有效</th>
+                <td class="formValue">
+                    <div class="ckbox">
+                        <input id="F_EnabledMark" name="F_EnabledMark" type="checkbox" checked="checked"><label for="F_EnabledMark">有效</label>
+                    </div>
+                </td>
+                <th class="formTitle">是否启用批次</th>
+                <td class="formValue">
+                    <div class="ckbox">
+                        <input id="F_OpenBatch" name="F_OpenBatch" type="checkbox" checked="checked"><label for="F_OpenBatch">启用批次</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle" valign="top" style="padding-top: 5px;">
+                    备注
+                </th>
+                <td class="formValue" colspan="2">
+                    <textarea id="F_Description" name="F_Description" class="form-control" style="height: 70px; width:570px;"></textarea>
+                </td>
+            </tr>
+        </table>
+    </div>
+</form>
+
+<script src="~/Content/js/framework-FormVar.js"></script>
+<script src="~/Areas/WmsManage/Content/js/Goods/Form.js"></script>
+<script src="~/Content/js/framework-Form.js"></script>
+
+<script>
+    $(function () {
+        GetVolme();
+    });
+
+    function GetVolme() {
+        var h = $("#F_Height").val();
+        var w = $("#F_Wide").val();
+        var l = $("#F_Long").val();
+        if (h==""||w==""||l=="") {
+            $("#F_Volume").val();
+        }
+
+        var v = h * w * l;
+
+        $("#F_Volume").val(v);
+
+    }
+</script>

@@ -1,0 +1,1184 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KGM.Framework.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:KGM.Framework.WebApi.Controllers.Base.AppBaseController">
+            <summary>
+            父控制器
+            </summary>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Controllers.Base.AppBaseController.PagerActionEntity`1">
+            <summary>
+            分页返回对象
+            </summary>
+        </member>
+        <member name="F:KGM.Framework.WebApi.Controllers.Base.AppBaseController.PagerActionEntity`1.Data">
+            <summary>
+            数据源
+            </summary>
+        </member>
+        <member name="F:KGM.Framework.WebApi.Controllers.Base.AppBaseController.PagerActionEntity`1.PageIndex">
+            <summary>
+            当前页
+            </summary>
+        </member>
+        <member name="F:KGM.Framework.WebApi.Controllers.Base.AppBaseController.PagerActionEntity`1.PageCount">
+            <summary>
+            页数
+            </summary>
+        </member>
+        <member name="F:KGM.Framework.WebApi.Controllers.Base.AppBaseController.PagerActionEntity`1.Total">
+            <summary>
+            总记录数
+            </summary>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.Base.AppBaseController.PagerListAction``1(KGM.Framework.Infrastructure.PagerInfo,KGM.Framework.Infrastructure.PagerEntity{``0})">
+            <summary>
+            返回分页数据
+            </summary>
+            <typeparam name="TEntity">对象</typeparam>
+            <param name="pager">分页对象</param> 
+            <param name="data">PagerEntity数据源</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.Base.AppBaseController.CreateAction(System.Boolean,System.String)">
+            <summary>
+            返回创建成功的响应
+            </summary>
+            <param name="state">状态</param>
+            <param name="message">返回信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.Base.AppBaseController.OKAction(System.Boolean,System.String)">
+            <summary>
+            返回200的响应
+            </summary>
+            <param name="state">状态</param>
+            <param name="message">返回信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.Base.AppBaseController.NotFoundAction(System.Boolean,System.String)">
+            <summary>
+            返回400的响应
+            </summary>
+            <param name="state">状态</param>
+            <param name="message">返回信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.Base.AppBaseController.NoContentAction">
+            <summary>
+            返回无参数的响应
+            </summary> 
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.Base.AppBaseController.SetPager(System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            设置分页对象
+            </summary>
+            <param name="pageIndex">当前页</param>
+            <param name="pageSize">每页数量</param>
+            <param name="sortFiled">排序字段 默认 SortCode</param>
+            <param name="sortType">排序类型 默认 ASC</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.Base.AppBaseController.ListToTreeJson(System.Collections.Generic.IList{KGM.Framework.WebApi.Model.Common.TreeNode},System.String,System.Collections.Generic.IList{KGM.Framework.WebApi.Model.Common.TreeNode})">
+            <summary>
+            递归初始化树
+            </summary>
+            <param name="nodes">结果</param>
+            <param name="parentID">父ID</param>
+            <param name="sources">数据源</param>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Controllers.LoginController">
+            <summary>
+            用户登录接口
+            </summary> 
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.LoginController.#ctor(KGM.Framework.Application.Services.IUserService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="service">用户服务</param> 
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.LoginController.GetAuthToken(KGM.Framework.Application.Dtos.UserLoginDto)">
+            <summary>
+            获取认证token
+            </summary>
+            <param name="LoginDto">登录对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.LoginController.RefreshToken(KGM.Framework.Application.Dtos.UserGetAuthToken)">
+            <summary>
+            获取认证token
+            </summary>
+            <param name="user">登录对象</param>
+            <returns></returns>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Controllers.AreaController">
+            <summary>
+            地区管理接口
+            </summary>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.AreaController.#ctor(KGM.Framework.Application.Services.IAreaService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="service"></param>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.AreaController.Add(KGM.Framework.Application.Dtos.AreaSingleDto)">
+            <summary>
+            新增地区
+            </summary>
+            <param name="SingleDto">地区对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.AreaController.Update(KGM.Framework.Application.Dtos.AreaSingleDto,System.String)">
+            <summary>
+            更新地区
+            </summary>
+            <param name="Id">地区Id</param>
+            <param name="SingleDto">地区对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.AreaController.Delete(System.String)">
+            <summary>
+            删除地区
+            </summary>
+            <param name="Id">地区Id</param> 
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.AreaController.GetAllArea(KGM.Framework.WebApi.Model.Condition.ModuleIndexCondition)">
+            <summary>
+             获取所有地区信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.AreaController.GetByIdAsync(System.String)">
+            <summary>
+             根据根据Id获取地区信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.AreaController.GetCityByProvince(System.String)">
+            <summary>
+            根据省份获取城市信息
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.AreaController.GetByPagesAsync(KGM.Framework.WebApi.Model.Condition.ModuleIndexCondition)">
+            <summary>
+            分页条件查询
+            </summary>
+            <param name="condition">条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.AreaController.GetAreahTreeAsync">
+            <summary>
+            获取模块属性结构
+            </summary> 
+            <returns></returns>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Controllers.CompanyController">
+            <summary>
+            公司管理接口
+            </summary>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.CompanyController.#ctor(KGM.Framework.Application.Services.ICompanyService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="service"></param>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.CompanyController.GetByIdAsync(System.String)">
+            <summary>
+            根据Id获取菜单信息和他的按钮信息
+            </summary>
+            <param name="Id">模块Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.CompanyController.GetCompanyhTreeAsync">
+            <summary>
+            获取模块属性结构
+            </summary> 
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.CompanyController.GetByPagesAsync(KGM.Framework.WebApi.Model.Condition.CompanyIndexCondition)">
+            <summary>
+            分页条件查询(公司)
+            </summary>
+            <param name="condition">条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.CompanyController.GetDepartmentByPagesAsync(KGM.Framework.WebApi.Model.Condition.CompanyIndexCondition)">
+            <summary>
+            分页条件查询(部门)
+            </summary>
+            <param name="condition">条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.CompanyController.Insert(KGM.Framework.Application.Dtos.CompanySingleDto)">
+            <summary>
+            新增模块
+            </summary>
+            <param name="entity">模块对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.CompanyController.Update(System.String,KGM.Framework.Application.Dtos.CompanySingleDto)">
+            <summary>
+            更新模块
+            </summary>
+            <param name="Id">主键</param>
+            <param name="entity">模块对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.CompanyController.Delete(System.String)">
+            <summary>
+            删除模块
+            </summary>
+            <param name="Id">模块Id</param>
+            <returns></returns>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Controllers.DepartmentController">
+            <summary>
+            部门管理接口
+            </summary>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.DepartmentController.#ctor(KGM.Framework.Application.Services.IDepartmentService,KGM.Framework.Application.Services.IUserService,KGM.Framework.Application.Services.ICompanyService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="service"></param>
+            <param name="userservice"></param>
+            /// <param name="companyService"></param>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.DepartmentController.Add(KGM.Framework.Application.Dtos.DepartmentSingleDto)">
+            <summary>
+            新增部门
+            </summary>
+            <param name="GetDto">部门对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.DepartmentController.Update(KGM.Framework.Application.Dtos.DepartmentSingleDto,System.String)">
+            <summary>
+            更新部门
+            </summary>
+            <param name="Id">部门对象</param>
+            <param name="SingleDto">部门对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.DepartmentController.Delete(System.String)">
+            <summary>
+            删除部门
+            </summary>
+            <param name="Id">部门Id</param> 
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.DepartmentController.GetDepartmentTreeAsync">
+            <summary>
+            获取模块属性结构
+            </summary> 
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.DepartmentController.GetByPagesAsync(KGM.Framework.WebApi.Model.Condition.CompanyIndexCondition)">
+            <summary>
+            分页条件查询
+            </summary>
+            <param name="condition">条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.DepartmentController.GetById(System.String)">
+            <summary>
+            根据Id获取部门信息
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Controllers.DictionaryController">
+            <summary>
+            数据字典管理接口
+            </summary>  
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.DictionaryController.#ctor(KGM.Framework.Application.Services.IDictionaryService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="service">数据字典服务</param> 
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.DictionaryController.GetByIdAsync(System.String)">
+            <summary>
+            根据Id获取菜单信息和他的按钮信息
+            </summary>
+            <param name="Id">数据字典Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.DictionaryController.GetDictionaryTreeAsync">
+            <summary>
+            获取数据字典属性结构
+            </summary> 
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.DictionaryController.GetDictionaryItemByPagesAsync(KGM.Framework.WebApi.Model.Condition.DictionaryItemIndexCondition)">
+            <summary>
+            分页条件查询
+            </summary>
+            <param name="condition">条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.DictionaryController.GetDictionaryByPagesAsync(KGM.Framework.WebApi.Model.Condition.DictionaryIndexCondition)">
+            <summary>
+            分页条件查询 主表
+            </summary>
+            <param name="condition">条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.DictionaryController.Insert(KGM.Framework.Application.Dtos.DictionarySingleDto)">
+            <summary>
+            新增数据字典
+            </summary>
+            <param name="entity">数据字典对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.DictionaryController.Update(System.String,KGM.Framework.Application.Dtos.DictionarySingleDto)">
+            <summary>
+            更新数据字典分类
+            </summary>
+            <param name="Id">主键</param>
+            <param name="entity">数据字典对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.DictionaryController.Delete(System.String)">
+            <summary>
+            删除数据字典分类
+            </summary>
+            <param name="Id">数据字典Id</param>
+            <returns></returns>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Controllers.ModuleController">
+            <summary>
+            菜单管理接口
+            </summary>  
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.ModuleController.#ctor(KGM.Framework.Application.Services.IModuleService,KGM.Framework.Application.Services.IRoleService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="service">模块服务</param> 
+            <param name="roleService">角色服务</param> 
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.ModuleController.GetByIdAsync(System.String)">
+            <summary>
+            根据Id获取菜单信息和他的按钮信息
+            </summary>
+            <param name="Id">模块Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.ModuleController.GetModuleTreeAsync">
+            <summary>
+            获取模块树形结构
+            </summary> 
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.ModuleController.GetModuleBtnTreeAsync(System.String)">
+            <summary>
+            获取模块按钮树形结构
+            </summary> 
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.ModuleController.GetModuleByPagesAsync(KGM.Framework.WebApi.Model.Condition.ModuleIndexCondition)">
+            <summary>
+            分页条件查询
+            </summary>
+            <param name="condition">条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.ModuleController.Insert(KGM.Framework.Application.Dtos.ModuleSingleDto)">
+            <summary>
+            新增模块
+            </summary>
+            <param name="entity">模块对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.ModuleController.Update(System.String,KGM.Framework.Application.Dtos.ModuleSingleDto)">
+            <summary>
+            更新模块
+            </summary>
+            <param name="Id">主键</param>
+            <param name="entity">模块对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.ModuleController.Delete(System.String)">
+            <summary>
+            删除模块
+            </summary>
+            <param name="Id">模块Id</param>
+            <returns></returns>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Controllers.SystemManger.PlatFormController">
+            <summary>
+            平台控制器
+            </summary>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.SystemManger.PlatFormController.#ctor(KGM.Framework.Application.Services.IPlatFormService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="service">模块服务</param> 
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.SystemManger.PlatFormController.GetByIdAsync(System.String)">
+            <summary>
+            根据Id获取菜单信息和他的按钮信息
+            </summary>
+            <param name="Id">平台Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.SystemManger.PlatFormController.GetAllAsync">
+            <summary>
+            获取全部信息
+            </summary> 
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.SystemManger.PlatFormController.GetByPagesAsync(KGM.Framework.WebApi.Model.Condition.PlatFormIndexCondition)">
+            <summary>
+            分页条件查询
+            </summary>
+            <param name="condition">条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.SystemManger.PlatFormController.Insert(KGM.Framework.Application.Dtos.PlatFormInsertDto)">
+            <summary>
+            新增平台
+            </summary>
+            <param name="entity">平台对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.SystemManger.PlatFormController.Update(System.String,KGM.Framework.Application.Dtos.PlatFormInsertDto)">
+            <summary>
+            更新平台
+            </summary>
+            <param name="Id">主键</param>
+            <param name="entity">平台对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.SystemManger.PlatFormController.Delete(System.String)">
+            <summary>
+            删除平台
+            </summary>
+            <param name="Id">平台Id</param>
+            <returns></returns>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Controllers.RoleController">
+            <summary>
+            角色管理接口
+            </summary> 
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.RoleController.#ctor(KGM.Framework.Application.Services.IRoleService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="service">模块服务</param> 
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.RoleController.GetSelectJson">
+            <summary>
+            绑定角色下拉框
+            </summary> 
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.RoleController.GetByIdAsync(System.String)">
+            <summary>
+            根据Id获取菜单信息和他的按钮信息
+            </summary>
+            <param name="Id">角色Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.RoleController.GetAllAsync">
+            <summary>
+            获取全部信息
+            </summary> 
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.RoleController.GetByPagesAsync(KGM.Framework.WebApi.Model.Condition.RoleIndexCondition)">
+            <summary>
+            分页条件查询
+            </summary>
+            <param name="condition">条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.RoleController.Insert(KGM.Framework.Application.Dtos.RoleSingleDto)">
+            <summary>
+            新增角色
+            </summary>
+            <param name="entity">角色对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.RoleController.Update(System.String,KGM.Framework.Application.Dtos.RoleSingleDto)">
+            <summary>
+            更新角色
+            </summary>
+            <param name="Id">主键</param>
+            <param name="entity">角色对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.RoleController.Delete(System.String)">
+            <summary>
+            删除角色
+            </summary>
+            <param name="Id">角色Id</param>
+            <returns></returns>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Controllers.UserController">
+            <summary>
+            用户管理接口
+            </summary> 
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.UserController.#ctor(KGM.Framework.Application.Services.IUserService,KGM.Framework.Application.Services.IDepartmentService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="service">模块服务</param> 
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.UserController.GetByIdAsync(System.String)">
+            <summary>
+            根据Id获取菜单信息和他的按钮信息
+            </summary>
+            <param name="Id">用户Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.UserController.GetByPagesAsync(KGM.Framework.WebApi.Model.Condition.UserIndexCondition)">
+            <summary>
+            分页条件查询
+            </summary>
+            <param name="condition">条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.UserController.Insert(KGM.Framework.Application.Dtos.UserSingleDto)">
+            <summary>
+            新增用户
+            </summary>
+            <param name="entity">用户对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.UserController.Update(System.String,KGM.Framework.Application.Dtos.UserSingleDto)">
+            <summary>
+            更新用户
+            </summary>
+            <param name="Id">主键</param>
+            <param name="entity">用户对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.UserController.UpdatePwd(System.String,System.String)">
+            <summary>
+            修改密码
+            </summary>
+            <param name="Id"></param>
+            <param name="pwd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.UserController.Delete(System.String)">
+            <summary>
+            删除用户
+            </summary>
+            <param name="Id">用户Id</param>
+            <returns></returns>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Controllers.BarCodeRuleController">
+            <summary>
+            条码规则设置
+            </summary>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.BarCodeRuleController.#ctor(KGM.Framework.Application.Services.IBarCodeRuleMainService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="service">模块服务</param> 
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.BarCodeRuleController.GetByIdAsync(System.String)">
+            <summary>
+            根据Id获取条码规则信息和他的子表信息
+            </summary>
+            <param name="Id">条码规则Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.BarCodeRuleController.GetBarCodeRuleByPagesAsync(KGM.Framework.WebApi.Model.Condition.BarCodeRuleIndexCondition)">
+            <summary>
+            分页条件查询
+            </summary>
+            <param name="condition">条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.BarCodeRuleController.Insert(KGM.Framework.Application.Dtos.BarCodeRuleMainSingleDto)">
+            <summary>
+            新增模块
+            </summary>
+            <param name="entity">模块对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.BarCodeRuleController.Update(System.String,KGM.Framework.Application.Dtos.BarCodeRuleMainSingleDto)">
+            <summary>
+            更新模块
+            </summary>
+            <param name="Id">主键</param>
+            <param name="entity">模块对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.BarCodeRuleController.Delete(System.String)">
+            <summary>
+            删除模块
+            </summary>
+            <param name="Id">模块Id</param>
+            <returns></returns>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Controllers.CustomerController">
+            <summary>
+            客户管理接口
+            </summary>  
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.CustomerController.#ctor(KGM.Framework.Application.Services.ICustomerService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="service">客户服务</param> 
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.CustomerController.GetByIdAsync(System.String)">
+            <summary>
+            根据Id获取菜单信息和他的按钮信息
+            </summary>
+            <param name="Id">客户Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.CustomerController.GetCustomerByPagesAsync(KGM.Framework.WebApi.Model.Condition.CustomerIndexCondition)">
+            <summary>
+            分页条件查询
+            </summary>
+            <param name="condition">条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.CustomerController.QueryCustomerOwnerByPagers(KGM.Framework.WebApi.Model.Condition.CustomerIndexCondition)">
+            <summary>
+            分页条件查询
+            </summary>
+            <param name="condition">条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.CustomerController.Insert(KGM.Framework.Application.Dtos.CustomerSingleDto)">
+            <summary>
+            新增客户
+            </summary>
+            <param name="entity">客户对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.CustomerController.Update(System.String,KGM.Framework.Application.Dtos.CustomerSingleDto)">
+            <summary>
+            更新客户
+            </summary>
+            <param name="Id">主键</param>
+            <param name="entity">客户对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.CustomerController.Delete(System.String)">
+            <summary>
+            删除客户
+            </summary>
+            <param name="Id">客户Id</param>
+            <returns></returns>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Controllers.WarehouseController">
+            <summary>
+            仓库管理接口
+            </summary>  
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.WarehouseController.#ctor(KGM.Framework.Application.Services.IWarehouseService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="service">仓库服务</param> 
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.WarehouseController.GetByIdAsync(System.String)">
+            <summary>
+            根据Id获取菜单信息和他的按钮信息
+            </summary>
+            <param name="Id">仓库Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.WarehouseController.GetSelectJson">
+            <summary>
+            绑定仓库下拉框
+            </summary> 
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.WarehouseController.GetWarehouseByPagesAsync(KGM.Framework.WebApi.Model.Condition.WarehouseIndexCondition)">
+            <summary>
+            分页条件查询
+            </summary>
+            <param name="condition">条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.WarehouseController.QueryPositionByPagers(KGM.Framework.WebApi.Model.Condition.WarehouseIndexCondition)">
+            <summary>
+            分页条件查询
+            </summary>
+            <param name="condition">条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.WarehouseController.Insert(KGM.Framework.Application.Dtos.WarehouseSingleDto)">
+            <summary>
+            新增仓库
+            </summary>
+            <param name="entity">仓库对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.WarehouseController.Update(System.String,KGM.Framework.Application.Dtos.WarehouseSingleDto)">
+            <summary>
+            更新仓库
+            </summary>
+            <param name="Id">主键</param>
+            <param name="entity">仓库对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Controllers.WarehouseController.Delete(System.String)">
+            <summary>
+            删除仓库
+            </summary>
+            <param name="Id">仓库Id</param>
+            <returns></returns>
+        </member>
+        <member name="T:KGM.Framework.WebApi.HttpGlobalExceptionFilter">
+            <summary>
+            全局异常处理
+            </summary>
+        </member>
+        <member name="M:KGM.Framework.WebApi.HttpGlobalExceptionFilter.#ctor(Microsoft.Extensions.Logging.ILoggerFactory,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            全局异常过滤器
+            </summary>
+            <param name="loggerFactory"></param>
+            <param name="env"></param>
+        </member>
+        <member name="M:KGM.Framework.WebApi.HttpGlobalExceptionFilter.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            发生异常时处理
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:KGM.Framework.WebApi.HttpGlobalExceptionFilter.ApplicationErrorResult">
+            <summary>
+            返回结果
+            </summary>
+        </member>
+        <member name="M:KGM.Framework.WebApi.HttpGlobalExceptionFilter.ApplicationErrorResult.#ctor(System.Object)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="T:KGM.Framework.WebApi.HttpGlobalExceptionFilter.ErrorResponse">
+            <summary>
+            错误响应类
+            </summary>
+        </member>
+        <member name="M:KGM.Framework.WebApi.HttpGlobalExceptionFilter.ErrorResponse.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="P:KGM.Framework.WebApi.HttpGlobalExceptionFilter.ErrorResponse.Message">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.HttpGlobalExceptionFilter.ErrorResponse.DeveloperMessage">
+            <summary>
+            开发环境消息
+            </summary>
+        </member>
+        <member name="T:KGM.Framework.WebApi.HttpGlobalExcuteFilter">
+            <summary>
+            全局执行处理
+            </summary>
+        </member>
+        <member name="M:KGM.Framework.WebApi.HttpGlobalExcuteFilter.#ctor(Microsoft.Extensions.Logging.ILoggerFactory,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            全局异常过滤器
+            </summary>
+            <param name="loggerFactory"></param>
+            <param name="env"></param>
+        </member>
+        <member name="M:KGM.Framework.WebApi.HttpGlobalExcuteFilter.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            执行前处理
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:KGM.Framework.WebApi.HttpGlobalExcuteFilter.OnActionExecuted(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)">
+            <summary>
+            执行后处理
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Model.Common.TreeNode">
+            <summary>
+            树形结构节点
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Common.TreeNode.Id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Common.TreeNode.Text">
+            <summary>
+            显示
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Common.TreeNode.Children">
+            <summary>
+            子节点
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Common.TreeNode.ParentId">
+            <summary>
+            父节点
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Common.TreeNode.Value">
+            <summary>
+            实际值
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Common.TreeNode.CheckState">
+            <summary>
+            选中状态
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Common.TreeNode.ShowCheck">
+            <summary>
+            显示复选框
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Common.TreeNode.Complete">
+            <summary>
+            是否完成
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Common.TreeNode.IsExpand">
+            <summary>
+            是否展开
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Common.TreeNode.HasChildren">
+            <summary>
+            是否有子节点
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Common.TreeNode.Img">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Common.TreeNode.Title">
+            <summary>
+            title
+            </summary>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Model.Condition.PagerCondition">
+            <summary>
+            分页过滤对象
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.PagerCondition.Rows">
+            <summary>
+            每页多少行
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.PagerCondition.Page">
+            <summary>
+            当前第几页
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.PagerCondition.SIdx">
+            <summary>
+            排序字段
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.PagerCondition.Sord">
+            <summary>
+            排序顺序
+            </summary>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Model.Condition.CompanyIndexCondition">
+            <summary>
+            公司主页面过滤条件
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.CompanyIndexCondition.EnCode">
+            <summary>
+            模块编码
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.CompanyIndexCondition.FullName">
+            <summary>
+            模块名称
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.CompanyIndexCondition.CompanyId">
+            <summary>
+            公司Id
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.CompanyIndexCondition.ParentId">
+             <summary>
+            父 Id
+             </summary>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Model.Condition.DictionaryIndexCondition">
+            <summary>
+            模块主页面过滤条件
+            </summary> 
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.DictionaryIndexCondition.EnCode">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.DictionaryIndexCondition.FullName">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Model.Condition.DictionaryItemIndexCondition">
+            <summary>
+            模块主页面过滤条件
+            </summary> 
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.DictionaryItemIndexCondition.ItemCode">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.DictionaryItemIndexCondition.ItemName">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.DictionaryItemIndexCondition.ItemId">
+            <summary>
+            分类Id
+            </summary>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Model.Condition.ModuleIndexCondition">
+            <summary>
+            模块主页面过滤条件
+            </summary> 
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.ModuleIndexCondition.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.ModuleIndexCondition.EnCode">
+            <summary>
+            模块编码
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.ModuleIndexCondition.FullName">
+            <summary>
+            模块名称
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.ModuleIndexCondition.ModuleId">
+            <summary>
+            父模块Id
+            </summary>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Model.Condition.PlatFormIndexCondition">
+            <summary>
+            平台主页面过滤条件
+            </summary> 
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.PlatFormIndexCondition.EnCode">
+            <summary>
+            模块编码
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.PlatFormIndexCondition.FullName">
+            <summary>
+            模块名称
+            </summary>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Model.Condition.RoleIndexCondition">
+            <summary>
+            角色主页面过滤条件
+            </summary> 
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.RoleIndexCondition.EnCode">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.RoleIndexCondition.FullName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.RoleIndexCondition.CompanyId">
+            <summary>
+            公司Id
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.RoleIndexCondition.DepartmentId">
+            <summary>
+            部门Id
+            </summary>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Model.Condition.UserIndexCondition">
+            <summary>
+            用户主页面过滤条件
+            </summary> 
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.UserIndexCondition.EnCode">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.UserIndexCondition.RealName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.UserIndexCondition.CompanyId">
+            <summary>
+            公司Id
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.UserIndexCondition.DepartmentId">
+            <summary>
+            部门Id
+            </summary>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Model.Condition.CustomerIndexCondition">
+            <summary>
+            模块主页面过滤条件
+            </summary> 
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.CustomerIndexCondition.EnCode">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.CustomerIndexCondition.FullName">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Model.Condition.BarCodeRuleIndexCondition">
+            <summary>
+            模块主页面过滤条件
+            </summary> 
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.BarCodeRuleIndexCondition.EnCode">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.BarCodeRuleIndexCondition.FullName">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Model.Condition.OwnerIndexCondition">
+            <summary>
+            模块主页面过滤条件
+            </summary> 
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.OwnerIndexCondition.EnCode">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.OwnerIndexCondition.FullName">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Model.Condition.PositionIndexCondition">
+            <summary>
+            模块主页面过滤条件
+            </summary> 
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.PositionIndexCondition.EnCode">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.PositionIndexCondition.FullName">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Model.Condition.WarehouseIndexCondition">
+            <summary>
+            模块主页面过滤条件
+            </summary> 
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.WarehouseIndexCondition.EnCode">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Model.Condition.WarehouseIndexCondition.FullName">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KGM.Framework.WebApi.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:KGM.Framework.WebApi.Startup.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:KGM.Framework.WebApi.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>

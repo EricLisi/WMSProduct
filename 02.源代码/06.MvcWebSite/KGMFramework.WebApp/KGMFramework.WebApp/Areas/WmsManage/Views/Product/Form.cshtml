@@ -1,0 +1,235 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+
+<form id="form1">
+    <div class="form row">
+        @*<div class="col-md-6 col-sm-6 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle">上级</th>
+                    <td class="formValue">
+                        <select id="F_ParentId" name="F_ParentId" class="form-control required">
+                            <option value="0">父节点</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>*@
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle">名称</th>
+                    <td class="formValue">
+                        <input id="F_FullName" name="F_FullName" type="text" class="form-control required" placeholder="请输入名称" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle">编号</th>
+                    <td class="formValue">
+                        <input id="F_EnCode" name="F_EnCode" type="text" class="form-control required" placeholder="请输入编号" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle">代码</th>
+                    <td class="formValue">
+                        <input id="F_ShortCode" name="F_ShortCode" type="text" class="form-control" placeholder="请输入代码" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle">别名</th>
+                    <td class="formValue">
+                        <input id="F_ShortName" name="F_ShortName" type="text" class="form-control" placeholder="请输入别名" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle">产品分类</th>
+                    <td class="formValue">
+                        <select name="F_ProductClassId" id="F_ProductClassId" class="form-control"></select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle">规格</th>
+                    <td class="formValue">
+                        <input id="F_Standard" name="F_Standard" type="text" class="form-control" placeholder="请输入规格" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle">单位</th>
+                    <td class="formValue">
+                        <input id="F_Unit" name="F_Unit" type="text" class="form-control" placeholder="请输入单位" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle">销售价格</th>
+                    <td class="formValue">
+                        <input id="F_SalesPrice" name="F_SalesPrice" type="text" class="form-control" placeholder="请输入销售价格" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle">采购价格</th>
+                    <td class="formValue">
+                        <input id="F_PurchasePrice" name="F_PurchasePrice" type="text" class="form-control" placeholder="请输入采购价格" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle">品牌</th>
+                    <td class="formValue">
+                        <input id="F_Brand" name="F_Brand" type="text" class="form-control" placeholder="请输入品牌" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle">颜色</th>
+                    <td class="formValue">
+                        <input id="F_Color" name="F_Color" type="text" class="form-control" placeholder="请输入颜色" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle">长(m)</th>
+                    <td class="formValue">
+                        <input id="F_Length" name="F_Length" type="text" class="form-control" placeholder="请输入长" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle">高(m)</th>
+                    <td class="formValue">
+                        <input id="F_Height" name="F_Height" type="text" class="form-control" placeholder="请输入高" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle">宽(m)</th>
+                    <td class="formValue">
+                        <input id="F_Width" name="F_Width" type="text" class="form-control" placeholder="请输入宽" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle">净重(kg)</th>
+                    <td class="formValue">
+                        <input id="F_NetWeight" name="F_NetWeight" type="text" class="form-control" placeholder="请输入净重" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle">毛重(kg)</th>
+                    <td class="formValue">
+                        <input id="F_Weight" name="F_Weight" type="text" class="form-control" placeholder="请输入毛重" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle">保质期(天)</th>
+                    <td class="formValue">
+                        <input id="F_EffectiveDays" name="F_EffectiveDays" type="text" class="form-control" placeholder="请输入保质期" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle">包装规格</th>
+                    <td class="formValue">
+                            <input id="F_Package" name="F_Package" type="text" class="form-control" placeholder="请输入包装规格" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle" style="height: 35px;">选项</th>
+                    <td class="formValue" style="padding-top: 1px;">
+                        <div class="ckbox">
+                            <input id="F_BatchManagement" name="F_BatchManagement" type="checkbox" checked="checked"><label for="F_BatchManagement">批次管理</label>
+                        </div>
+                        <div class="ckbox">
+                            <input id="F_SnManagement" name="F_SnManagement" type="checkbox" checked="checked"><label for="F_SnManagement">序列号管理</label>
+                        </div>
+                        <div class="ckbox">
+                            <input id="F_EffectiveManagement" name="F_EffectiveManagement" type="checkbox" checked="checked"><label for="F_EffectiveManagement">效期管理</label>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <table>
+                <tr>
+                    <th class="formTitle" valign="top" style="padding-top: 5px;">
+                        描述
+                    </th>
+                    <td class="formValue" colspan="3">
+                        <textarea id="F_Description" name="F_Description" class="form-control" style="height: 60px;" placeholder="请输入描述"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</form>
+
+<script src="~/Content/js/framework-FormVar.js"></script>
+<script src="~/Areas/WmsManage/Content/js/Product/Form.js"></script>
+<script src="~/Content/js/framework-Form.js"></script>

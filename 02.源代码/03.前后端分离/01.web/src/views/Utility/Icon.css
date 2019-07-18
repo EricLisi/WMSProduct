@@ -1,0 +1,53 @@
+ html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body > div {
+                position: relative;
+                overflow: auto;
+                height: 100%;
+                width: 100%;
+        }
+
+        a {
+            color: #21b384;
+            text-decoration: none !important;
+            background-color: transparent;
+        }
+
+        .page-header {
+            padding-left: 15px;
+        }
+
+        .row {
+            margin: 0px;
+        }
+
+        .fontawesome-icon-list a {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: block;
+            color: #222;
+            line-height: 32px;
+            height: 32px;
+            padding-left: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            .fontawesome-icon-list a:hover {
+                background-color: #1d9d74;
+                color: #fff;
+                text-decoration: none;
+            }
+
+            .fontawesome-icon-list a .fa {
+                width: 32px;
+                font-size: 14px;
+                display: inline-block;
+                text-align: right;
+                margin-right: 10px;
+            }
+            .ss{background:#1d9d74;color:white!important;}

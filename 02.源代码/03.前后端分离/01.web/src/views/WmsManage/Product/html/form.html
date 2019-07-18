@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../../../assets/plugin/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../../../../assets/css/app-common.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/app-scroll/app-scroll.css" />
+		<link rel="stylesheet" href="../../../../assets/css/app-iframe-form.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/app-tree/app-tree.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/app-select/app-select.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/timeline/app-timeline.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/app-formselect/app-formselect.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/inputsearch/app-isearch.css" />
+	</head>
+
+	<body>
+		<div class="topPanel" id="form1">
+			<ul id="myTab" class="nav nav-tabs">
+				<li class="active">
+					<a href="#home" data-toggle="tab">商品信息</a>
+				</li>
+				<li>
+					<a href="#define" data-toggle="tab">自定义项</a>
+				</li>
+			</ul>
+			<div id="myTabContent" class="tab-content">
+
+				<div id="home" role="tabpanel" class="tab-pane fade in active">
+					<div class="app-form-wrap">
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">商品编码
+							</div>
+							<input id="EnCode" type="text" class="form-control"/>
+							<!--<input id="UserId" type="hidden" class="form-control" />-->
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">sku
+								<font face="宋体">*</font>
+							</div>
+							<input id="InvSKU" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">商品名称
+								<font face="宋体">*</font>
+							</div>
+							<input id="FullName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">客户编码
+							<font face="宋体">*</font></div>
+							<div id="CusCode" isvalid="yes" checkexpession="NotNull" ></div>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">条形码</div>
+							<input id="Barcode" type="text" class="form-control"/>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">物料分类</div>
+							<div id="Type"></div>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">长(CM)</div>
+							<input id="Length" type="text" class="form-control" onkeyup="this.value=this.value.replace(/[^\d]/g,'');" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">宽(CM)</div>
+							<input id="Width" type="text" class="form-control" onkeyup="this.value=this.value.replace(/[^\d]/g,'');" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">高(CM)</div>
+							<input id="Height" type="text" class="form-control" onkeyup="this.value=this.value.replace(/[^\d]/g,'');" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">净重(g)</div>
+							<input id="fWeight" type="text" class="form-control" onkeyup="this.value=this.value.replace(/[^\d]/g,'');" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">毛重(g)</div>
+							<input id="gWeight" type="text" class="form-control" onkeyup="this.value=this.value.replace(/[^\d]/g,'');" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">价格</div>
+							<input id="Price" type="text" class="form-control"/>
+						</div>
+						<div class="col-md-12 col-sm-12 col-xs-12 app-form-item">
+							<div class="app-form-item-title">备注</div>
+							<textarea id="Description" class="form-control" style="height:100px;"></textarea>
+						</div>
+					</div>
+				</div>
+
+				<div id="define" role="tabpanel" class="tab-pane fade">
+					<div class="app-form-wrap">
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项1
+							</div>
+							<input id="Define1" type="text" class="form-control" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项2
+							</div>
+							<input id="Define2" type="text" class="form-control" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项3
+							</div>
+							<input id="Define3" type="text" class="form-control" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项4
+							</div>
+							<input id="Define4" type="text" class="form-control" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项5
+							</div>
+							<input id="Define5" type="text" class="form-control" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项6
+							</div>
+							<input id="Define6" type="text" class="form-control" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项7
+							</div>
+							<input id="Define7" type="text" class="form-control" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项8
+							</div>
+							<input id="Define8" type="text" class="form-control" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项9
+							</div>
+							<input id="Define9" type="text" class="form-control" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项10
+							</div>
+							<input id="Define10" type="text" class="form-control" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项11
+							</div>
+							<input id="Define11" type="text" class="form-control" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项12
+							</div>
+							<input id="Define12" type="text" class="form-control" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项13
+							</div>
+							<input id="Define13" type="text" class="form-control" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项14
+							</div>
+							<input id="Define14" type="text" class="form-control" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项15
+							</div>
+							<input id="Define15" type="text" class="form-control" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项16
+							</div>
+							<input id="Define16" type="text" class="form-control" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项17
+							</div>
+							<input id="Define17" type="text" class="form-control" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项18
+							</div>
+							<input id="Define18" type="text" class="form-control" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项19
+							</div>
+							<input id="Define19" type="text" class="form-control" />
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+							<div class="app-form-item-title">自定义项20
+							</div>
+							<input id="Define20" type="text" class="form-control" />
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</body>
+	<script src="../../../../assets/plugin/jquery/jquery-1.10.2.min.js"></script>
+	<script src="../../../../assets/plugin/jquery/jquery.md5.min.js"></script>
+	<script src="../../../../assets/plugin/bootstrap/js/bootstrap.js"></script>
+	<script src="../../../../assets/plugin/datepicker/WdatePicker.js"></script>
+	<script src="../../../../assets/plugin/resize/resize.js"></script>
+	<script src="../../../../assets/plugin/mousewheel/mousewheel.js"></script>
+	<script src="../../../../assets/plugin/app-scroll/app-scroll.js"></script>
+	<script src="../../../../utils/app-validator.js"></script>
+	<script src="../../../../utils/app-form.js"></script>
+	<script src="../../../../assets/plugin/app-tree/app-tree.js"></script>
+	<script src="../../../../assets/plugin/app-select/app-select.js"></script>
+	<script src="../../../../assets/plugin/timeline/app-timeline.js"></script>
+	<script src="../../../../assets/plugin/app-formselect/app-formselect.js"></script>
+	<script src="../../../../assets/plugin/inputsearch/app-isearch.js"></script>
+	<script src="../../../../assets/plugin/app-grid/app-grid.js"></script>
+	<script src="../../../../assets/plugin/layx/layx.min.js"></script>
+	<script src="../js/form.js"></script>
+
+</html>

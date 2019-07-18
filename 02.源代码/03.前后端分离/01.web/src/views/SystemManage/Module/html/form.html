@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!--<style>
+			.layx-statu-bar {
+				display: none;
+				/*border-top: 1px solid #ddd;
+				min-height: 25px;
+				background-color: #eeeef2;*/
+			}
+		</style>-->
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../../../assets/plugin/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../../../../assets/css/app-common.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/app-scroll/app-scroll.css" />
+		<link rel="stylesheet" href="../../../../assets/css/app-iframe-form.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/wizard/wizard.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/app-tree/app-tree.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/app-select/app-select.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/timeline/app-timeline.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/layx/layx.min.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/app-formselect/app-formselect.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/inputsearch/app-isearch.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/app-grid/app-grid.css" />
+		<link rel="stylesheet" href="../css/form.css" />
+		
+	</head>
+
+	<body>
+		<div class="widget-body">
+			<div id="wizard" class="wizard" data-target="#wizard-steps">
+				<ul class="steps">
+					<li data-target="#step-1" class="active"><span class="step">1</span>基础信息<span class="chevron"></span>
+					</li>
+					<li data-target="#step-2"><span class="step">2</span>按钮信息<span class="chevron"></span></li>
+					<!--<li data-target="#step-3"><span class="step">3</span>列表视图<span class="chevron"></span></li>
+					<li data-target="#step-4"><span class="step">4</span>表单视图<span class="chevron"></span></li>-->
+				</ul>
+			</div>
+			<div class="step-content" id="wizard-steps">
+				<div class="step-pane app-form-wrap active" id="step-1">
+					<div class="col-md-6 col-sm-12 col-xs-12 app-form-item">
+						<div class="app-form-item-title">编号
+							<font face="宋体">*</font>
+						</div>
+						<input id="encode" type="text" class="form-control" placeholder="请输入编号" isvalid="yes" checkexpession="NotNull" />
+					</div>
+					<div class="col-md-6 col-sm-12 col-xs-12 app-form-item">
+						<div class="app-form-item-title">名称
+							<font face="宋体">*</font>
+						</div>
+						<input id="fullname" type="text" class="form-control" placeholder="请输入名称" isvalid="yes" checkexpession="NotNull" />
+					</div>
+					<div class="col-md-6 col-sm-12 col-xs-12 app-form-item">
+						<div class="app-form-item-title">上级</div>
+						<div id="parentid"></div>
+					</div>
+					<div class="col-md-6 col-sm-12 col-xs-12 app-form-item">
+						<div class="app-form-item-title">图标</div>
+						<input id="icon" type="text" class="form-control" placeholder="请选择图标" />
+						<span id="selectIcon" class="app-input-button" title="选取图标">...</span>
+					</div>
+					<div class="col-md-6 col-sm-12 col-xs-12 app-form-item">
+						<div class="app-form-item-title">目标
+							<font face="宋体">*</font>
+						</div>
+						<div id="target" isvalid="yes" checkexpession="NotNull">
+							<ul style="display:none;">
+								<li data-value="expand">expand</li>
+								<li data-value="iframe">iframe</li>
+								<li data-value="open">open</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-12 col-xs-12 app-form-item">
+						<div class="app-form-item-title">排序
+							<font face="宋体">*</font>
+						</div>
+						<input id="sortcode" type="text" class="form-control" placeholder="请输入排序号" isvalid="yes" checkexpession="Num" />
+					</div>
+					<div class="col-md-12 col-sm-12 col-xs-12 app-form-item">
+						<div class="app-form-item-title">地址</div>
+						<input id="urladdress" type="text" class="form-control" placeholder="请输入URL地址" />
+					</div>
+					<div class="col-md-12 col-sm-12 col-xs-12 app-form-item">
+						<div class="app-form-item-title">选项</div>
+						<div class="checkbox">
+							<label>
+							<input id="ismenu" type="checkbox" />
+							菜单
+						</label>
+							<label>
+							<input id="isexpand" type="checkbox" />
+							展开
+						</label>
+							<label>
+							<input id="enabledmark" type="checkbox" checked="checked" /> 
+							有效
+						</label>
+						</div>
+					</div>
+					<div class="col-md-12 col-sm-12 col-xs-12 app-form-item">
+						<div class="app-form-item-title">描述</div>
+						<textarea id="description" class="form-control" style="height: 80px;"></textarea>
+					</div>
+				</div>
+				<div class="step-pane app-rblock" id="step-2" style="padding:5px;">
+					<div class="app-rblock" style="border:1px solid #ccc;">
+						<div id="btns_girdtable"></div>
+					</div>
+				</div>
+				<div class="step-pane app-rblock" id="step-3" style="padding:5px;">
+					<div class="app-rblock" style="border:1px solid #ccc;">
+						<div id="view_girdtable"></div>
+					</div>
+				</div>
+				<div class="step-pane app-rblock" id="step-4" style="padding:5px;">
+					<div class="app-rblock" style="border:1px solid #ccc;">
+						<div id="form_girdtable"></div>
+					</div>
+				</div>
+			</div>
+			<div class="app-form-bottom-button" id="wizard-actions">
+				<a id="btn_prev" class="btn btn-default btn-prev" disabled>上一步</a>
+				<a id="btn_next" class="btn btn-default btn-next" disabled>下一步</a>
+				<a id="btn_finish" class="btn btn-success">完成</a>
+			</div>
+
+		</div>
+	</body>
+	<script src="../../../../assets/plugin/jquery/jquery-1.10.2.min.js"></script>
+	<script src="../../../../assets/plugin/jquery/jquery.md5.min.js"></script>
+	<script src="../../../../assets/plugin/datepicker/WdatePicker.js"></script>
+	<script src="../../../../assets/plugin/resize/resize.js"></script>
+	<script src="../../../../assets/plugin/mousewheel/mousewheel.js"></script>
+	<script src="../../../../assets/plugin/app-scroll/app-scroll.js"></script>
+	<script src="../../../../utils/app-validator.js"></script>
+	<script src="../../../../utils/app-form.js"></script>
+	<script src="../../../../assets/plugin/wizard/wizard.js"></script>
+	<script src="../../../../assets/plugin/app-tree/app-tree.js"></script>
+	<script src="../../../../assets/plugin/app-select/app-select.js"></script>
+	<script src="../../../../assets/plugin/timeline/app-timeline.js"></script>
+	<script src="../../../../assets/plugin/app-formselect/app-formselect.js"></script>
+	<script src="../../../../assets/plugin/inputsearch/app-isearch.js"></script>
+	<script src="../../../../assets/plugin/app-grid/app-grid.js"></script>
+	<script src="../../../../assets/plugin/layx/layx.min.js"></script>
+	<script src="../../../../assets/js/app-common-form.js"></script>
+	<script src="../js/form.js"></script>
+
+</html>

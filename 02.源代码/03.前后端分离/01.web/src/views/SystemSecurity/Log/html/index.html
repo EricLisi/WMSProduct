@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <!-- 资源文件引入开始 -->
+    <link href="../../../../assets/plugin/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../../../assets/plugin/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../../../assets/css/app-common.css" rel="stylesheet" />
+    <link href="../../../../assets/plugin/app-scroll/app-scroll.css" rel="stylesheet" />
+    <link href="../../../../assets/css/app-frame-index.css" rel="stylesheet" />
+    <link href="../../../../assets/plugin/app-layout/app-layout.css" rel="stylesheet" />
+   
+    <link href="../../../../assets/plugin/app-select/app-select.css" rel="stylesheet" />
+    <link href="../../../../assets/plugin/app-tree/app-tree.css" rel="stylesheet" />
+    <link href="../../../../assets/plugin/app-grid/app-grid.css" rel="stylesheet" />
+    <link href="../../../../assets/plugin/layx/layx.min.css" rel="stylesheet"/>
+    <!-- 资源文件引入结束 -->
+</head>
+<body>
+<div id="app_layout" class="app-layout app-layout-left-center">
+    <div class="app-layout-left">
+        <div class="app-layout-wrap app-layout-wrap-notitle" style="padding-top:10px;">
+            <div class="app-layout-body">
+                <ul class="app-left-list" id="app_left_list">
+                    <li class="active  applg" data-value="1">登录日志</li>
+                    <li data-value="2" class="applg" >访问日志</li>
+                    <li data-value="3" class="applg" >操作日志</li>
+                    <li data-value="4" class="applg" >异常日志</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="app-layout-center">
+        <div class="app-layout-wrap app-layout-wrap-notitle">
+            <div class="app-layout-tool">
+                <div class="app-layout-tool-left">
+                    <div class="app-layout-tool-item">
+                        <div id="datesearch" class="datetime"></div>
+                    </div>
+                    <div class="app-layout-tool-item">
+                        <input id="txt_Keyword" type="text" class="form-control" placeholder="请输入要查询关键字" />
+                    </div>
+                    <div class="app-layout-tool-item">
+                        <a id="btn_Search" class="btn btn-primary btn-sm"><i class="fa fa-search"></i>&nbsp;<span class="applg">查询</span></a>
+                    </div>
+                </div>
+                <div class="app-layout-tool-right">
+                    <div class=" btn-group btn-group-sm">
+                        <a id="app_refresh" class="btn btn-default"><i class="fa fa-refresh"></i></a>
+                    </div>
+                    <div class=" btn-group btn-group-sm" app-authorize="no">
+                        <a id="app_removelog" class="btn btn-default"><i class="fa fa-eraser"></i>&nbsp;<span class="applg">清空</span></a>
+                        <a id="app_export" class="btn btn-default"><i class="fa fa-sign-out"></i>&nbsp;<span class="applg">导出</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="app-layout-body" id="gridtable">
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- 脚本开始 -->
+    <script src="../../../../assets/plugin/jquery/jquery-1.10.2.min.js"></script>
+    <script src="../../../../assets/plugin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../../../assets/plugin/resize/resize.js"></script>
+    <script src="../../../../assets/plugin/mousewheel/mousewheel.js"></script>
+    <script src="../../../../assets/plugin/app-scroll/app-scroll.js"></script>
+    <script src="../../../../assets/plugin/app-layout/app-layout.js"></script>
+    <script src="../../../../utils/app-layer.js"></script>
+    <script src="../../../../assets/plugin/layx/layx.min.js"></script>
+    <script src="../../../../assets/plugin/app-select/app-select.js"></script>
+    <script src="../../../../assets/plugin/app-tree/app-tree.js"></script> 
+    <script src="../../../../assets/plugin/app-grid/app-grid.js"></script>
+    <script src="../js/index.js"></script>
+    <!-- 脚本结束 -->
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+ 
+<div class="gridPanel">
+    <table id="ResultList"></table>
+    <div id="gridPager"></div>
+</div>
+
+<script> 
+    var data = [];
+ 
+    $(function () {
+        var datastr = sessionStorage.getItem($.request('id'))
+        sessionStorage.removeItem($.request('id'))
+        data = JSON.parse(datastr);
+        InitGridSelf(data);
+    })
+
+
+    //渲染datagrid列表
+    function InitGridSelf(data) {
+        $("#ResultList").dataGrid({
+            treeGrid: false,
+            datatype: "local",
+            data: data,
+            pager: "#gridPager",
+            height: 340,
+            editable: false,
+            editRow: true,
+            multiselect: true,
+            colModel: [
+                { label: "行号", name: "RowNumber", width: 100, align: 'left', key: true },
+                    { label: "资产编码", name: "F_AssetEnCode", width: 150, align: 'left', },
+                    { label: '结果', name: 'F_Result', width: 100, align: 'left' },
+                    { label: '原因', name: 'F_Reason', width: 250, align: 'left' }
+            ]//grid的显示列
+        });
+    } 
+</script> 

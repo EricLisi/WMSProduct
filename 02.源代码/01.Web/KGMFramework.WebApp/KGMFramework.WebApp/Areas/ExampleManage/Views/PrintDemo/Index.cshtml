@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+
+<div>
+    <a class="btn btn-primary" onclick="print()">打印测试</a>
+</div>
+
+<script>
+    function print() {
+        var data = [{ a: 1, b: 2 ,c:3}]
+        $.modalOpen({
+            id: "Print",
+            title: "打印测试",
+            url: "/Print/Index?fileName=demo&sourceName=Source&sourceData=" + escape(JSON.stringify(data)),
+            width: $.currentWindow().width + "px",
+            height: $.currentWindow().height + "px",
+            btn: null
+        });
+    }
+</script>
+<script src="~/Content/js/index.js"></script>
+<script src="~/Content/js/indextab.js"></script>
+<script src="~/Areas/ExampleManage/Contect/js/PrintDemo/Index.js"></script>

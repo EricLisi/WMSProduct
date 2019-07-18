@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "导出Excel数据";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+
+<div style="margin: 5px;">
+    <div class="alert alert-danger" style="margin-bottom: 5px;">
+        <i class="fa fa-question-circle" style="position: relative; top: 1px; font-size: 15px; padding-right: 5px;"></i>
+        注：请勾选需要导出的字段
+    </div>
+</div>
+<div style="margin-left:20px;margin-right:20px">
+    <input type="text" id="fileName" class="form-control" placeholder="请输入保存的文件名" required />
+</div>
+<div style="margin: 5px;">
+    <ul class="sys_spec_text"></ul>
+</div>
+
+<script src="~/Content/js/framework-ExcelExport.js"></script>

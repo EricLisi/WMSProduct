@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../../../assets/plugin/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../../../../assets/css/app-common.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/layx/layx.min.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/app-scroll/app-scroll.css" />
+		<link rel="stylesheet" href="../../../../assets/css/app-iframe-form.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/wizard/wizard.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/app-tree/app-tree.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/app-select/app-select.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/timeline/app-timeline.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/app-formselect/app-formselect.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/inputsearch/app-isearch.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/app-grid/app-grid.css" />
+		<link rel="stylesheet" href="../css/form.css" />
+		<link rel="stylesheet" href="../../../../assets/css/hide.css" />
+		<link rel="stylesheet" href="../../../../assets/plugin/datepicker/skin/WdatePicker.css" />
+
+		<!--<style>
+			.btn-group-sm>.btn,
+			.btn-sm {
+				margin-right: 10px;
+			}
+			
+			@media screen and (max-width: 600px) {
+				.btn-group-sm>.btn,
+				.btn-sm {
+					margin-bottom: 5px;
+				}
+			}
+		</style>-->
+	</head>
+
+	<body>
+		<div class="app-layout" id="form1">
+			<div class="app-form-wrap">
+				<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+					<div class="app-form-item-title">单据号
+						<font face="宋体">*</font>
+					</div>
+					<input id="EnCode" type="text" class="form-control" readonly placeholder="保存后自动生成" />
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+					<div class="app-form-item-title">客户
+						<font face="宋体">*</font>
+					</div>
+					<div id="CustomerId" class="form-control" isvalid="yes" checkexpession="NotNull"></div>
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+					<div class="app-form-item-title">权属
+						<font face="宋体">*</font>
+					</div>
+					<input id="Property" type="text" class="form-control" disabled="disabled" />
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 app-form-item">
+					<div class="app-form-item-title">仓库
+					</div>
+					<div id="WarehouseId" disabled="disabled"></div>
+				</div>
+				<div class="col-md-8 col-sm-8 col-xs-12  app-form-item">
+					<div class="col-md-1 col-sm-1 col-xs-4 btn-group btn-group-sm">
+						<a id="app_Shelf" class="btn btn-primary"><i class="fa fa-check"></i>&nbsp;<span class="applg">确认差异</span></a>
+					</div>
+					<div class="col-md-1 col-sm-1 col-xs-4 btn-group btn-group-sm">
+						<a id="app_Arrival" class="btn btn-info"><i class="fa fa-archive"></i>&nbsp;<span class="applg">继续下架</span></a>
+					</div>
+					<div class="col-md-1 col-sm-1 col-xs-4 btn-group btn-group-sm">
+						<a id="app_Redo" class="btn btn-warning"><i class="fa fa-reply"></i>&nbsp;<span class="applg">重新下架</span></a>
+					</div>
+				</div>
+
+				<div class="col-md-12 col-sm-12 col-xs-12 app-form-item app-form-item-grid">
+					<div id="girdTable"></div>
+				</div>
+
+				<div class="col-md-12 col-sm-12 col-xs-12 app-form-item beizhu" style="padding-left:40px">
+					<textarea id="Description" data-wfname="备注信息" placeholder="暂无备注信息" class="form-control" style="height: 80px;"></textarea>
+				</div>
+
+			</div>
+
+			
+		</div>
+	</body>
+	<script src="../../../../assets/plugin/layx/layx.min.js"></script>
+	<script src="../../../../assets/plugin/jquery/jquery-1.10.2.min.js"></script>
+	<script src="../../../../assets/plugin/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../../../../assets/plugin/jquery/jquery.md5.min.js"></script>
+	<script src="../../../../assets/plugin/datepicker/WdatePicker.js"></script>
+	<script src="../../../../assets/plugin/resize/resize.js"></script>
+	<script src="../../../../assets/plugin/mousewheel/mousewheel.js"></script>
+	<script src="../../../../assets/plugin/app-scroll/app-scroll.js"></script>
+	<script src="../../../../utils/app-validator.js"></script>
+	<script src="../../../../assets/plugin/wizard/wizard.js"></script>
+	<script src="../../../../assets/plugin/app-select/app-select.js"></script>
+	<script src="../../../../assets/plugin/app-tree/app-tree.js"></script>
+	<script src="../../../../utils/app-form.js"></script>
+	<script src="../../../../assets/plugin/timeline/app-timeline.js"></script>
+	<script src="../../../../assets/plugin/app-formselect/app-formselect.js"></script>
+	<script src="../../../../assets/plugin/inputsearch/app-isearch.js"></script>
+	<script src="../../../../assets/plugin/app-grid/app-grid.js"></script>
+	<script src="../js/form.js"></script>
+
+</html>

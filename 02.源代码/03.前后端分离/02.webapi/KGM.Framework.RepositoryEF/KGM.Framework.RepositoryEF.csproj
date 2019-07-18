@@ -1,0 +1,92 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\KGM.Framework.WebApi\bin\Debug\netcoreapp2.1\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DbContext\WmsManage\**" />
+    <Compile Remove="Repositories\System\Competence\**" />
+    <Compile Remove="Repositories\System\ItemsDetail\**" />
+    <Compile Remove="Repositories\System\Items\**" />
+    <Compile Remove="Repositories\System\Post\**" />
+    <Compile Remove="Repositories\System\RoleMdoule\**" />
+    <Compile Remove="Repositories\System\RoleModuleButton\**" />
+    <Compile Remove="Repositories\System\RoleModuleColumn\**" />
+    <Compile Remove="Repositories\System\RoleModuleForm\**" />
+    <Compile Remove="Repositories\System\RolePlat\**" />
+    <Compile Remove="Repositories\System\UserCompany\**" />
+    <Compile Remove="Repositories\System\UserDepartment\**" />
+    <Compile Remove="Repositories\WmsManage\**" />
+    <EmbeddedResource Remove="DbContext\WmsManage\**" />
+    <EmbeddedResource Remove="Repositories\System\Competence\**" />
+    <EmbeddedResource Remove="Repositories\System\ItemsDetail\**" />
+    <EmbeddedResource Remove="Repositories\System\Items\**" />
+    <EmbeddedResource Remove="Repositories\System\Post\**" />
+    <EmbeddedResource Remove="Repositories\System\RoleMdoule\**" />
+    <EmbeddedResource Remove="Repositories\System\RoleModuleButton\**" />
+    <EmbeddedResource Remove="Repositories\System\RoleModuleColumn\**" />
+    <EmbeddedResource Remove="Repositories\System\RoleModuleForm\**" />
+    <EmbeddedResource Remove="Repositories\System\RolePlat\**" />
+    <EmbeddedResource Remove="Repositories\System\UserCompany\**" />
+    <EmbeddedResource Remove="Repositories\System\UserDepartment\**" />
+    <EmbeddedResource Remove="Repositories\WmsManage\**" />
+    <None Remove="DbContext\WmsManage\**" />
+    <None Remove="Repositories\System\Competence\**" />
+    <None Remove="Repositories\System\ItemsDetail\**" />
+    <None Remove="Repositories\System\Items\**" />
+    <None Remove="Repositories\System\Post\**" />
+    <None Remove="Repositories\System\RoleMdoule\**" />
+    <None Remove="Repositories\System\RoleModuleButton\**" />
+    <None Remove="Repositories\System\RoleModuleColumn\**" />
+    <None Remove="Repositories\System\RoleModuleForm\**" />
+    <None Remove="Repositories\System\RolePlat\**" />
+    <None Remove="Repositories\System\UserCompany\**" />
+    <None Remove="Repositories\System\UserDepartment\**" />
+    <None Remove="Repositories\WmsManage\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="DbContext\SystemManage\UserCompanyContext.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="DbContext\WmsManage\PositionContext.cs" />
+    <Compile Include="DbContext\WmsManage\OwnerContext.cs" />
+    <Compile Include="DbContext\WmsManage\WarehouseContext.cs" />
+    <Compile Include="DbContext\WmsManage\CustomerContext.cs" />
+    <Compile Include="DbContext\WmsManage\BarCodeRuleContext.cs" />
+    <Compile Include="Repositories\WmsManage\BarCodeRuleMain\BarCodeRuleMainRepository.cs" />
+    <Compile Include="Repositories\WmsManage\Customer\CustomerRepository.cs" />
+    <Compile Include="Repositories\WmsManage\Owner\OwnerRepository.cs" />
+    <Compile Include="Repositories\WmsManage\Position\PositionRepository.cs" />
+    <Compile Include="Repositories\WmsManage\Warehouse\WarehouseRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.4" />
+    <PackageReference Include="System.ComponentModel" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KGM.Framework.Domain\KGM.Framework.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="KGM.Framework.Domain.Core">
+      <HintPath>..\KGM.Framework.Dll\KGM.Framework.Domain.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="KGM.Framework.Infrastructure">
+      <HintPath>..\KGM.Framework.Dll\KGM.Framework.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="KGM.Framework.RepositoryEF.Core">
+      <HintPath>..\KGM.Framework.Dll\KGM.Framework.RepositoryEF.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

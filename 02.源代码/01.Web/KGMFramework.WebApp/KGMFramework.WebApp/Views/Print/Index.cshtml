@@ -1,0 +1,25 @@
+﻿@using Stimulsoft.Report.Mvc;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        @Html.Stimulsoft().StiMvcViewer(new StiMvcViewerOptions()
+        {
+            Actions =
+            {
+                GetReportSnapshot = "GetReportSnapshot",
+                ViewerEvent = "ViewerEvent"
+            }
+        })
+    </div>
+</body>
+</html>

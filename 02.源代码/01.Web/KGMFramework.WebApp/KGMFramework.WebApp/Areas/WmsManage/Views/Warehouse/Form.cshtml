@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+
+
+
+
+<form id="form1">
+    <div style="padding-top: 20px; margin-right: 20px;">
+        <table class="form">
+            <tr>
+                <th class="formTitle">编号</th>
+                <td class="formValue">
+                    <input id="F_EnCode" name="F_EnCode" type="text" class="form-control required" placeholder="请输入仓库编号" />
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">名称</th>
+                <td class="formValue">
+                    <input id="F_FullName" name="F_FullName" type="text" class="form-control required" placeholder="请输入仓库名称" />
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">联系人</th>
+                <td class="formValue">
+                    <input id="F_Contacts" name="F_Contacts" type="text" class="form-control required" placeholder="请输入联系人" />
+                </td>
+                @*onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9.]+/,'');}).call(this)"*@
+            </tr>
+            <tr>
+                <th class="formTitle">电话</th>
+                <td class="formValue">
+                    <input id="F_TelePhone" name="F_TelePhone" type="text" class="form-control required" placeholder="请输入电话" />
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">地址</th>
+                <td class="formValue">
+                    <input id="F_Address" name="F_Address" type="text" class="form-control required" placeholder="请输入地址" />
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">备注</th>
+                <td class="formValue">
+                    <input id="F_Description" name="F_Description" type="text" class="form-control " placeholder="请输入备注" />
+                </td>
+            </tr>
+            @*<tr>
+                <th class="formTitle">所属地区</th>
+                <td class="formValue">
+                    <select id="F_AreaId" name="F_AreaId" class="form-control"></select>
+                </td>
+            </tr>*@
+         
+        </table>
+    </div>
+</form>
+
+<script src="~/Content/js/framework-FormVar.js"></script>
+<script src="~/Areas/WmsManage/Content/js/Warehouse/Form.js"></script>
+<script src="~/Content/js/framework-Form.js"></script>

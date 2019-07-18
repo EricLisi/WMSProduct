@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+
+<div class="topPanel">
+    <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="search">
+                <div class="input-group">
+                    <input id="txt_keyword" type="text" class="form-control" placeholder="名称" style="width: 200px;">
+                    <span class="input-group-btn pull-left">
+                        <button id="btn_search" type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 col-sm-8 col-xs-12">
+            <div class="pull-right toolbar">
+                <div class="btn-group">
+                    <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+                </div>
+                <div class="btn-group">
+                    <a id="NF-add" authorize="yes" class="btn btn-primary" onclick="btn_add()"><i class="fa fa-plus"></i>新建菜单</a>
+                </div>
+                <div class="btn-group">
+                    <a id="NF-edit" authorize="yes" class="btn btn-info hidden-xs" onclick="btn_edit()"><i class="fa fa-pencil-square-o"></i>修改菜单</a>
+                </div>
+                <div class="btn-group">
+                    <a id="NF-delete" authorize="yes" class="btn btn-danger hidden-xs" onclick="btn_delete()"><i class="fa fa-trash-o"></i>删除菜单</a>
+                </div>
+                <div class="btn-group">  
+                    <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i>更多操作</a>
+                    <ul class="dropdown-menu pull-right"> 
+                        <li><a id="NF-edit" class="hidden-sm hidden-md hidden-lg" authorize="yes" onclick="btn_edit()"><i class="fa fa-pencil-square-o"></i>修改菜单</a></li>
+                        <li><a id="NF-delete" class="hidden-sm hidden-md hidden-lg" authorize="yes" onclick="btn_delete()"><i class="fa fa-trash-o"></i>删除菜单</a></li>
+                        <li><a id="NF-Details" authorize="yes" onclick="btn_details()"><i class="fa fa-search-plus"></i>查看菜单</a></li>
+                        <li><a id="NF-modulebutton" authorize="yes" onclick="btn_modulebutton()"><i class="fa fa-gavel"></i>按钮管理</a></li>
+                    </ul> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="gridPanel">
+    <table id="gridList"></table>
+</div>
+
+<script>$('.toolbar').authorizeButton()</script>
+<script src="~/Content/js/framework-IndexVar.js"></script>
+<script src="~/Areas/SystemManage/Content/js/Module/Index.js"></script>
+<script src="~/Content/js/framework-Index.js"></script> 

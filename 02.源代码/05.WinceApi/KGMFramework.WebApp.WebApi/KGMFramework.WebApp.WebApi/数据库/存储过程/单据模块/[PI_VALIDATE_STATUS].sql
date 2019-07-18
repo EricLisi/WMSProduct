@@ -1,0 +1,62 @@
+USE [KGM_WMS_DB]
+GO
+
+/****** Object:  StoredProcedure [dbo].[PI_VALIDATE_STATUS]    Script Date: 2019/3/28 10:55:15 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+/*
+	到货单据状态校验
+*/
+
+IF EXISTS(SELECT  * FROM SYS.PROCEDURES WHERE  OBJECT_ID = OBJECT_ID(N'[dbo].[PI_VALIDATE_STATUS]'))
+   DROP PROC [dbo].[PI_VALIDATE_STATUS]
+GO
+Create PROC [dbo].[PI_VALIDATE_STATUS]
+@ORDERNO NVARCHAR(50),	--单据号
+@MSG NVARCHAR(4000) OUTPUT	--返回信息
+AS 
+SET @MSG = ''
+
+DECLARE @CSTATUS INT
+DECLARE @ISLOCK INT
+DECLARE @EXISTS INT
+SET @EXISTS = 0
+SELECT @CSTATUS = F_Status  --@ISLOCK = ISLOCK,@EXISTS = COUNT(*) 
+FROM PI_Head 
+WHERE F_EnCode = @ORDERNO
+--GROUP BY [STATUS],ISLOCK
+--IF @EXISTS = 0
+--BEGIN
+--	SET @MSG = N'未能获取到单据信息,单据可能已经删除!'
+--	RETURN
+--END
+--IF @ISLOCK = 1
+--BEGIN
+--	SET @MSG = N'单据已经锁定,不允许继续操作!'
+--	RETURN
+--END
+--IF @CSTATUS < 2
+--BEGIN
+--	SET @MSG = N'单据已经撤销,不允许继续操作!'
+--	RETURN
+--END
+--ELSE 
+IF @CSTATUS = 4
+BEGIN
+	SET @MSG = N'单据已经完成,不允许继续操作!'
+	RETURN
+END 
+--ELSE IF @CSTATUS > 4
+--BEGIN
+--	SET @MSG = N'单据已经上架完成,不允许继续操作!'
+--	RETURN
+--END 
+
+
+GO
+
+

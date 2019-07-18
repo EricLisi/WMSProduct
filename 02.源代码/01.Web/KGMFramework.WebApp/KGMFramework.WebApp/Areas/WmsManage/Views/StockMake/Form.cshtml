@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<style>
+
+    .Max {
+      
+        color:#00690e ;
+    }
+
+    .Min {
+    
+        color:red ;
+    }
+</style>
+<form id="form1">
+    <table class="form">
+        <tr>
+            <th class="formTitle">单据号</th>
+            <td class="formValue">
+                <input id="F_EnCode" name="F_EnCode" type="text" readonly="readonly" class="form-control" placeholder="单据号后台自动生成" />
+                <input id="F_Id" name="F_Id" type="hidden" />
+            </td>
+            <th class="formTitle">制单人</th>
+            <td class="formValue">
+                <input id="F_Operator" name="F_Operator" type="text" readonly="readonly" class="form-control" value="@ViewBag.UserName" />
+            </td>
+            <th class="formTitle">单据日期</th>
+            <td class="formValue">
+                <input id="F_date" name="F_date" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker()" value="@DateTime.Now.ToShortDateString()" />
+            </td>
+        </tr>
+        <tr>
+            <th class="formTitle">盘点仓库</th>
+            <td class="formValue">
+                <select id="F_WarehouseId" name="F_WarehouseId" class="form-control required"></select>
+            </td>
+            <th class="formTitle">盘点货位</th>
+            <td class="formValue">
+                <select id="F_CargoPositionId" name="F_CargoPositionId" class="form-control" multiple="multiple"></select>
+            </td>
+            <th class="formTitle" style="padding-top: 5px;">备注 </th>
+            <td class="formValue">
+                <input id="F_Description" name="F_Description" type="text" class="form-control" placeholder="请输入备注" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <div class="pull-left" style="padding:10px" id="rowTools">
+                    <a id="btn_genarate" class="btn btn-primary" onclick="Tools().add()">生成盘点单</a>
+ 
+                </div>
+                <div class="pull-left" style="padding:10px" id="rowTools">
+                    @*<a id="btn_print" class="btn btn-primary" onclick="printBarcode()"><i class="fa fa-print"></i>打印单据</a>*@
+                    @*<a id="btn_BeginBathEdit" class="btn btn-primary edit" onclick="Tools().BeginBathEdit(this)">批量修改</a>*@
+                    <a id="btn_EndBathEdit" class="btn btn-primary edit" style="display:none" onclick="Tools().EndBathEdit(this)">批量保存</a>
+                    <a id="btn_CancelEdit" class="btn btn-danger ui-icon-desc" style="display:none" onclick="Tools().CancelEdit(this)">取消编辑</a>         
+                    @*<div class="btn-group">
+                        <a id="NF-Excel" class="btn btn-primary dropdown-text"><i class="fa fa-plus"></i>Excel操作</a>
+                        <a id="NF-drop" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                   <ul class="dropdown-menu pull-right">
+                            <li>
+                                <a id="btn_xiazai" href="~/Content/activex/产品盘点格式.xlsx"><i class="fa fa-download"></i>下载模版</a>
+                            </li>
+                            <li>
+                                <a id="btnImport" onclick="FileOper.Uploadify({ router: 'StockMake' })"><i class="fa fa-file-excel-o"></i>导入Excel</a>
+                            </li>
+                            <li>
+                                <a id="btn_export" onclick="ExportExcel1({ router: 'StockMake' })"><i class="fa fa-file-excel-o"></i>导出Excel</a>
+                            </li>
+                        </ul>
+                    </div>*@ 
+                </div>
+                
+                <div class="pull-right" style="padding:10px">
+                    <a id="btn_verify" class="btn btn-warning" onclick="Tools().verify()">审核单据</a>
+                    <a id="btn_noverify" class="btn btn-danger" onclick="Tools().noverify()">弃审单据</a>
+                    <a id="btn_save" class="btn btn-primary" onclick="Tools().save()">保存单据</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="gridPanel">
+        <table id="gridList"></table>
+    </div>
+
+</form>
+
+<script src="~/Content/js/framework-FormVar.js"></script>
+<script src="~/Areas/WmsManage/Content/js/StockMake/Form.js"></script>
+<script src="~/Content/js/framework-Form.js"></script>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>后台管理系统-登录</title>
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
+		<link href="src/assets/plugin/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="src/assets/plugin/layx/layx.min.css" rel="stylesheet" />
+		<link href="src/assets/plugin/jquery-unlock/unlock.css" rel="stylesheet" />
+		<link href="src/assets/css/app-login.css" rel="stylesheet" />
+		<style>			
+			@media screen and (max-width: 600px) {
+				.wrap {
+					width: 300px!important
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="bgimg">
+			<img src="src/assets/images/login/defaultbg.png" />
+		</div>
+		<div class="container wrap">	
+			<div class="row">
+				<div class="col-md-6 col-sm-6 hidden-xs leftimg">
+					<img src="src/assets/images/login/default_left.png" />
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12">
+					<div class="text-center">
+						<img src="src/assets/images/logo.png" class="logo" />
+					</div>
+					<div>
+						<form class="form-horizontal row">
+							<div class="form-group ">
+								<div class="col-md-12 col-sm-12 col-xs-12">
+									<input id="account" class="form-control" type="text" required placeholder="用户名">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-md-12 col-sm-12 col-xs-12">
+									<input id="password" class="form-control" type="password" placeholder="密码">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-md-12 col-sm-12 col-xs-12">
+									<select id="loginPlatform" class="form-control">
+										<option value="">=请选择登录平台=</option>
+										<option value="wms" data-url='auth.html'>仓库管理系统</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-md-12 col-sm-12 col-xs-12 bar">
+									<div id="validate"></div>
+								</div>
+							</div>
+							<div class="form-group remember">
+								<div class="col-md-12 col-sm-12 col-xs-12">
+									<input id="autoLogin" type="checkbox">
+									<label for="autoLogin" style="font-weight:normal">记住登录用户</label>
+								</div>
+							</div>
+							<div class="form-group text-center">
+								<div class="col-md-12 col-sm-12 col-xs-12">
+									<button id="btnLogin" class="btn btn-primary btn-lg btn-block" type="button" disabled>登录系统</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<p>Copyright © <span id="copy"></span> 上海金戈马软件有限公司</p>
+			<p>官方网站：
+				<a href="http://www.kgmsoft.com.cn">http://www.kgmsoft.com.cn</a>
+			</p>
+		</footer>
+		<script src="src/mock/platformdata.js"></script>
+		<script src="src/assets/plugin/jquery/jquery-1.10.2.min.js"></script>
+		<script src="src/assets/plugin/bootstrap/js/bootstrap.min.js"></script>
+		<script src="src/assets/plugin/jquery/jquery.md5.min.js"></script>
+		<script src="src/assets/plugin/mousewheel/mousewheel.js"></script>
+		<script src="src/assets/plugin/jquery-unlock/unlock.js"></script>
+		<script src="src/assets/plugin/layx/layx.min.js"></script>
+		<script src="src/utils/app.js"></script>
+		<script src="src/utils/app-config.js"></script>
+		<script src="src/utils/app-local-store.js"></script>
+		<script src="src/utils/app-request.js"></script>
+		<script src="src/assets/js/app-login.js"></script>
+	</body>
+
+</html>

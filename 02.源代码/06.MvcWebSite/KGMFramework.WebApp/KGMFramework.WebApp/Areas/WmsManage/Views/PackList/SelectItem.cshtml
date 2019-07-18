@@ -1,0 +1,117 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+
+<div class="topPanel">
+    <div class="row">
+        <div class="col-md-6 col-sm-7 col-xs-5">
+            <div class="btn-group">
+                <button id="btndropmenu" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-search"></i>查询过滤 <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu list-search-menu form row" data-stoppropagation="true">
+                    <li>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <table>
+                                <tr>
+                                    <th class="formTitle">单据号</th>
+                                    <td class="formValue">
+                                        <input id="F_EnCode" name="F_EnCode" type="text" class="form-control" placeholder="请输入单据号">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <table>
+                                <tr>
+                                    <th class="formTitle">供应商</th>
+                                    <td class="formValue">
+                                        <select id="F_Supplier" name="F_Supplier" class="form-control">
+                                            <option value="">==请选择==</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <table>
+                                <tr>
+                                    <th class="formTitle">仓库</th>
+                                    <td class="formValue">
+                                        <select id="F_Warehouse" name="F_Warehouse" class="form-control">
+                                            <option value="">==请选择==</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <table>
+                                <tr>
+                                    <th class="formTitle">状态</th>
+                                    <td class="formValue">
+                                        <select id="F_Status" name="F_Status" class="form-control">
+                                            <option value="">==请选择==</option>
+                                            <option value="0">待审核</option>
+                                            <option value="1">已审核</option>
+                                            <option value="2">已关闭</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <table>
+                                <tr>
+                                    <th class="formTitle">起始日</th>
+                                    <td class="formValue">
+                                        <input id="F_SDate" name="F_SDate" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker()" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <table>
+                                <tr>
+                                    <th class="formTitle">截止日</th>
+                                    <td class="formValue">
+                                        <input id="F_EDate" name="F_EDate" type="text" class="form-control input-wdatepicker" onfocus="WdatePicker()" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+                            <div class="pull-right">
+                                <a id="btn_search" class="btn btn-primary"><i class="fa fa-search"></i>查询</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-5 col-xs-7">
+            <div class="pull-right toolbar">
+                <div class="btn-group">
+                    <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+                </div>
+                <div class="btn-group">
+                    <a id="NF-add" authorize="yes" class="btn btn-primary hidden-xs" onclick="btn_add()"><i class="fa fa-plus"></i>新建单据</a>
+                </div>
+                <div class="btn-group">
+                    <a id="NF-edit" authorize="yes" class="btn btn-info hidden-xs hidden-sm" onclick="btn_edit()"><i class="fa fa-pencil-square-o"></i>修改单据</a>
+                </div>  
+                <div class="btn-group">
+                    <a id="NF-delete" authorize="yes" class="btn btn-danger hidden-xs hidden-sm" onclick="btn_delete()"><i class="fa fa-trash-o"></i>删除单据</a>
+                </div>
+              
+            </div>
+        </div>
+    </div>
+</div>
+<div class="gridPanel">
+    <table id="gridList"></table>
+</div>
+<script src="~/Content/js/framework-IndexVar.js"></script>
+<script src="~/Areas/WmsManage/Content/js/PackList/SelectItem.js"></script>
+<script src="~/Content/js/framework-Index.js"></script> 

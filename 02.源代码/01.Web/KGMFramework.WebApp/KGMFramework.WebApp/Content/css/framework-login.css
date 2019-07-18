@@ -1,0 +1,72 @@
+body {
+    background-image: url(../img/home/bj2.jpg);
+    color: #fff;
+}
+
+.myicon {
+    color: #3041c3;
+    line-height: 20px;
+}
+
+.errorText {
+    color: #ff0000; 
+    font-size:larger;
+    font-weight:bold;
+}
+
+/*当页面大于1200px且高度大于800时，大屏幕，主要是PC 端*/
+@media (min-height: 800px) and (min-width:1200px) {
+    .mytab {
+        margin-top: 250px;
+    }
+}
+
+@media (min-height: 670px) and (max-height:799px) and (min-width:1200px) {
+    .mytab {
+        margin-top: 150px;
+    }
+}
+
+@media (max-height:669px) and (min-width:1200px) {
+    .mytab {
+        margin-top: 40px;
+    }
+}
+
+/*在992 和1199 像素之间的屏幕里，中等屏幕，分辨率低的PC*/
+@media (min-height: 800px) and (min-width:992px) and (max-width:1199px) {
+    .mytab {
+        margin-top: 250px;
+    }
+}
+
+@media (min-height: 670px) and (max-height:799px) and (min-width:992px) and (max-width:1199px) {
+    .mytab {
+        margin-top: 150px;
+    }
+}
+
+@media (max-height:669px) and (min-width:992px) and (max-width:1199px) {
+    .mytab {
+        margin-top: 40px;
+    }
+}
+
+
+.loginbox {
+    border: 2px solid #fff;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    background-color: #000000;
+    background-color: rgba(0,0,0,0.2);
+}
+
+#clr, #show {
+    pointer-events: auto;
+    text-decoration: none;
+}
+
+    #clr, #show:hover {
+        cursor: pointer;
+    }

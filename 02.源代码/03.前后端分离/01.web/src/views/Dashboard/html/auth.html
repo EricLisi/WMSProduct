@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的桌面</title>
+    <!-- 资源文件引入开始 -->
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
+    <link href="../../../assets/plugin/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../../assets/plugin/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../../assets/css/app-common.css" rel="stylesheet" />
+    <link href="../css/auth.css" rel="stylesheet" />
+    <style>
+			@media (max-width: 600px) {
+				.app-item-20{width:100%;}								
+			}
+	</style>
+    <!-- 资源文件引入结束 -->
+   
+</head>
+
+<body>
+    <div class="app-desktop-panel">
+        <div class="col-xs-12">
+            <div class="portal-panel-title">
+                <i class="fa fa-bars"></i>&nbsp;&nbsp;常用菜单
+            </div>
+            <div class="row portal-panel-content">
+                <div class="app-item-20">
+                    <div class="task-stat" style="background-color: #578ebe;">
+                        <div class="visual">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                用户管理
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="app-item-20 ">
+                    <div class="task-stat" style="background-color: #e35b5a;">
+                        <div class="visual">
+                            <i class="fa fa-group"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                角色管理
+                            </div> 
+                        </div> 
+                    </div>
+                </div>
+                <div class="app-item-20">
+                    <div class="task-stat" style="background-color: #44b6ae;">
+                        <div class="visual">
+                            <i class="fa fa-comment"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                系统日志
+                            </div> 
+                        </div>
+                         
+                    </div>
+                </div>
+                <div class="app-item-20">
+                    <div class="task-stat" style="background-color: #8775a7;">
+                        <div class="visual">
+                            <i class="fa fa-bars"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                功能管理
+                            </div> 
+                        </div> 
+                    </div>
+                </div>
+                <div class="app-item-20">
+                    <div class="task-stat" style="background-color: #3598dc;">
+                        <div class="visual">
+                            <i class="fa fa-archive"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                公司管理
+                            </div> 
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-xs-12">
+            <div class="portal-panel-title">
+                <i class="fa fa-bar-chart"></i>&nbsp;&nbsp;一周登录流量
+            </div>
+            <div id="weekChart" class="portal-panel-content" style="overflow: hidden; padding-top: 20px; padding-left: 30px; padding-right: 50px;">
+                 
+            </div>
+        </div> 
+    </div>
+    <!-- 引入js开始 -->
+    <script src="../../../assets/plugin/jquery/jquery-1.10.2.min.js"></script>
+    <script src="../../../assets/plugin/highcharts/highcharts.js"></script> 
+    <script src="../js/auth.js"></script>
+    <!-- 引入js结束 -->
+</body>
+
+</html>

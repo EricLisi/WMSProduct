@@ -1,0 +1,47 @@
+﻿.card-no-border .card {
+    border-color: #d7dfe3;
+    border-radius: 4px;
+    -webkit-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.card-no-border .sidebar-footer {
+    background: #f2f6f8;
+}
+
+.card-no-border .sidebar-nav>ul>li>a.active {
+    background: #ffffff;
+}
+
+.card-no-border .shadow-none {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
+
+.error-box {
+    height: 100%;
+    position: fixed;
+    background: url(../images/error/error-bg.jpg) no-repeat center center #fff;
+    width: 100%;
+}
+
+.error-box footer {
+    width: 100%;
+    margin-bottom: 20px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.error-body {
+    padding-top: 5%;
+}
+
+.error-body .errorCode {
+    font-size: 210px;
+    font-weight: 900;
+    line-height: 210px;
+}
+
+#back {margin-top: 50px;}

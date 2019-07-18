@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Config>
+  <!--<SERVERIP>192.168.168.26:9866</SERVERIP>
+  <DBNAME>KGM_WeiZhiXing</DBNAME>
+  <DBUSER>sa</DBUSER>
+  <DBPWD>zzz</DBPWD>-->
+  <!--<APISERVERIP>localhost:12106</APISERVERIP>-->
+  <APISERVERIP>120.26.131.47:9401</APISERVERIP>
+  <APISERVICE></APISERVICE>
+  <TERMINAL>-1</TERMINAL>
+  <SerialNo></SerialNo>
+  <COM>COM5</COM>
+</Config>
+

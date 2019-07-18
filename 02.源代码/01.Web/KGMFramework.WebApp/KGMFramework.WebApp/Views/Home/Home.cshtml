@@ -1,0 +1,155 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/css/home.css" rel="stylesheet" />
+<link href="~/Content/plugins/vegas/jquery.vegas.min.css" rel="stylesheet" />
+<body data-spy="scroll" data-target="#menu">
+    <div class="navbar navbar-inverse navbar-fixed-top scrollclass" id="menu">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="~/Content/images/home/logo180-50.png" alt="" style="max-height:40px" /></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#services">工作平台</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--NAVBAR SECTION END-->
+    <div id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 ">
+                    <div id="carousel-slider" data-ride="carousel" class="carousel slide">
+                        <div class="carousel-inner" style="height:500px;line-height:500px">
+                            <div class="item active">
+                                <h1>JACK WOLFSKIN</h1>
+                            </div>
+                            <div class="item">
+                                <h1>专业装备，无需负重</h1>
+                            </div>
+                            <div class="item">
+                                <h1>走向户外，投入大自然的怀抱</h1>
+                            </div>
+                        </div>
+                        <!--INDICATORS-->
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-slider" data-slide-to="0" title="我们是您身边的户外运动专家。我们勇于经受空间和时间的严格考验。不断总结经验，超越自我，从不满足于现有的成就。" class="active"></li>
+                            <li data-target="#carousel-slider" data-slide-to="1" title="我们诚邀您一起行动：保护地球的环境、体验自然的神奇、分享生命的感悟" class=""></li>
+                            <li data-target="#carousel-slider" data-slide-to="2" title="我们憧憬自由，向往独立，期待幸福、着迷户外。因为梦想，所以追求。" class=""></li>
+                        </ol>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2  scrollclass">
+                    <h4 id="mytext" style="height:100px">
+                        我们憧憬自由，向往独立，期待幸福、着迷户外。因为梦想，所以追求。
+                    </h4>
+                    <br />
+                    @*<a href="#about" class="btn  btn-lg custom-btn-1"><i class="fa fa-home"></i>关于我们</a>
+                        <a href="#services" class="btn  btn-lg custom-btn-1"><i class="fa fa-comments-o"></i> 技术支持 </a>*@
+                    <a id="test" href="javascript:;" class="btn btn-lg custom-btn-1"><i class="fa fa-globe"></i> 立即体验 </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--HOME SECTION END-->
+    <hr />
+    <!--ABOUT SECTION END-->
+    <hr />
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2  text-center">
+                    <h2>工作平台</h2>
+                    <p>
+                        狼爪公共企业平台是狼爪公司为了整合企业与客商之间的交互而开发的平台。
+                        通过这一平台，让企业与客商之间信息化交互，资源共享，提升效率。
+                    </p>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="media">
+                        <div class="pull-left">
+                            <i class="fa fa-tv fa-4x "></i>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">运维平台</h3>
+                            <p>
+                                用于企业间货品的周转、运输以及追踪管理
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="media">
+                        <div class="pull-left">
+                            <i class="fa fa-support fa-4x  "></i>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">敬请期待</h3>
+                            <p>
+                                不久之后我们将会见面
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row ">
+
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="media">
+                        <div class="pull-left">
+                            <i class="fa fa-support fa-4x  "></i>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">敬请期待</h3>
+                            <p>
+                                不久之后我们将会见面
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="media">
+                        <div class="pull-left">
+                            <i class="fa fa-support fa-4x  "></i>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">敬请期待</h3>
+                            <p>
+                                不久之后我们将会见面
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--SERVICES SECTION END-->
+    <hr />
+    <!--CONTACT SECTION END-->
+    <div class="footer">
+        &copy; 2017 www.kgmsoft.com.cn | <a href="http://www.kgmsoft.com.cn/" target="_blank" title="上海金戈马软件有限公司">上海金戈马软件有限公司</a>
+        @*- Collect from <a href="http://www.kgmsoft.com.cn/" title="上海金戈马软件有限公司" target="_blank">上海金戈马软件有限公司</a>*@
+    </div>
+    <script src="~/Content/plugins/vegas/jquery.vegas.min.js"></script>
+    <script src="~/Content/js/home.js"></script>
+</body>

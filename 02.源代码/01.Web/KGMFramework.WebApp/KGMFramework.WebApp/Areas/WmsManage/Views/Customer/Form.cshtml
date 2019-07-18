@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<form id="form1">
+    <div style="padding-top: 30px; margin-right: 20px;">
+        <table class="form">
+            <tr>
+                <th class="formTitle">客户编码</th>
+                <td class="formValue">
+                    <input id="F_EnCode" name="F_EnCode" type="text" class="form-control required" placeholder="请输入客户编码" />
+                </td>
+                <th class="formTitle">客户名称</th>
+                <td class="formValue">
+                    <input id="F_FullName" name="F_FullName" type="text" class="form-control required" placeholder="请输入客户名称" />
+                </td>
+            </tr>
+            <tr>
+                 @*<th class="formTitle">客户类型</th>
+                <td class="formValue">
+                    <select id="F_CusterCategoryId" name="F_CusterCategoryId" class="form-control">
+                        <option value="">==请选择==</option>
+                    </select>
+                    @*<input id="F_CategoryID" name="F_CategoryID" type="text" class="form-control required" placeholder="请输入客户类型" />
+                </td>*@
+                <th class="formTitle">联系人</th>
+                <td class="formValue">
+                    <input id="F_Contacts" name="F_Contacts" type="text" class="form-control " placeholder="请输入联系人" />
+                </td>
+                <th class="formTitle">手机号码</th>
+                <td class="formValue">
+                    <input id="F_MobilePhone" name="F_MobilePhone" type="text" class="form-control" placeholder="请输入手机号码" />
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle">电话</th>
+                <td class="formValue">
+                    <input id="F_TelePhone" name="F_TelePhone" type="text" class="form-control" placeholder="请输入电话" />
+                </td>
+                <th class="formTitle">微信</th>
+                <td class="formValue">
+                    <input id="F_WeChat" name="F_WeChat" type="text" class="form-control" placeholder="请输入微信" />
+                </td>
+            </tr>
+            <tr style="display:none">
+                <th class="formTitle">传真</th>
+                <td class="formValue">
+                    <input id="F_Fax" name="F_Fax" type="text" class="form-control" placeholder="请输入传真" />
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle" valign="top" style="padding-top: 5px;">地址</th>
+                <td class="formValue">
+                    <textarea id="F_Address" name="F_Address" type="text" class="form-control" style="height: 40px; width:630px;"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <th class="formTitle" valign="top" style="padding-top: 5px;">
+                    备注
+                </th>
+                <td class="formValue" colspan="3">
+                    <textarea id="F_Description" name="F_Description" class="form-control" style="height: 70px; width:630px;"></textarea>
+                </td>
+            </tr>
+        </table>
+    </div>
+</form>
+<script src="~/Content/js/framework-FormVar.js"></script>
+<script src="~/Areas/WmsManage/Content/js/Customer/Form.js"></script>
+<script src="~/Content/js/framework-Form.js"></script>
+
+<script type='text/javascript'>
+
+    //window.onload = function () {
+    //    var CreatorTime = document.getElementById("F_CreatorTime").value;
+    //    if (CreatorTime == "") {
+    //        var date = new Date();
+    //        var year = date.getFullYear();
+    //        var month = date.getMonth() + 1;
+    //        var day = date.getDate();
+    //        //document.getElementById("F_CreatorTime").value = year + "-" + month + "-" + day;
+    //    } else {
+    //        var YCreatorTime = CreatorTime.substring(0, 10);
+    //        document.getElementById("F_CreatorTime").value = YCreatorTime;
+    //    }
+    //}
+
+</script>

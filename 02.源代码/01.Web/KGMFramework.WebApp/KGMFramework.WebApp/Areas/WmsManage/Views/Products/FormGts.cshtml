@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+
+<form id="form1">
+    <div style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+        <div style="padding-top: 20px; margin-right: 30px;">
+            <table class="form">
+                <tr>
+                    <th class="formTitle"></th>
+                    <td class="formValue">
+                        <input id="F_Id" name="F_Id" type="hidden" class="form-control" readonly="readonly" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle"></th>
+                    <td class="formValue">
+                        <input id="Gts" name="Gts" type="hidden" class="form-control" readonly="readonly" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">GtsLicenseNo</th>
+                    <td class="formValue">
+                        <div id="F_GtsLicenseNo1" style="width:200px"></div>
+                        <input id="F_GtsLicenseNo" name="F_GtsLicenseNo" type="hidden" class="form-control" readonly="readonly" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">Material Number</th>
+                    <td class="formValue">
+                        <input id="F_Material" name="F_Material" type="text" class="form-control required" readonly="readonly" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="formTitle">Product No</th>
+                    <td class="formValue">
+                        <input id="F_ProductNo" name="F_ProductNo" type="text" class="form-control required" readonly="readonly" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</form>
+
+<script src="~/Content/js/framework-FormVar.js"></script>
+<script src="~/Areas/PrintLabelManage/Content/js/Products/FormGts.js"></script>
+<script src="~/Content/js/framework-Form.js"></script>

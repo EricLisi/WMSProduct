@@ -1,0 +1,98 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Index.cshtml";
+} 
+
+<script src="~/Content/plugins/echarts/echarts-all.js"></script>
+<script src="~/Content/plugins/echarts/infographic.js"></script>
+
+<div class="panel panel-default" style="margin-bottom: 10px;">
+    <div class="panel-heading">实时监控</div>
+    <div class="panel-body" style="padding: 0px;">
+        <div>
+            <div id="maina" style="width: 33%; float: left; height: 250px;"></div>
+            <div id="mainb" style="width: 34%; float: left; height: 250px;">2</div>
+            <div id="mainc" style="width: 33%; float: left; height: 250px;">3</div>
+        </div>
+        <div style="position: relative; top: -20px;">
+            <div style="width: 33%; float: left; text-align: center;">IIS使用率</div>
+            <div style="width: 34%; float: left; text-align: center;">CPU使用率</div>
+            <div style="width: 33%; float: left; text-align: center;">ARM使用率</div>
+        </div>
+    </div>
+</div>
+<div class="panel panel-default" style="margin-bottom: 10px;">
+    <div class="panel-heading">实时监控</div>
+    <div class="panel-body" style="padding: 0px;padding-top:20px;">
+        <div id="maind" style="height: 250px;"></div>
+    </div>
+</div>
+<div>
+    <div style="float: left; width: 49%;">
+        <div class="panel panel-default" style="margin-bottom: 10px;">
+            <div class="panel-heading">服务器信息</div>
+            <div class="panel-body" style="height: 300px;">
+                <table>
+                    <tr>
+                        <td>操作系统名称</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>操作系统版本</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>数据库服务器端口</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>数据库名称</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>用户名</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div style="float: right; width: 49%;">
+        <div class="panel panel-default" style="margin-bottom: 10px;">
+            <div class="panel-heading">数据库信息</div>
+            <div class="panel-body" style="height: 300px;">
+                <table>
+                    <tr>
+                        <td>数据库类型</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>数据库服务器地址</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>数据库服务器端口</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>数据库名称</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>用户名</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Areas/SystemSecurity/Content/js/ServerMonitoring/Index.js"></script>

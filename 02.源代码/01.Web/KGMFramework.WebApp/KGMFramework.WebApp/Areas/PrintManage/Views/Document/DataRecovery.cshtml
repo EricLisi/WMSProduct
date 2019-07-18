@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+
+}
+
+<div class="ui-layout" id="layout" style="height: 100%; width: 100%;position:relative;">
+    <div class="ui-layout-center">
+        <div class="topPanel">
+            <div class="toolbar">
+                <div class="btn-group">
+                    <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>    
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn-primary" id="NF-DataRecovery" onclick="DataRecovery()"><i class="fa fa-repeat"></i>恢复</a>
+                </div>
+             </div>
+            <div class="search">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="input-group">
+                                <input id="txt_keyword" type="text" class="form-control" placeholder="项目/标签/版本/语言" style="width: 200px;">
+                                <span class="input-group-btn">
+                                    <button id="btn_search" type="button" class="btn  btn-primary"><i class="fa fa-search"></i></button>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="gridPanel">
+            <table id="gridList"></table>
+            <div id="gridPager"></div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Content/js/index.js"></script>
+<script src="~/Content/js/indextab.js"></script>
+<script src="~/Content/js/framework-IndexVar.js"></script>
+<script src="~/Areas/PrintManage/Contect/js/DataRecovery/index.js"></script>
+<script src="~/Content/js/framework-Index.js"></script>

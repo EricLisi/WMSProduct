@@ -1,0 +1,323 @@
+﻿@{
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+
+<section>
+    <div>
+        <div id="myCarousel" class="carousel slide" data-ride=”carousel”>
+            <div class="carousel-inner">
+                <div class="item active" data-id="0">
+                    <div>
+                        <div class="topPanel">
+                            <div class="toolbar">
+                                <div class="btn-group">
+                                    <a class="btn btn-primary" onclick="$.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
+                                </div> 
+                            </div>
+                            <div class="search">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="input-group">
+                                                <input id="txt_keyword" type="text" class="form-control" placeholder="单据编码/入库单据编码/制单人" style="width: 250px;">
+                                                <span class="input-group-btn">
+                                                    <button id="btn_search" type="button" class="btn  btn-primary"><i class="fa fa-search"></i></button>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="g1" class="gridPanel">
+                            <table id="gridList"></table>
+                            <div id="gridPager"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item" data-id="1">
+                    <div>
+                        <div id="g2" class="gridPanel">
+                            <table id="gridBodyList"></table>
+                            <div id="gridBodyPager"></div>
+                        </div>
+                        <div>
+                            <input type="button" class="btn btn-primary" value="确定" onclick="BodyMethods().add()" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <table id="grdResult"></table> @*勾选结果*@
+    </div>
+</section> 
+
+<script>
+    $(function () {
+
+    })
+
+    var type = $.request('type')
+    var listAction = "";
+    var resultData = [];
+
+    /**
+     *  轮播模块
+     */
+    var Carousel = function () {
+        return {
+            ele: $("#myCarousel"),//当前元素
+            getActiveItem: function () {//获取当前选中项
+                return this.ele.find(".item.active")
+            },
+            getActiveItemId: function () {//获取当前选中项的数据Id
+                return this.getActiveItem().attr('data-id')
+            },
+            carou: function (number, did) {//点击切换轮播
+                grid = "";
+                gridOver = ""
+                if (number == 0) {
+                    gridOver = "#g1"
+                    grid = "#gridList"
+                } else if (number == 1) {
+                    gridOver = "#g2"
+                    grid = "#gridBodyList"
+                }
+                var overWidth = $(gridOver).css('width').replace('px')
+                var width = $(grid).css('width').replace('px')
+
+                if (width > overWidth) {
+                    $(gridOver).css('overflow-x', 'scroll')
+                }
+
+                if (number > 0) {
+                    $(grid).jqGrid('setGridParam', {
+                        postData: { keyword: key, searchFiled: "F_HId", operators: 3 }
+                    }).trigger('reloadGrid');
+                }
+                else {
+                    operInfo = undefined;
+                }
+
+
+                this.ele.carousel({
+                    interval: false
+                }).carousel(number)
+            }
+        } 
+    }
+
+    //单据列表操作
+    var ListMethods = {
+        grid: $("#gridList"),
+        getGridColumn: function () {
+            var cols = undefined;
+            if (type == 0) {
+                listAction = ""
+                cols = [
+                    {
+                        label: "操作", name: "F_Id",
+                        formatter: function (cellvalue) {
+                            return "<input type='button' style='margin-right:5px' class='btn btn-primary' value='选择' onclick=Carousel().carou(1,'" + cellvalue + "')><input type='button' class='btn btn-info' value='巡检表' onclick=Carousel().carou(2,'" + cellvalue + "')>";
+                        }
+                    },
+                    { label: '出库编号', name: 'F_Id', width: 150, align: 'left', hidden: true, key: true },
+                    { label: '退回单据号', name: 'F_EnCode', width: 150, align: 'left' },
+                    { label: '出库据号', name: 'F_OutBatch', width: 150, align: 'left' },
+                    { label: '客户', name: 'F_CustomerName', width: 150, align: 'left' },
+                    { label: '联系人', name: 'F_Contacts', width: 100, align: 'left' },
+                    { label: '电话', name: 'F_TelePhone', width: 100, align: 'left' },
+                    { label: '地址', name: 'F_Address', width: 150, align: 'left' },
+                    { label: '操作人', name: 'F_Operator', width: 100, align: 'left' },
+                    {
+                        label: '单据日期', name: 'F_Date', width: 120, align: 'left', formatter: "date", formatoptions: { srcformat: 'Y-m-d', newformat: 'Y-m-d' }
+                    },
+                    { label: '审核人', name: 'F_AuditingUser', width: 100, align: 'left' },
+                    {
+                        label: '审核日期', name: 'F_VeriDate', width: 120, align: 'left', formatter: "date", formatoptions: { srcformat: 'Y-m-d', newformat: 'Y-m-d' }
+                    },
+                    {
+                        label: '审核状态', name: 'F_Status', width: 100, align: 'center',
+                        formatter: function (cellvalue) {
+
+                            if (cellvalue == "True") {
+                                return "<i class=\"fa fa-toggle-on\"></i>";
+                            } else {
+                                return "<i class=\"fa fa-toggle-off\"></i>";
+                            }
+
+                        }
+                    },
+                    { label: '备注', name: 'F_Description', width: 200, align: 'left' }]
+            }
+            else {
+                listAction = ""
+            }
+            return cols;
+        },
+        /*
+            初始化单据列表grid
+        */
+        initGrid: function () {
+            this.grid.datagrid({
+                treeGrid: false,
+                url: listAction = "",
+                height: 200,
+                colModel: this.getGridColumn(),
+                pager: "#gridPager",
+                viewrecords: true,
+                multiselect: true
+            })
+        }
+    }
+
+
+    /**
+     *  工艺路线材料
+     */
+    var BodyMethods = function () {
+        return {
+            grid: $("#gridBodyList"),//当前grid对象
+            router: listAction,
+            initGrid: function (postData) {//初始化grid
+                var _thisGrid = this.grid;
+                _thisGrid.tableDnD({ scrollAmount: 0 });//设置grid可以拖动
+                _thisGrid.dataGrid({
+                    url: this.router + "/GetGridJsonPagination",
+                    height: 430,
+                    colModel: [
+                        { label: "主键", name: "F_Id", hidden: true, key: true },
+                        { label: '材料规格', name: 'F_MetStvd', width: 140, align: 'left' },
+                        { label: '材料编码', name: 'F_MetCode', width: 140, align: 'left' },
+                        { label: '材料名称', name: 'F_MetName', width: 120, align: 'left' },
+                        { label: '备注', name: 'F_Description', width: 140, align: 'left' },
+                        { label: '生产厂家', name: 'F_Factory', width: 140, align: 'left' },
+                        { label: '单重', name: 'F_Weight', width: 80, align: 'left' }
+                    ],
+                    postData: postData,
+                    pager: "#gridBodyPager",
+                    viewrecords: true
+                });
+            },
+            refreshGrid: function () {//刷新grid
+                this.grid.jqGrid('setGridParam', {
+                    postData: { keyword: key + "|" + operInfo.F_Id, searchFiled: "F_HeadId|F_FlowOperId", operators: 3 }
+                }).trigger('reloadGrid');
+            },
+            getData: function () {
+                var data = {
+                    type: 0,//0 未选中 1 选中
+                    rows: []//选中行对象
+                };
+                var rows = this.grid.jqGridRowValue();
+                if (rows.length) {//当前是数组对象
+                    data.rows = rows;
+                } else {//当前为选中行对象
+                    data.type = 1
+                    data.rows.push(rows)
+                }
+                return data;
+            },
+            getRow: function (id) {
+                var rows = this.getData().rows;
+                if (id) {
+                    for (var i = 0; i < rows.length; i++) {
+                        if (rows[i].F_Id == id) {
+                            return rows[i];
+                        }
+                    }
+                } else {
+                    return rows[0]
+                }
+            },
+            add: function (frameId, frameIndex) {//添加工序
+                var selectData = SelectForm().getSelectData(frameId)
+                if (selectData == null || selectData == undefined) {
+                    $.modalMsg("请至少选择一行记录", "error");
+                    return false;
+                }
+
+                resultMethods.add(selectData); 
+
+            },
+            del: function () {//删除工序
+                var _this = this;
+                var selectData = _this.getData();
+                if (!selectData || selectData.type == 0) {
+                    $.modalMsg("请至少选择一行记录", "error");
+                    return false;
+                }
+                var delKey = ''
+                for (var i = 0; i < selectData.rows.length; i++) {
+                    delKey += selectData.rows[i].F_Id + ','
+                }
+
+                delKey = delKey.substring(0, delKey.length - 1)
+
+                $.deleteForm({
+                    url: _this.router + "/DeleteForm",
+                    param: { keyValue: delKey },
+                    success: function () {
+                        _this.refreshGrid();
+                    }
+                })
+            }
+        }
+    }
+
+
+
+    var resultMethods = {
+        grid: $("#grdResult"),
+        initGrid: function () {
+            this.grid.datagrid({
+                treeGrid: false,
+                datatype: 'local',
+                data: resultData,
+                height: 200,
+                colModel: [
+                        { label: "主键", name: "F_Id", hidden: true, key: true },
+                        { label: '材料规格', name: 'F_MetStvd', width: 140, align: 'left' },
+                        { label: '材料编码', name: 'F_MetCode', width: 140, align: 'left' },
+                        { label: '材料名称', name: 'F_MetName', width: 120, align: 'left' },
+                        { label: '备注', name: 'F_Description', width: 140, align: 'left' },
+                        { label: '生产厂家', name: 'F_Factory', width: 140, align: 'left' },
+                        { label: '单据数量', name: 'F_Weight', width: 80, align: 'left' },
+                        { label: '数量', name: 'F_Weight', width: 80, align: 'left' }
+                ],
+                viewrecords: true,
+                multiselect: true
+            })
+        },
+        add: function (data) {
+            for (var i = 0; i < data.length; i++) {
+                if (!this.exists(data[i].F_Id)) {
+                    resultData.push(data[i])
+                } 
+            }
+
+            this.reload();
+        },
+        exists: function (id) {
+            for (var i = 0; i < resultData; i++) {
+                if (resultData.F_Id == id) {
+                    return true;
+                }
+            }
+
+            return false;
+        },
+        endEdit:function(){
+
+        },
+        reload: function () {
+            this.endEdit();
+            this.grid.trigger('reloadGrid');
+        }
+    }
+
+
+</script>  

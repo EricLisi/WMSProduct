@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<form id="form1">
+    <table class="form">
+        <tr>
+            <th class="formTitle">单据号</th>
+            <td class="formValue">
+                <input id="F_EnCode" name="F_EnCode" type="text" readonly="readonly" class="form-control" placeholder="单据号后台自动生成" />
+                <input id="F_Id" name="F_Id" type="hidden" />
+            </td>
+            <th class="formTitle">制单人</th>
+            <td class="formValue">
+                <input id="F_Operator" name="F_Operator" type="text" readonly="readonly" class="form-control" value="@ViewBag.UserName" />
+            </td>
+            <th class="formTitle">单据日期</th>
+            <td class="formValue"> 
+                <input id="F_Date" name="F_Date" type="text" class="form-control input-wdatepicker" value="@DateTime.Now" onfocus="WdatePicker()" />
+            </td>
+            <th class="formTitle">合同号</th>
+            <td class="formValue">
+                <input id="F_Invoice" name="F_Invoice" type="text" class="form-control" placeholder="请输入合同号" />
+            </td>
+        </tr>
+        <tr>
+            <th class="formTitle">客户</th>
+            <td class="formValue">
+                <select id="F_CustomerId" name="F_CustomerId" class="form-control required">
+                    <option value="0">==请选择==</option>
+                </select>
+            </td>
+            <th class="formTitle">联系人</th>
+            <td class="formValue">
+                <input id="F_Contacts" name="F_Contacts" type="text" class="form-control required" />
+            </td>
+            <th class="formTitle">电话</th>
+            <td class="formValue">
+                <input id="F_TelePhone" name="F_TelePhone" type="text" class="form-control"  />
+            </td>
+            <th class="formTitle" style="padding-top: 5px;">地址 </th>
+            <td class="formValue">
+                <input id="F_Address" name="F_Address" type="text" class="form-control required" />
+            </td>
+        </tr>
+        <tr>
+            <th class="formTitle">仓库</th>
+            <td class="formValue">
+                <select id="F_WarehouseId" name="F_WarehouseId" class="form-control required">
+                    <option value="">==请选择==</option>
+                </select>
+            </td>
+            <th class="formTitle">备注</th>
+            <td class="formValue">
+                <input id="F_Description" name="F_Description" type="text" class="form-control" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="8">
+                <div class="pull-left" style="padding:10px" id="rowTools">
+                    <a id="btn_addDetail" class="btn btn-primary" onclick="Tools().add()">新增行</a> 
+                    <a id="btn_deleteDetail" class="btn btn-danger" onclick="Tools().del()">删除行</a>
+                </div>
+                <div class="pull-right" style="padding:10px">
+                    <a id="btn_noverify" class="btn btn-danger" onclick="Tools().noverify()">弃审</a>
+                    <a id="btn_Printbarcode" class="btn btn-info" onclick="Tools().printBarcode()">打印出库通知单</a>
+                    <a id="btn_verify" class="btn btn-warning" onclick="Tools().verify()">审核单据</a>
+                    <a id="btn_save" class="btn btn-primary" onclick="Tools().save()">保存单据</a>
+                </div>
+                <div class="pull-left" style="padding:10px" id="rowTools">
+                    <a id="btn_BeginBathEdit" class="btn btn-primary edit" onclick="Tools().BeginBathEdit(this)">批量编辑</a>
+                    <a id="btn_EndBathEdit" class="btn btn-primary edit" style="display:none" onclick="Tools().EndBathEdit(this)">保存编辑</a>
+                    <a id="btn_CancelEdit" class="btn btn-danger ui-icon-desc" style="display:none" onclick="Tools().CancelEdit(this)">取消编辑</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="gridPanel">
+        <table id="gridList"></table>
+    </div>
+
+</form>
+ 
+<script src="~/Content/js/framework-FormVar.js"></script>
+<script src="~/Areas/WmsManage/Content/js/PurchaseOutStock/Form.js"></script>
+<script src="~/Content/js/framework-Form.js"></script>

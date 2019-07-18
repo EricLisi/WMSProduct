@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<!-- 资源文件引入开始 -->
+		<link href="../../../../assets/plugin/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+		<link href="../../../../assets/plugin/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="../../../../assets/css/app-common.css" rel="stylesheet" />
+		<link href="../../../../assets/plugin/app-scroll/app-scroll.css" rel="stylesheet" />
+		<link href="../../../../assets/css/app-frame-index.css" rel="stylesheet" />
+		<link href="../../../../assets/plugin/app-layout/app-layout.css" rel="stylesheet" />
+		<link href="../../../../assets/plugin/app-select/app-select.css" rel="stylesheet" />
+		<link href="../../../../assets/plugin/app-grid/app-grid.css" rel="stylesheet" />
+		<link href="../../../../assets/plugin/layx/layx.min.css" rel="stylesheet" />
+		<liink href="../css/index.css"/>
+		<!-- 资源文件引入结束 -->
+	</head>
+
+	<body>
+		<div class="app-layout">
+			<div class="app-layout-center">
+				<div class="app-layout-wrap app-layout-wrap-notitle">
+					<div class="app-layout-tool">
+						<div class="app-layout-tool-left">
+							<div class="app-layout-tool-item">
+								<input id="txt_Keyword" type="text" class="form-control" placeholder="请输入要查询关键字" />
+							</div>
+							<div class="app-layout-tool-item">
+								<a id="btn_Search" class="btn btn-primary btn-sm"><i class="fa fa-search"></i>&nbsp;<span class="applg">查询</span></a>
+							</div>
+						</div>
+						<div class="app-layout-tool-right">
+							<div class=" btn-group btn-group-sm">
+								<a id="app_refresh" class="btn btn-default"><i class="fa fa-refresh"></i></a>
+							</div>
+							<div class="btn-group btn-group-sm" app-authorize="">
+								<a id="app_add" class="btn btn-primary"><i class="fa fa-plus"></i>&nbsp;<span class="applg">新增</span></a>
+								<a id="app_edit" class="btn btn-info"><i class="fa fa-pencil-square-o"></i>&nbsp;<span class="applg">编辑</span></a>
+								<a id="app_delete" class="btn btn-danger"><i class="fa fa-trash-o"></i>&nbsp;<span class="applg">删除</span></a>
+								<!--<a id="app_verify" class="btn btn-warning"><i class="fa fa fa-check"></i>&nbsp;<span class="applg">审核</span></a>
+								<a id="app_print" class="btn btn-success"><i class="fa fa-print"></i>&nbsp;<span class="applg">打印单据</span></a>-->
+								<a id="app_more" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+									<i class="fa fa-reorder"></i>&nbsp;<span class="applg">更多</span><span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu pull-right"  aria-labelledby="app-more">
+									    <li id="app_verify">
+											<a><i class="fa fa-check"></i>&nbsp;<span class="applg">审核单据</span></a>
+										</li>
+										<li id="app_deny">
+											<a><i class="fa fa-reply"></i>&nbsp;<span class="applg">弃审单据</span></a>
+										</li>
+										<li id="app_print">
+											<a><i class="fa fa-print"></i>&nbsp;<span class="applg">打印单据</span></a>
+										</li>
+										<li id="app_Ground">
+											<a><i class="fa fa-search-plus"></i>&nbsp;<span class="applg">快速上架</span></a>
+										</li>
+										<li id="app_ArriveGoods">
+											<a><i class="fa fa-check-square"></i>&nbsp;<span class="applg">确认到货</span></a>
+										</li>
+										<li id="app_printBox">
+											<a><i class="fa fa-print"></i>&nbsp;<span class="applg">打印箱贴</span></a>
+										</li>
+										<li id="app_Download">										  
+											<a href="../../../../assets/ImportModel/产品到货单导入格式.xlsx" download="产品到货单导入格式.xlsx"><i class="fa fa-download"></i>&nbsp;<span class="applg">下载导入模板</span></a>
+										</li>
+										<li id="app_Upload">
+											<a><i class="fa fa-upload"></i>&nbsp;<span class="applg">导入Excel</span></a>
+										</li>
+										<li id="app_Export">
+											<a><i class="fa fa-file-excel-o"></i>&nbsp;<span class="applg">导出Excel</span></a>
+										</li>
+								</ul>
+								
+                      
+							</div>
+						</div>
+					</div>
+
+					<div class="app-layout-body" id="gridtable"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 脚本开始 -->
+		
+			<script src="../../../../assets/plugin/jquery/jquery-1.10.2.min.js"></script>
+			<script src="../../../../assets/plugin/bootstrap/js/bootstrap.min.js"></script>
+			<script src="../../../../assets/plugin/resize/resize.js"></script>
+			<script src="../../../../assets/plugin/mousewheel/mousewheel.js"></script>
+			<script src="../../../../assets/plugin/app-scroll/app-scroll.js"></script>
+			<script src="../../../../assets/plugin/app-layout/app-layout.js"></script>
+			<script src="../../../../assets/plugin/layx/layx.min.js"></script>
+			<script src="../../../../assets/plugin/app-select/app-select.js"></script>
+			<script src="../../../../assets/js/app-authorize.js"></script>
+			<script src="../../../../assets/plugin/app-grid/app-grid.js"></script>
+			<script src="../../../../assets/js/app-common-index.js"></script>
+			<script src="../js/index.js"></script>
+		<!-- 脚本结束 -->
+	</body>
+
+</html>
